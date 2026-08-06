@@ -1,0 +1,16 @@
+{
+  "name": "chrysalide-front",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix client run dev",
+    "dev:client": "npm --prefix client run dev",
+    "dev:superadmin": "npm --prefix superadmin run dev",
+    "dev:all": "concurrently \"npm --prefix client run dev\" \"npm --prefix superadmin run dev\"",
+    "build": "npm --prefix client run build && npm --prefix superadmin run build",
+    "install:all": "npm --prefix client install && npm --prefix superadmin install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
