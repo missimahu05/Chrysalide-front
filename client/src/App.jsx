@@ -2,16 +2,15 @@ import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import AboutSection from './components/AboutSection';
+import CategoriesGrid from './components/CategoriesGrid';
 import RoomCatalog from './components/RoomCatalog';
-import ServicesSection from './components/ServicesSection';
-import Testimonials from './components/Testimonials';
-import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import BookingModal from './components/BookingModal';
 
 export default function App() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [selectedRoom, setSelectedRoom] = useState(null);
+  const [filterCategory, setFilterCategory] = useState('all');
 
   const handleOpenBookingWithRoom = (room) => {
     setSelectedRoom(room);
@@ -19,21 +18,36 @@ export default function App() {
   };
 
   const handleSearchAvailability = (filters) => {
-    console.log('Filtres de recherche appliqués:', filters);
+    console.log('Recherche effectuée:', filters);
+    if (filters.category) {
+      setFilterCategory(filters.category);
+    }
     setIsBookingOpen(true);
   };
 
+  const handleSelectCategoryTile = (catId) => {
+    setFilterCategory(catId);
+    const roomsElem = document.getElementById('rooms');
+    if (roomsElem) {
+      roomsElem.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <div className="chrysalide-app">
+    <div className="chrysalide-light-app">
       <Navbar onOpenBooking={() => setIsBookingOpen(true)} />
       
       <main>
-        <Hero onSearchAvailability={handleSearchAvailability} />
-        <AboutSection />
-        <RoomCatalog onSelectRoomForBooking={handleOpenBookingWithRoom} />
-        <ServicesSection />
-        <Testimonials />
-        <ContactSection />
+        <Hero 
+          onSearchAvailability={handleSearchAvailability} 
+          onOpenBooking={() => setIsBookingOpen(true)}
+        />
+        <AboutSection onOpenBooking={() => setIsBookingOpen(true)} />
+        <CategoriesGrid onSelectCategory={handleSelectCategoryTile} />
+        <RoomCatalog 
+          filterCategory={filterCategory} 
+          onSelectRoomForBooking={handleOpenBookingWithRoom} 
+        />
       </main>
 
       <Footer />
