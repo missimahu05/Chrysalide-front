@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, Phone, Calendar } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 
 export default function Navbar({ onOpenBooking }) {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -18,9 +18,9 @@ export default function Navbar({ onOpenBooking }) {
           <span className="lang-selector">🇫🇷 FR ▾</span>
         </div>
 
-        {/* Center: Official Logo */}
+        {/* Center: High Resolution Official Logo */}
         <a href="#" className="brand-logo-container">
-          <img src="/logo.jpg" alt="La Chrysalide Suite Logo" className="official-logo-img" />
+          <img src="/logo.png" alt="La Chrysalide Suite Logo" className="official-logo-img" />
           <div className="brand-title-group">
             <span className="brand-title-main">La Chrysalide</span>
             <span className="brand-title-sub">SUITE</span>

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Calendar, Users, Home } from 'lucide-react';
 
 export default function Hero({ onSearchAvailability, onOpenBooking }) {
   const [checkIn, setCheckIn] = useState('');
@@ -18,7 +17,7 @@ export default function Hero({ onSearchAvailability, onOpenBooking }) {
 
       <div className="container hero-content-inner">
         <div className="hero-badge-logo">
-          <img src="/logo.jpg" alt="Logo La Chrysalide Suite" />
+          <img src="/logo.png" alt="Logo La Chrysalide Suite" />
         </div>
 
         <h1 className="hero-title-serif">
