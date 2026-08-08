@@ -1,0 +1,114 @@
+import React from 'react';
+
+export default function ContactLocationSection() {
+  return (
+    <section className="container-xxl py-5 my-4 bg-light border-top border-bottom border-light" id="contact-location">
+      <div className="container">
+        
+        {/* Title */}
+        <div className="text-center mb-5">
+          <h6 className="section-title text-center text-chrysalide-gold text-uppercase mb-2 font-weight-bold">
+            Localisation & Accès
+          </h6>
+          <h2 className="text-dark font-weight-bold">
+            Où se trouve <span className="text-chrysalide-green">La Chrysalide</span> <span className="text-chrysalide-gold">Suite</span> ?
+          </h2>
+          <p className="text-muted leading-relaxed" style={{ maxWidth: '700px', margin: '0 auto' }}>
+            Idéalement situé au cœur de Parakou, notre complexe hôtelier vous accueille dans un cadre calme, discret et parfaitement sécurisé.
+          </p>
+        </div>
+
+        <div className="row g-4 align-items-stretch">
+          
+          {/* Left: Contact Info & Address Cards */}
+          <div className="col-lg-5">
+            <div className="bg-white rounded-4 p-4 p-md-5 shadow-sm border border-light h-100 d-flex flex-column justify-content-between">
+              <div>
+                <h4 className="font-weight-bold text-dark mb-4 text-uppercase border-bottom border-2 pb-2" style={{ borderColor: '#CFA34C' }}>
+                  Coordonnées Officielle
+                </h4>
+
+                <div className="d-flex align-items-start mb-4">
+                  <div className="rounded-circle bg-light text-chrysalide-gold p-3 me-3 d-flex align-items-center justify-content-center shadow-sm" style={{ width: '50px', height: '50px' }}>
+                    <i className="fa fa-map-marker-alt fa-lg"></i>
+                  </div>
+                  <div>
+                    <h6 className="fw-bold mb-1 text-dark">Adresse Physique</h6>
+                    <p className="text-muted mb-0 font-weight-medium">
+                      <strong>Quartier Nima</strong>, Parakou, République du Bénin
+                    </p>
+                  </div>
+                </div>
+
+                <div className="d-flex align-items-start mb-4">
+                  <div className="rounded-circle bg-light text-chrysalide-green p-3 me-3 d-flex align-items-center justify-content-center shadow-sm" style={{ width: '50px', height: '50px' }}>
+                    <i className="fa fa-phone-alt fa-lg"></i>
+                  </div>
+                  <div>
+                    <h6 className="fw-bold mb-1 text-dark">Téléphone & Réservations</h6>
+                    <a href="tel:+2290159188023" className="text-decoration-none text-dark font-weight-bold">
+                      +229 0159188023
+                    </a>
+                    <small className="d-block text-muted">Disponible 24h/24 & 7j/7</small>
+                  </div>
+                </div>
+
+                <div className="d-flex align-items-start mb-4">
+                  <div className="rounded-circle bg-light text-chrysalide-green p-3 me-3 d-flex align-items-center justify-content-center shadow-sm" style={{ width: '50px', height: '50px' }}>
+                    <i className="fab fa-whatsapp fa-lg"></i>
+                  </div>
+                  <div>
+                    <h6 className="fw-bold mb-1 text-dark">WhatsApp Direct</h6>
+                    <a href="https://wa.me/2290159188023" target="_blank" rel="noreferrer" className="text-decoration-none text-chrysalide-green font-weight-bold">
+                      +229 0159188023 (Envoyer un message)
+                    </a>
+                  </div>
+                </div>
+
+                <div className="d-flex align-items-start mb-4">
+                  <div className="rounded-circle bg-light text-chrysalide-purple p-3 me-3 d-flex align-items-center justify-content-center shadow-sm" style={{ width: '50px', height: '50px' }}>
+                    <i className="fa fa-envelope fa-lg"></i>
+                  </div>
+                  <div>
+                    <h6 className="fw-bold mb-1 text-dark">Email Officiel</h6>
+                    <a href="mailto:lachrysalidesuites@gmail.com" className="text-decoration-none text-dark font-weight-bold">
+                      lachrysalidesuites@gmail.com
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="d-flex gap-2 pt-3 border-top border-light">
+                <a href="https://wa.me/2290159188023" target="_blank" rel="noreferrer" className="btn btn-success flex-grow-1 font-weight-bold text-uppercase py-2 shadow-sm" style={{ backgroundColor: '#25854C', borderColor: '#25854C' }}>
+                  <i className="fab fa-whatsapp me-2"></i>Itinéraire WhatsApp
+                </a>
+                <a href="tel:+2290159188023" className="btn btn-outline-dark font-weight-bold text-uppercase py-2 px-3">
+                  <i className="fa fa-phone-alt"></i>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+          {/* Right: Interactive Google Maps Frame */}
+          <div className="col-lg-7">
+            <div className="bg-white rounded-4 p-2 shadow-sm border border-light h-100 overflow-hidden position-relative">
+              <iframe
+                title="Google Maps La Chrysalide Suite Nima Parakou"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15757.241088219468!2d2.6189333!3d9.3512964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1032338ff7ff2fb7%3A0xd647180bfd03f0b2!2sParakou%2C%20Benin!5e0!3m2!1sen!2sbj!4v1700000000000!5m2!1sen!2sbj"
+                width="100%"
+                height="100%"
+                style={{ minHeight: '400px', border: 0, borderRadius: '12px' }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  );
+}

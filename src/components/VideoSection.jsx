@@ -1,85 +1,105 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 export default function VideoSection({ onOpenBooking }) {
-  const [showVideoModal, setShowVideoModal] = useState(false);
+  const videoRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const togglePlay = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+        setIsPlaying(false);
+      } else {
+        videoRef.current.play();
+        setIsPlaying(true);
+      }
+    }
+  };
 
   return (
-    <>
-      <section className="container-fluid py-5 px-0 my-5 min-vh-100 d-flex align-items-center">
-        <div className="row g-0 w-100">
-          <div className="col-md-6 bg-dark d-flex align-items-center p-5">
-            <div className="p-lg-4">
-              <h6 className="section-title text-start text-chrysalide-gold text-uppercase mb-3 font-weight-bold">
-                Cadre VIP & Expérience Unique
-              </h6>
-              <h1 className="text-white mb-4 font-weight-bold">
-                Découvrez <span className="text-chrysalide-green">La Chrysalide</span> <span className="text-chrysalide-gold">Suite</span> en vidéo
-              </h1>
-              <p className="text-white-50 mb-3 leading-relaxed">
-                Situé au quartier Nima à Parakou, <strong><span className="text-chrysalide-green">La Chrysalide</span> <span className="text-chrysalide-gold">Suite</span></strong> regroupe des chambres ventilées et climatisées, des suites VIP, un Bar Lounge chaleureux, une Cave à Vin sélectionnée et un espace Chicha & Restauration raffiné.
-              </p>
-              <div className="row g-2 mb-4 text-white-50">
-                <div className="col-6"><i className="fa fa-cocktail text-chrysalide-gold me-2"></i>Cocktails & Cave à Vin</div>
-                <div className="col-6"><i className="fa fa-utensils text-chrysalide-green me-2"></i>Plats Gourmands</div>
-                <div className="col-6"><i className="fa fa-smoking text-chrysalide-purple me-2"></i>Espace Chicha</div>
-                <div className="col-6"><i className="fa fa-shield-alt text-chrysalide-gold me-2"></i>Sécurité 24h/24</div>
-              </div>
-              <div className="d-flex gap-3">
-                <a href="#rooms" className="btn btn-primary py-md-3 px-md-5 text-uppercase font-weight-bold shadow">
-                  Nos Chambres
-                </a>
-                <button onClick={onOpenBooking} className="btn btn-light py-md-3 px-md-5 text-uppercase font-weight-bold shadow">
-                  Réserver maintenant
-                </button>
-              </div>
-            </div>
-          </div>
+    <section className="container-xxl py-5 my-4 bg-white" id="video-presentation">
+      <div className="container">
+        <div className="text-center mb-4">
+          <h6 className="section-title text-center text-chrysalide-gold text-uppercase mb-2 font-weight-bold">
+            Immersion Vidéo
+          </h6>
+          <h1 className="text-dark font-weight-bold mb-3">
+            Découvrez <span className="text-chrysalide-green">La Chrysalide</span> <span className="text-chrysalide-gold">Suite</span> en Action
+          </h1>
+          <p className="text-muted leading-relaxed" style={{ maxWidth: '800px', margin: '0 auto' }}>
+            Plongez dans l'ambiance chaleureuse de notre complexe à Parakou (Quartier Nima) : Bar Lounge, Cave à Vin, Espace Chicha, Restauration et Chambres VIP.
+          </p>
+        </div>
 
-          <div className="col-md-6 position-relative">
-            <div 
-              className="video d-flex align-items-center justify-content-center"
-              style={{
-                minHeight: '500px',
-                backgroundImage: 'linear-gradient(rgba(15, 23, 43, 0.4), rgba(15, 23, 43, 0.4)), url("/img/hero/1.jpeg")',
-                backgroundPosition: 'center',
-                backgroundSize: 'cover'
-              }}
+        {/* Large Inline Video Player */}
+        <div className="position-relative rounded-4 overflow-hidden shadow-lg border border-3" style={{ borderColor: '#CFA34C', backgroundColor: '#000' }}>
+          <div className="ratio ratio-16x9 position-relative">
+            <video 
+              ref={videoRef}
+              className="w-100 h-100 object-fit-cover" 
+              controls
+              playsInline
+              poster="/img/hero/1.jpeg"
+              onPlay={() => setIsPlaying(true)}
+              onPause={() => setIsPlaying(false)}
             >
-              <button 
-                type="button" 
-                className="btn-play" 
-                onClick={() => setShowVideoModal(true)}
-                title="Regarder la vidéo officielle"
-              >
-                <span></span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+              <source src="/img/videos/VideoChrysalide.mp4" type="video/mp4" />
+              Votre navigateur ne supporte pas la lecture vidéo HTML5.
+            </video>
 
-      {showVideoModal && (
-        <div className="modal fade show d-block" style={{ backgroundColor: 'rgba(0,0,0,0.85)', zIndex: 10000 }} tabIndex="-1">
-          <div className="modal-dialog modal-dialog-centered modal-lg">
-            <div className="modal-content bg-dark border-0 shadow-lg">
-              <div className="modal-header border-bottom border-secondary text-white p-4">
-                <h5 className="modal-title font-weight-bold">
-                  Présentation Vidéo — <span className="text-chrysalide-green">La Chrysalide</span> <span className="text-chrysalide-gold">Suite</span>
-                </h5>
-                <button type="button" className="btn-close btn-close-white" onClick={() => setShowVideoModal(false)}></button>
-              </div>
-              <div className="modal-body p-0">
-                <div className="ratio ratio-16x9">
-                  <video controls autoPlay className="w-100 h-100">
-                    <source src="/img/videos/VideoChrysalide.mp4" type="video/mp4" />
-                    Votre navigateur ne supporte pas la lecture de vidéo HTML5.
-                  </video>
+            {/* Custom Overlay Play Button if not playing */}
+            {!isPlaying && (
+              <div 
+                className="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column align-items-center justify-content-center"
+                style={{ background: 'rgba(0, 0, 0, 0.45)', cursor: 'pointer', zIndex: 5 }}
+                onClick={togglePlay}
+              >
+                <div 
+                  className="rounded-circle d-flex align-items-center justify-content-center shadow-lg"
+                  style={{ width: '85px', height: '85px', backgroundColor: '#CFA34C', color: '#FFF', transition: 'transform 0.3s ease' }}
+                >
+                  <i className="fa fa-play fa-2x ms-1"></i>
                 </div>
+                <h5 className="text-white mt-3 font-weight-bold text-uppercase" style={{ letterSpacing: '1px', textShadow: '0 2px 6px rgba(0,0,0,0.8)' }}>
+                  Lancer la Présentation Vidéo
+                </h5>
               </div>
+            )}
+          </div>
+        </div>
+
+        {/* Features banner below video */}
+        <div className="row g-4 mt-4 text-center">
+          <div className="col-md-3 col-6">
+            <div className="p-3 bg-light rounded shadow-sm border border-light">
+              <i className="fa fa-cocktail text-chrysalide-gold fa-2x mb-2"></i>
+              <h6 className="fw-bold mb-1 text-dark">Bar Lounge & Cocktails</h6>
+              <small className="text-muted">Ambiance chic et raffinée</small>
+            </div>
+          </div>
+          <div className="col-md-3 col-6">
+            <div className="p-3 bg-light rounded shadow-sm border border-light">
+              <i className="fa fa-wine-bottle text-chrysalide-purple fa-2x mb-2"></i>
+              <h6 className="fw-bold mb-1 text-dark">Cave à Vin</h6>
+              <small className="text-muted">Sélection de grand crus</small>
+            </div>
+          </div>
+          <div className="col-md-3 col-6">
+            <div className="p-3 bg-light rounded shadow-sm border border-light">
+              <i className="fa fa-utensils text-chrysalide-green fa-2x mb-2"></i>
+              <h6 className="fw-bold mb-1 text-dark">Restauration</h6>
+              <small className="text-muted">Plats gourmands sur place</small>
+            </div>
+          </div>
+          <div className="col-md-3 col-6">
+            <div className="p-3 bg-light rounded shadow-sm border border-light">
+              <i className="fa fa-hotel text-chrysalide-gold fa-2x mb-2"></i>
+              <h6 className="fw-bold mb-1 text-dark">Chambres & Suites</h6>
+              <small className="text-muted">Sécurité & Confort 24h/24</small>
             </div>
           </div>
         </div>
-      )}
-    </>
+      </div>
+    </section>
   );
 }

@@ -38,18 +38,18 @@ Merci de confirmer la disponibilité et le tarif !`;
     <div className="modal fade show d-block" style={{ backgroundColor: 'rgba(0,0,0,0.65)', zIndex: 10000 }} tabIndex="-1">
       <div className="modal-dialog modal-dialog-centered modal-lg">
         <div className="modal-content rounded-3 border-0 shadow-lg">
-          <div className="modal-header bg-dark text-white p-4">
+          <div className="modal-header bg-white text-dark p-4 border-bottom border-3" style={{ borderColor: '#CFA34C' }}>
             <div>
-              <h5 className="modal-title font-weight-bold text-uppercase">
+              <h5 className="modal-title font-weight-bold text-uppercase text-dark">
                 <i className="fa fa-calendar-check me-2 text-chrysalide-gold"></i>Réservation Directe — <span className="text-chrysalide-green">La Chrysalide</span> <span className="text-chrysalide-gold">Suite</span>
               </h5>
-              <small className="text-white-50">Validation instantanée via WhatsApp ou Téléphone (+229 0159188023)</small>
+              <small className="text-muted">Validation instantanée via WhatsApp ou Téléphone (+229 0159188023)</small>
             </div>
-            <button type="button" className="btn-close btn-close-white" onClick={onClose}></button>
+            <button type="button" className="btn-close" onClick={onClose}></button>
           </div>
 
           <form onSubmit={handleSubmit}>
-            <div className="modal-body p-4">
+            <div className="modal-body p-4 bg-white">
               <div className="row g-3 mb-3">
                 <div className="col-md-6">
                   <label className="form-label font-weight-bold text-dark">Nom et Prénom *</label>
@@ -142,7 +142,7 @@ Merci de confirmer la disponibilité et le tarif !`;
               <button type="button" className="btn btn-outline-secondary text-uppercase" onClick={onClose}>
                 Annuler
               </button>
-              <button type="submit" className="btn btn-success py-2 px-4 font-weight-bold text-uppercase shadow">
+              <button type="submit" className="btn btn-success py-2 px-4 font-weight-bold text-uppercase shadow-sm" style={{ backgroundColor: '#25854C', borderColor: '#25854C' }}>
                 <i className="fab fa-whatsapp me-2"></i>Envoyer via WhatsApp Direct
               </button>
             </div>

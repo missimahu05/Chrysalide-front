@@ -2,89 +2,146 @@ import React from 'react';
 
 export default function Footer({ onOpenBooking }) {
   return (
-    <footer className="container-fluid bg-dark text-light footer pt-5" id="contact">
-      <div className="container pb-5">
-        <div className="row g-5">
-          <div className="col-md-6 col-lg-4">
-            <div className="rounded p-4 h-100 d-flex flex-column justify-content-between text-white" style={{ backgroundColor: '#0B4D33', borderTop: '4px solid #CFA34C' }}>
+    <footer className="container-fluid text-white footer pt-5 pb-3 border-top border-3" id="contact" style={{ backgroundColor: '#2D0B36', borderColor: '#CFA34C' }}>
+      <div className="container">
+        
+        {/* Main 4-Column Grid */}
+        <div className="row g-4 g-lg-5 mb-4">
+          
+          {/* Col 1: Brand & Presentation */}
+          <div className="col-lg-3 col-md-6">
+            <a href="#hero" className="d-flex align-items-center mb-3 text-white text-decoration-none">
+              <img src="/newfav.png" alt="Logo La Chrysalide Suite" style={{ height: '45px', marginRight: '10px' }} />
               <div>
-                <a href="#hero" className="d-flex align-items-center mb-3 text-white text-decoration-none">
-                  <img src="/logo.png" alt="Logo La Chrysalide Suite" style={{ height: '48px', marginRight: '10px' }} />
-                  <h4 className="text-white text-uppercase font-weight-bold m-0" style={{ fontSize: '1.2rem' }}>
-                    <span className="text-chrysalide-green">La Chrysalide</span> <span className="text-chrysalide-gold">Suite</span>
-                  </h4>
-                </a>
-                <p className="text-white-50 mb-4 leading-relaxed" style={{ fontSize: '0.9rem' }}>
-                  <strong><span className="text-chrysalide-green">La Chrysalide</span> <span className="text-chrysalide-gold">Suite</span></strong> regroupe des hébergements de standing, un Bar Lounge, une Cave à Vin, un Restaurant et un espace Chicha au quartier Nima à Parakou.
-                </p>
+                <h4 className="text-white text-uppercase font-weight-bold m-0" style={{ fontSize: '1.15rem', letterSpacing: '0.5px' }}>
+                  <span className="text-chrysalide-green">La Chrysalide</span> <span className="text-chrysalide-gold">Suite</span>
+                </h4>
+                <small className="text-chrysalide-gold text-uppercase font-weight-bold" style={{ fontSize: '0.65rem', letterSpacing: '1.5px' }}>
+                  Hôtel & Résidences
+                </small>
               </div>
-              <button 
-                onClick={onOpenBooking} 
-                className="btn btn-dark text-white font-weight-bold text-uppercase w-100 py-2 shadow-sm"
+            </a>
+            <p className="text-white-50 mb-3 leading-relaxed" style={{ fontSize: '0.88rem' }}>
+              Complex hôtelier et résidentiel d'exception à Parakou (Quartier Nima). Chambres ventilées et climatisées, Suites VIP, Bar Lounge, Cave à Vin et Restauration.
+            </p>
+            <button 
+              onClick={onOpenBooking} 
+              className="btn btn-warning text-dark font-weight-bold text-uppercase w-100 py-2 shadow-sm"
+              style={{ backgroundColor: '#CFA34C', borderColor: '#CFA34C', fontSize: '0.85rem' }}
+            >
+              <i className="fa fa-calendar-check me-2"></i>Réserver un Séjour
+            </button>
+          </div>
+
+          {/* Col 2: Navigation Rapide */}
+          <div className="col-lg-3 col-md-6">
+            <h5 className="font-weight-bold text-chrysalide-gold text-uppercase mb-3 pb-2 border-bottom border-secondary border-opacity-25" style={{ fontSize: '1.05rem' }}>
+              Navigation
+            </h5>
+            <ul className="list-unstyled mb-0" style={{ fontSize: '0.9rem' }}>
+              <li className="mb-2"><a href="#hero" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-chevron-right me-2 text-chrysalide-gold small"></i>Accueil</a></li>
+              <li className="mb-2"><a href="#about" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-chevron-right me-2 text-chrysalide-gold small"></i>À propos de nous</a></li>
+              <li className="mb-2"><a href="#services" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-chevron-right me-2 text-chrysalide-gold small"></i>Nos Services VIP</a></li>
+              <li className="mb-2"><a href="#rooms" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-chevron-right me-2 text-chrysalide-gold small"></i>Nos Chambres & Tarifs</a></li>
+              <li className="mb-2"><a href="#video-presentation" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-chevron-right me-2 text-chrysalide-gold small"></i>Présentation Vidéo</a></li>
+              <li className="mb-2"><a href="#testimonials" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-chevron-right me-2 text-chrysalide-gold small"></i>Témoignages Clients</a></li>
+            </ul>
+          </div>
+
+          {/* Col 3: Nos Tarifs & Prestations */}
+          <div className="col-lg-3 col-md-6">
+            <h5 className="font-weight-bold text-chrysalide-gold text-uppercase mb-3 pb-2 border-bottom border-secondary border-opacity-25" style={{ fontSize: '1.05rem' }}>
+              Nos Offres & Tarifs
+            </h5>
+            <ul className="list-unstyled mb-0" style={{ fontSize: '0.9rem' }}>
+              <li className="mb-2"><a href="#rooms" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-star me-2 text-chrysalide-gold small"></i>Ventilée (15.000 FCFA)</a></li>
+              <li className="mb-2"><a href="#rooms" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-star me-2 text-chrysalide-gold small"></i>Climatisée (25.000 FCFA)</a></li>
+              <li className="mb-2"><a href="#rooms" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-star me-2 text-chrysalide-gold small"></i>Suite VIP (45.000 FCFA)</a></li>
+              <li className="mb-2"><a href="#rooms" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-star me-2 text-chrysalide-gold small"></i>Appartement (60.000 FCFA)</a></li>
+              <li className="mb-2"><a href="#services" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-cocktail me-2 text-chrysalide-gold small"></i>Bar Lounge & Cave à Vin</a></li>
+              <li className="mb-2"><a href="#services" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-smoking me-2 text-chrysalide-gold small"></i>Espace Chicha VIP</a></li>
+            </ul>
+          </div>
+
+          {/* Col 4: Contact & Réseaux Sociaux */}
+          <div className="col-lg-3 col-md-6">
+            <h5 className="font-weight-bold text-chrysalide-gold text-uppercase mb-3 pb-2 border-bottom border-secondary border-opacity-25" style={{ fontSize: '1.05rem' }}>
+              Contact & Accès
+            </h5>
+            <p className="mb-2 text-white-50" style={{ fontSize: '0.88rem' }}>
+              <i className="fa fa-map-marker-alt me-2 text-chrysalide-green"></i>Quartier Nima, Parakou, Bénin
+            </p>
+            <p className="mb-2" style={{ fontSize: '0.88rem' }}>
+              <a href="tel:+2290159188023" className="text-white-50 text-decoration-none hover-gold">
+                <i className="fa fa-phone-alt me-2 text-chrysalide-gold"></i>+229 0159188023
+              </a>
+            </p>
+            <p className="mb-2" style={{ fontSize: '0.88rem' }}>
+              <a href="https://wa.me/2290159188023" target="_blank" rel="noreferrer" className="text-white-50 text-decoration-none hover-gold">
+                <i className="fab fa-whatsapp me-2 text-chrysalide-green"></i>+229 0159188023 (WhatsApp)
+              </a>
+            </p>
+            <p className="mb-3" style={{ fontSize: '0.88rem' }}>
+              <a href="mailto:lachrysalidesuites@gmail.com" className="text-white-50 text-decoration-none hover-gold">
+                <i className="fa fa-envelope me-2 text-chrysalide-purple"></i>lachrysalidesuites@gmail.com
+              </a>
+            </p>
+
+            <h6 className="text-white font-weight-bold mb-2 text-uppercase" style={{ fontSize: '0.8rem' }}>Réseaux Sociaux</h6>
+            <div className="d-flex gap-2">
+              <a 
+                className="rounded-circle d-flex align-items-center justify-content-center text-white text-decoration-none shadow-sm transition-all" 
+                href="tel:+2290159188023"
+                style={{ width: '38px', height: '38px', backgroundColor: 'rgba(255, 255, 255, 0.1)', border: '1px solid rgba(255, 255, 255, 0.15)' }}
+                title="Appel direct"
               >
-                Réserver une chambre
-              </button>
+                <i className="fa fa-phone-alt"></i>
+              </a>
+              <a 
+                className="rounded-circle d-flex align-items-center justify-content-center text-white text-decoration-none shadow-sm transition-all" 
+                href="https://wa.me/2290159188023" 
+                target="_blank" 
+                rel="noreferrer"
+                style={{ width: '38px', height: '38px', backgroundColor: 'rgba(255, 255, 255, 0.1)', border: '1px solid rgba(255, 255, 255, 0.15)' }}
+                title="WhatsApp Direct"
+              >
+                <i className="fab fa-whatsapp"></i>
+              </a>
+              <a 
+                className="rounded-circle d-flex align-items-center justify-content-center text-white text-decoration-none shadow-sm transition-all" 
+                href="mailto:lachrysalidesuites@gmail.com"
+                style={{ width: '38px', height: '38px', backgroundColor: 'rgba(255, 255, 255, 0.1)', border: '1px solid rgba(255, 255, 255, 0.15)' }}
+                title="Email"
+              >
+                <i className="fa fa-envelope"></i>
+              </a>
+              <a 
+                className="rounded-circle d-flex align-items-center justify-content-center text-white text-decoration-none shadow-sm transition-all" 
+                href="https://facebook.com"
+                target="_blank"
+                rel="noreferrer"
+                style={{ width: '38px', height: '38px', backgroundColor: 'rgba(255, 255, 255, 0.1)', border: '1px solid rgba(255, 255, 255, 0.15)' }}
+                title="Facebook"
+              >
+                <i className="fab fa-facebook-f"></i>
+              </a>
             </div>
           </div>
 
-          <div className="col-md-6 col-lg-4">
-            <h6 className="section-title text-start text-chrysalide-gold text-uppercase mb-4 font-weight-bold">Contact & Accès</h6>
-            <p className="mb-3"><i className="fa fa-map-marker-alt me-3 text-chrysalide-green"></i>Quartier Nima, Parakou, Bénin</p>
-            <p className="mb-3">
-              <a href="tel:+2290159188023" className="text-light text-decoration-none">
-                <i className="fa fa-phone-alt me-3 text-chrysalide-gold"></i>+229 0159188023
-              </a>
-            </p>
-            <p className="mb-3">
-              <a href="https://wa.me/2290159188023" target="_blank" rel="noreferrer" className="text-light text-decoration-none">
-                <i className="fab fa-whatsapp me-3 text-chrysalide-green"></i>+229 0159188023 (WhatsApp Direct)
-              </a>
-            </p>
-            <p className="mb-4">
-              <a href="mailto:lachrysalidesuites@gmail.com" className="text-light text-decoration-none">
-                <i className="fa fa-envelope me-3 text-chrysalide-purple"></i>lachrysalidesuites@gmail.com
-              </a>
-            </p>
-            
-            <div className="d-flex pt-2 gap-2">
-              <a className="btn btn-outline-light btn-social rounded-circle" href="tel:+2290159188023"><i className="fa fa-phone-alt"></i></a>
-              <a className="btn btn-outline-light btn-social rounded-circle" href="https://wa.me/2290159188023" target="_blank" rel="noreferrer"><i className="fab fa-whatsapp"></i></a>
-              <a className="btn btn-outline-light btn-social rounded-circle" href="mailto:lachrysalidesuites@gmail.com"><i className="fa fa-envelope"></i></a>
+        </div>
+
+        {/* Bottom Copyright Bar */}
+        <div className="pt-3 border-top border-secondary border-opacity-25">
+          <div className="row align-items-center">
+            <div className="col-md-6 text-center text-md-start text-white-50" style={{ fontSize: '0.85rem' }}>
+              &copy; {new Date().getFullYear()} <strong className="text-white"><span className="text-chrysalide-green">La Chrysalide</span> <span className="text-chrysalide-gold">Suite</span></strong>. Tous droits réservés.
             </div>
-          </div>
-
-          <div className="col-lg-4 col-md-12">
-            <div className="row g-4">
-              <div className="col-6">
-                <h6 className="section-title text-start text-chrysalide-gold text-uppercase mb-4 font-weight-bold">Services</h6>
-                <a className="btn btn-link text-white-50 p-0 mb-2 d-block text-decoration-none" href="#services">Bar Lounge & Cocktails</a>
-                <a className="btn btn-link text-white-50 p-0 mb-2 d-block text-decoration-none" href="#services">Cave à Vin & Spiritueux</a>
-                <a className="btn btn-link text-white-50 p-0 mb-2 d-block text-decoration-none" href="#services">Restaurant & Plats</a>
-                <a className="btn btn-link text-white-50 p-0 mb-2 d-block text-decoration-none" href="#services">Espace Chicha VIP</a>
-                <a className="btn btn-link text-white-50 p-0 mb-2 d-block text-decoration-none" href="#rooms">Chambres & Suites</a>
-              </div>
-
-              <div className="col-6">
-                <h6 className="section-title text-start text-chrysalide-gold text-uppercase mb-4 font-weight-bold">Nos Tarifs</h6>
-                <a className="btn btn-link text-white-50 p-0 mb-2 d-block text-decoration-none" href="#rooms">Ventilée (15.000 FCFA)</a>
-                <a className="btn btn-link text-white-50 p-0 mb-2 d-block text-decoration-none" href="#rooms">Climatisée (25.000 FCFA)</a>
-                <a className="btn btn-link text-white-50 p-0 mb-2 d-block text-decoration-none" href="#rooms">Suite VIP (45.000 FCFA)</a>
-                <a className="btn btn-link text-white-50 p-0 mb-2 d-block text-decoration-none" href="#rooms">Appartement (60.000 FCFA)</a>
-              </div>
+            <div className="col-md-6 text-center text-md-end text-white-50" style={{ fontSize: '0.85rem' }}>
+              Hôtel • Bar Lounge • Cave à Vin • Quartier Nima, Parakou
             </div>
           </div>
         </div>
-      </div>
 
-      <div className="container border-top border-secondary py-3">
-        <div className="row align-items-center">
-          <div className="col-md-6 text-center text-md-start text-muted" style={{ fontSize: '0.85rem' }}>
-            &copy; {new Date().getFullYear()} <strong className="text-white"><span className="text-chrysalide-green">La Chrysalide</span> <span className="text-chrysalide-gold">Suite</span></strong>. Tous droits réservés.
-          </div>
-          <div className="col-md-6 text-center text-md-end text-muted" style={{ fontSize: '0.85rem' }}>
-            Hôtel • Bar Lounge • Cave à Vin • Quartier Nima, Parakou
-          </div>
-        </div>
       </div>
     </footer>
   );
