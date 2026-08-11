@@ -1,188 +1,202 @@
 import React, { useState } from 'react';
 import { 
-  Utensils, Wine, BedDouble, ShieldCheck, Award, Smile, 
-  ChevronRight, CalendarCheck, ZoomIn, X 
+  BedDouble, Wine, ShieldCheck, Users, 
+  ChevronRight, CalendarCheck, ZoomIn, X, Utensils
 } from 'lucide-react';
 
 export default function AboutSection({ onOpenBooking }) {
   const [selectedImg, setSelectedImg] = useState(null);
 
-  const galleryItems = [
+  const leftColumnImages = [
     {
       id: 1,
-      img: '/img/gallery/chrysalide-real-1.jpeg',
-      title: 'Restauration & Grillades',
-      sub: 'Poulet sauté & Spécialités locales',
-      tag: 'Gastronomie',
-      icon: Utensils,
-      height: '260px'
+      img: '/img/rooms/room-ac-deluxe.jpeg',
+      title: 'Chambres Climatisées',
+      sub: 'Confort & Calme Absolu',
+      tag: 'Hébergement',
+      icon: BedDouble,
+      height: '360px'
     },
     {
       id: 2,
-      img: '/img/gallery/chrysalide-real-2.jpeg',
-      title: 'Cuisine Raffinée',
-      sub: 'Plats cuisinés avec soin par nos chefs',
-      tag: 'Saveurs',
-      icon: Utensils,
-      height: '260px'
-    },
-    {
-      id: 3,
-      img: '/img/gallery/chrysalide-real-3.jpeg',
-      title: 'Bar Lounge & VIP',
-      sub: 'Ambiance feutrée, vins & cocktails',
-      tag: 'Détente 24/7',
-      icon: Wine,
-      height: '240px'
-    },
-    {
-      id: 4,
-      img: '/img/gallery/chrysalide-real-4.jpeg',
-      title: 'Chambres & Suites',
-      sub: 'Ventilées et Climatisées haut de gamme',
-      tag: 'Confort',
+      img: '/img/rooms/room-ventilated.jpeg',
+      title: 'Chambres Ventilées',
+      sub: 'Espace & Fraîcheur',
+      tag: 'Hébergement',
       icon: BedDouble,
       height: '240px'
     }
   ];
 
+  const rightColumnImages = [
+    {
+      id: 3,
+      img: '/img/gallery/chrysalide-real-3.jpeg',
+      title: 'Bar Lounge VIP & Resto',
+      sub: 'Ambiance feutrée, boissons & grillades',
+      tag: 'Lounge 24/7',
+      icon: Wine,
+      height: '420px'
+    },
+    {
+      id: 4,
+      img: '/img/gallery/chrysalide-real-4.jpeg',
+      title: 'Salons & Conciergerie',
+      sub: 'Service attentionné & Sécurité 24h/24',
+      tag: 'Service',
+      icon: ShieldCheck,
+      height: '220px'
+    }
+  ];
+
   return (
-    <section className="w-100 min-vh-lg-100 d-flex align-items-center py-5 position-relative" id="about" style={{ backgroundColor: '#FAF8F5' }}>
+    <section className="w-100 min-vh-100 d-flex align-items-center py-5 position-relative bg-white" id="about">
       
-      <div className="container-fluid px-3 px-md-5 px-xl-5 position-relative z-index-1">
+      <div className="container py-2 py-md-4">
         
         <div className="row g-4 g-lg-5 align-items-center">
           
-          {/* Left Column: Airy Text & Features */}
-          <div className="col-lg-6 pe-lg-4">
+          {/* Left Column: Text & Features matching chrysalide-rosy */}
+          <div className="col-lg-6">
             
-            <div className="d-inline-flex align-items-center gap-2 px-3.5 py-2 rounded-pill mb-3 border shadow-sm" style={{ backgroundColor: '#FFFFFF', borderColor: '#CFA34C' }}>
-              <Award size={18} style={{ color: '#CFA34C' }} />
-              <span className="text-uppercase font-weight-bold" style={{ fontSize: '0.78rem', color: '#25854C', letterSpacing: '1.2px' }}>
-                Complexe Hôtelier d'Exception à Parakou
+            <div className="d-flex align-items-center gap-2 mb-3">
+              <span className="text-uppercase font-weight-bold text-chrysalide-green" style={{ letterSpacing: '2.5px', fontSize: '0.85rem' }}>
+                À PROPOS DE NOUS
               </span>
+              <div style={{ width: '45px', height: '2px', backgroundColor: '#25854C' }}></div>
             </div>
 
-            <h2 className="mb-4 font-weight-bold display-5 text-dark" style={{ lineHeight: '1.2' }}>
-              Bienvenue à <span style={{ color: '#25854C' }}>La Chrysalide</span> <span style={{ color: '#CFA34C' }}>Suite</span>
+            <h2 className="display-6 font-weight-bold text-dark mb-4" style={{ lineHeight: '1.2' }}>
+              Bienvenue à <span style={{ color: '#25854C' }}>LA CHRYSALIDE SUITES</span>
             </h2>
 
-            <p className="mb-3 text-secondary leading-relaxed fs-5">
-              Idéalement situé au <strong>Quartier Nima à Parakou</strong>, <strong>La Chrysalide Suite</strong> associe élégance, tranquillité et confort moderne pour offrir un séjour d'exception à chaque visiteur.
+            <p className="text-secondary leading-relaxed fs-6 mb-4">
+              Bienvenue à <strong>La Chrysalide Suites</strong>, un établissement d'exception alliant confort, élégance et hospitalité au <strong>Quartier Nima à Parakou</strong>. Nous vous offrons un cadre paisible avec des chambres modernes, un service professionnel et une expérience unique pensée pour votre bien-être.
             </p>
 
-            <p className="mb-4 text-secondary leading-relaxed fs-5">
-              Profitez de nos <strong>chambres ventilées et climatisées</strong>, de notre <strong>Bar Lounge VIP</strong>, de notre <strong>Cave à Vin d'exception</strong>, de notre service de <strong>Restauration gourmande</strong> et de nos espaces de détente conçus pour votre bien-être.
-            </p>
-
-            {/* 3 Metric Cards */}
-            <div className="row g-3 pb-4 my-2">
+            {/* 3 Green Outline Stat Cards matching chrysalide-rosy design */}
+            <div className="row g-3 mb-4">
               <div className="col-4">
-                <div className="bg-white rounded-4 p-3.5 text-center border h-100 shadow-sm transition-all hover-lift" style={{ borderTop: '4px solid #25854C' }}>
-                  <div className="d-inline-flex p-2.5 rounded-circle mb-2" style={{ backgroundColor: 'rgba(37, 133, 76, 0.1)' }}>
+                <div className="bg-white rounded-3 p-3 text-center border shadow-sm h-100" style={{ borderColor: 'rgba(37, 133, 76, 0.3)' }}>
+                  <div className="d-inline-flex p-2 rounded-circle mb-2" style={{ backgroundColor: 'rgba(37, 133, 76, 0.1)' }}>
                     <BedDouble size={22} style={{ color: '#25854C' }} />
                   </div>
-                  <h3 className="mb-0 font-weight-bold text-dark fs-3">2 Types</h3>
-                  <p className="mb-0 text-muted text-uppercase font-weight-medium" style={{ fontSize: '0.72rem' }}>Ventilée & Climatisée</p>
+                  <h4 className="mb-0 font-weight-bold text-dark fs-4">15+</h4>
+                  <p className="mb-0 text-muted font-weight-medium text-uppercase" style={{ fontSize: '0.7rem' }}>Chambres</p>
                 </div>
               </div>
 
               <div className="col-4">
-                <div className="bg-white rounded-4 p-3.5 text-center border h-100 shadow-sm transition-all hover-lift" style={{ borderTop: '4px solid #CFA34C' }}>
-                  <div className="d-inline-flex p-2.5 rounded-circle mb-2" style={{ backgroundColor: 'rgba(207, 163, 76, 0.12)' }}>
-                    <Wine size={22} style={{ color: '#CFA34C' }} />
+                <div className="bg-white rounded-3 p-3 text-center border shadow-sm h-100" style={{ borderColor: 'rgba(37, 133, 76, 0.3)' }}>
+                  <div className="d-inline-flex p-2 rounded-circle mb-2" style={{ backgroundColor: 'rgba(37, 133, 76, 0.1)' }}>
+                    <Users size={22} style={{ color: '#25854C' }} />
                   </div>
-                  <h3 className="mb-0 font-weight-bold text-dark fs-3">VIP</h3>
-                  <p className="mb-0 text-muted text-uppercase font-weight-medium" style={{ fontSize: '0.72rem' }}>Lounge & Resto</p>
+                  <h4 className="mb-0 font-weight-bold text-dark fs-4">24/7</h4>
+                  <p className="mb-0 text-muted font-weight-medium text-uppercase" style={{ fontSize: '0.7rem' }}>Personnel</p>
                 </div>
               </div>
 
               <div className="col-4">
-                <div className="bg-white rounded-4 p-3.5 text-center border h-100 shadow-sm transition-all hover-lift" style={{ borderTop: '4px solid #7A288A' }}>
-                  <div className="d-inline-flex p-2.5 rounded-circle mb-2" style={{ backgroundColor: 'rgba(122, 40, 138, 0.1)' }}>
-                    <ShieldCheck size={22} style={{ color: '#7A288A' }} />
+                <div className="bg-white rounded-3 p-3 text-center border shadow-sm h-100" style={{ borderColor: 'rgba(37, 133, 76, 0.3)' }}>
+                  <div className="d-inline-flex p-2 rounded-circle mb-2" style={{ backgroundColor: 'rgba(37, 133, 76, 0.1)' }}>
+                    <ShieldCheck size={22} style={{ color: '#25854C' }} />
                   </div>
-                  <h3 className="mb-0 font-weight-bold text-dark fs-3">24h/24</h3>
-                  <p className="mb-0 text-muted text-uppercase font-weight-medium" style={{ fontSize: '0.72rem' }}>Sécurité & Service</p>
+                  <h4 className="mb-0 font-weight-bold text-dark fs-4">100%</h4>
+                  <p className="mb-0 text-muted font-weight-medium text-uppercase" style={{ fontSize: '0.7rem' }}>Confort</p>
                 </div>
               </div>
             </div>
 
-            {/* Action Buttons */}
-            <div className="d-flex flex-column flex-sm-row gap-3 pt-2">
+            {/* Main Action Button */}
+            <div className="pt-2">
               <button 
                 onClick={onOpenBooking} 
-                className="btn py-3 px-4 text-uppercase font-weight-bold shadow-lg rounded-3 d-inline-flex align-items-center justify-content-center text-white border-0 fs-6"
+                className="btn py-3 px-4 px-md-5 text-uppercase font-weight-bold shadow rounded-3 text-white border-0 fs-6"
                 style={{ backgroundColor: '#25854C' }}
               >
-                <CalendarCheck size={20} className="me-2" />
-                Réserver votre séjour
+                EN SAVOIR PLUS & RÉSERVER
               </button>
-
-              <a 
-                href="#rooms" 
-                className="btn btn-outline-dark py-3 px-4 text-uppercase font-weight-bold rounded-3 text-center d-inline-flex align-items-center justify-content-center fs-6"
-              >
-                Découvrir nos offres
-                <ChevronRight size={20} className="ms-1" />
-              </a>
             </div>
 
           </div>
 
-          {/* Right Column: Expanded Airy 2x2 Image Grid */}
+          {/* Right Column: Asymmetrical Portrait Photo Mosaic Grid matching chrysalide-rosy */}
           <div className="col-lg-6 mt-4 mt-lg-0 ps-lg-4">
             
-            <div className="d-flex align-items-center justify-content-between mb-3 px-1">
-              <span className="text-uppercase font-weight-bold text-muted" style={{ letterSpacing: '1.2px', fontSize: '0.78rem' }}>
-                Galerie de nos espaces
-              </span>
-              <span className="badge bg-success bg-opacity-10 text-success rounded-pill px-3 py-1.5 font-weight-bold" style={{ fontSize: '0.75rem' }}>
-                Survolez ou cliquez une photo ✨
-              </span>
-            </div>
-
-            <div className="row g-3 g-md-4">
-              {galleryItems.map((item) => {
-                const IconComp = item.icon;
-                return (
-                  <div key={item.id} className="col-6">
+            <div className="about-mosaic-grid">
+              
+              {/* Column 1 (Left 2 Portrait Images) */}
+              <div className="about-mosaic-col">
+                {leftColumnImages.map((item) => {
+                  const IconComp = item.icon;
+                  return (
                     <div 
-                      className="about-card-hover"
+                      key={item.id} 
+                      className="about-mosaic-card"
                       style={{ height: item.height }}
                       onClick={() => setSelectedImg(item)}
                     >
-                      <img 
-                        src={item.img} 
-                        alt={item.title} 
-                      />
+                      <img src={item.img} alt={item.title} />
                       
-                      {/* Hover Overlay with Details */}
-                      <div className="about-card-overlay">
-                        <div className="about-card-caption">
-                          <div className="d-flex align-items-center gap-2 mb-2">
-                            <div className="rounded-circle p-1.5 bg-white text-dark d-flex align-items-center justify-content-center shadow-sm" style={{ width: '32px', height: '32px' }}>
-                              <IconComp size={16} style={{ color: '#25854C' }} />
+                      <div className="about-mosaic-overlay">
+                        <div className="about-mosaic-caption">
+                          <div className="d-flex align-items-center gap-2 mb-1">
+                            <div className="rounded-circle p-1.5 bg-white text-dark d-flex align-items-center justify-content-center shadow-sm" style={{ width: '28px', height: '28px' }}>
+                              <IconComp size={15} style={{ color: '#25854C' }} />
                             </div>
-                            <span className="badge bg-warning text-dark font-weight-bold" style={{ fontSize: '0.7rem' }}>
+                            <span className="badge bg-warning text-dark font-weight-bold" style={{ fontSize: '0.68rem' }}>
                               {item.tag}
                             </span>
                           </div>
-                          <h5 className="m-0 font-weight-bold text-white fs-5">{item.title}</h5>
-                          <small className="text-white-50 d-block mt-1" style={{ fontSize: '0.78rem' }}>
-                            {item.sub}
-                          </small>
+                          <h6 className="m-0 font-weight-bold text-white fs-6">{item.title}</h6>
+                          <small className="text-white-50 d-block" style={{ fontSize: '0.75rem' }}>{item.sub}</small>
                         </div>
                       </div>
 
-                      {/* Top-Right Quick Zoom Badge */}
-                      <div className="position-absolute top-0 end-0 m-3 p-2 rounded-circle bg-dark bg-opacity-50 text-white d-flex align-items-center justify-content-center shadow" style={{ backdropFilter: 'blur(4px)', width: '34px', height: '34px' }}>
-                        <ZoomIn size={16} />
+                      <div className="position-absolute top-0 end-0 m-3 p-2 rounded-circle bg-dark bg-opacity-50 text-white d-flex align-items-center justify-content-center shadow" style={{ backdropFilter: 'blur(4px)', width: '32px', height: '32px' }}>
+                        <ZoomIn size={15} />
                       </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
+
+              {/* Column 2 (Right 2 Portrait Images) */}
+              <div className="about-mosaic-col">
+                {rightColumnImages.map((item) => {
+                  const IconComp = item.icon;
+                  return (
+                    <div 
+                      key={item.id} 
+                      className="about-mosaic-card"
+                      style={{ height: item.height }}
+                      onClick={() => setSelectedImg(item)}
+                    >
+                      <img src={item.img} alt={item.title} />
+                      
+                      <div className="about-mosaic-overlay">
+                        <div className="about-mosaic-caption">
+                          <div className="d-flex align-items-center gap-2 mb-1">
+                            <div className="rounded-circle p-1.5 bg-white text-dark d-flex align-items-center justify-content-center shadow-sm" style={{ width: '28px', height: '28px' }}>
+                              <IconComp size={15} style={{ color: '#25854C' }} />
+                            </div>
+                            <span className="badge bg-warning text-dark font-weight-bold" style={{ fontSize: '0.68rem' }}>
+                              {item.tag}
+                            </span>
+                          </div>
+                          <h6 className="m-0 font-weight-bold text-white fs-6">{item.title}</h6>
+                          <small className="text-white-50 d-block" style={{ fontSize: '0.75rem' }}>{item.sub}</small>
+                        </div>
+                      </div>
+
+                      <div className="position-absolute top-0 end-0 m-3 p-2 rounded-circle bg-dark bg-opacity-50 text-white d-flex align-items-center justify-content-center shadow" style={{ backdropFilter: 'blur(4px)', width: '32px', height: '32px' }}>
+                        <ZoomIn size={15} />
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
             </div>
 
           </div>
@@ -190,7 +204,7 @@ export default function AboutSection({ onOpenBooking }) {
         </div>
       </div>
 
-      {/* Interactive Lightbox Preview Modal */}
+      {/* Interactive Lightbox Modal */}
       {selectedImg && (
         <div 
           className="position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center p-3"
