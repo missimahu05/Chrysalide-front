@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { 
   Menu, X, Home, Info, BedDouble, Calendar, Sparkles, 
-  HelpCircle, MapPin, Phone, MessageCircle, CalendarCheck, ChevronRight, UserCheck, ShieldCheck
+  HelpCircle, MapPin, Phone, MessageCircle, CalendarCheck, ChevronDown, ChevronUp, ShieldCheck, Users, PlayCircle
 } from 'lucide-react';
 
 export default function Navbar({ onOpenBooking }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
+  const [activeItem, setActiveItem] = useState('hero');
 
   const adminDashboardUrl = import.meta.env.VITE_ADMIN_DASHBOARD_URL || 'https://admin-chrysalide.vercel.app';
 
@@ -14,6 +16,7 @@ export default function Navbar({ onOpenBooking }) {
   };
 
   const handleNavClick = (targetId) => {
+    setActiveItem(targetId);
     setIsOpen(false);
     const elem = document.getElementById(targetId);
     if (elem) {
@@ -21,36 +24,22 @@ export default function Navbar({ onOpenBooking }) {
     }
   };
 
-  const menuItems = [
-    { label: 'Accueil', target: 'hero', icon: Home, color: '#CFA34C', bg: 'rgba(207, 163, 76, 0.12)' },
-    { label: 'À propos de nous', target: 'about', icon: Info, color: '#34D399', bg: 'rgba(52, 211, 153, 0.12)' },
-    { label: 'Chambres (Ventilée & Climatisée)', target: 'rooms', icon: BedDouble, color: '#CFA34C', bg: 'rgba(207, 163, 76, 0.12)' },
-    { label: 'Événements & Privatisation', target: 'events', icon: Calendar, color: '#E879F9', bg: 'rgba(232, 121, 249, 0.12)' },
-    { label: 'Services & Lounge', target: 'services', icon: Sparkles, color: '#34D399', bg: 'rgba(52, 211, 153, 0.12)' },
-    { label: 'Comment réserver ?', target: 'process', icon: Sparkles, color: '#CFA34C', bg: 'rgba(207, 163, 76, 0.12)' },
-    { label: 'Avis Clients', target: 'testimonials', icon: MessageCircle, color: '#E879F9', bg: 'rgba(232, 121, 249, 0.12)' },
-    { label: 'Questions Fréquentes', target: 'faq', icon: HelpCircle, color: '#CFA34C', bg: 'rgba(207, 163, 76, 0.12)' },
-    { label: 'Localisation & Accès', target: 'contact-location', icon: MapPin, color: '#34D399', bg: 'rgba(52, 211, 153, 0.12)' },
-  ];
-
   return (
     <>
-      {/* Top Header Bar with Harmonized Light Luxury Palette */}
+      {/* Top Header Bar with Light Luxury Palette */}
       <header className="container-fluid px-3 px-lg-4 sticky-top shadow-sm border-bottom border-2" style={{ backgroundColor: '#FFFFFF', borderColor: '#CFA34C', zIndex: 1050 }}>
         <div className="d-flex align-items-center justify-content-between py-2 py-md-3">
           
-          {/* Left: Mobile-Only Hamburger Toggle + Brand Logo */}
+          {/* Left: Mobile Toggle + Brand Logo */}
           <div className="d-flex align-items-center">
-            
-            {/* Hamburger button: HIDDEN ON DESKTOP (d-lg-none), VISIBLE ON MOBILE */}
             <button 
               type="button" 
-              className="btn btn-outline-dark me-3 d-flex d-lg-none align-items-center justify-content-center shadow-sm rounded-3"
+              className="btn me-3 d-flex d-lg-none align-items-center justify-content-center shadow-sm rounded-3 border-0"
               onClick={toggleDrawer}
               aria-label="Menu de navigation mobile"
-              style={{ width: '42px', height: '42px', borderColor: '#CFA34C', backgroundColor: '#FAF8F5' }}
+              style={{ width: '42px', height: '42px', backgroundColor: '#25854C', color: '#FFFFFF' }}
             >
-              <Menu size={22} className="text-dark" />
+              <Menu size={22} />
             </button>
 
             {/* Brand Logo */}
@@ -71,7 +60,7 @@ export default function Navbar({ onOpenBooking }) {
             </a>
           </div>
 
-          {/* Center (Desktop Inline Navigation Links with Lucide-react Icons) */}
+          {/* Center (Desktop Inline Links with Lucide Icons) */}
           <nav className="d-none d-lg-flex align-items-center gap-3 gap-xl-4 font-weight-bold" style={{ fontSize: '0.88rem' }}>
             <a href="#hero" className="text-dark text-decoration-none hover-gold transition-all d-flex align-items-center">
               <Home size={15} className="me-1 text-chrysalide-gold" />Accueil
@@ -96,7 +85,6 @@ export default function Navbar({ onOpenBooking }) {
               <MapPin size={15} className="me-1 text-chrysalide-green" />Contact
             </a>
             
-            {/* Admin Dashboard Connection */}
             <a 
               href={adminDashboardUrl}
               target="_blank"
@@ -105,19 +93,19 @@ export default function Navbar({ onOpenBooking }) {
               style={{ color: '#CFA34C', borderColor: 'rgba(207, 163, 76, 0.4)', fontSize: '0.8rem', backgroundColor: 'rgba(207, 163, 76, 0.08)' }}
             >
               <ShieldCheck size={14} className="me-1" />
-              Espace Admin
+              Admin
             </a>
           </nav>
 
-          {/* Right: Call & Booking CTA */}
+          {/* Right: Phone & Booking */}
           <div className="d-flex align-items-center">
             <a href="tel:+2290159188023" className="btn btn-sm btn-outline-dark me-2 me-md-3 d-none d-md-inline-flex align-items-center font-weight-bold rounded-3">
               <Phone size={14} className="me-2 text-chrysalide-gold" />+229 0159188023
             </a>
             <button 
-              className="btn btn-warning py-2 px-3 px-md-4 text-uppercase font-weight-bold shadow-sm rounded-3 d-inline-flex align-items-center text-dark"
+              className="btn py-2 px-3 px-md-4 text-uppercase font-weight-bold shadow-sm rounded-3 d-inline-flex align-items-center text-white border-0"
               onClick={onOpenBooking}
-              style={{ backgroundColor: '#CFA34C', borderColor: '#CFA34C', fontSize: '0.85rem' }}
+              style={{ backgroundColor: '#25854C', fontSize: '0.85rem' }}
             >
               <CalendarCheck size={16} className="me-2" />Réserver
             </button>
@@ -130,12 +118,12 @@ export default function Navbar({ onOpenBooking }) {
       {isOpen && (
         <div 
           className="position-fixed top-0 start-0 w-100 h-100" 
-          style={{ backgroundColor: 'rgba(0, 0, 0, 0.75)', zIndex: 1060, backdropFilter: 'blur(5px)' }}
+          style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)', zIndex: 1060, backdropFilter: 'blur(3px)' }}
           onClick={toggleDrawer}
         ></div>
       )}
 
-      {/* Mobile Side-Drawer Menu */}
+      {/* Mobile Side-Drawer Menu matching BUSOLA style screenshot */}
       <aside 
         className="position-fixed top-0 start-0 h-100 bg-white shadow-lg d-flex flex-column"
         style={{ 
@@ -143,118 +131,179 @@ export default function Navbar({ onOpenBooking }) {
           maxWidth: '85vw', 
           zIndex: 1070, 
           transform: isOpen ? 'translateX(0)' : 'translateX(-100%)', 
-          transition: 'transform 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
-          borderRight: '4px solid #CFA34C'
+          transition: 'transform 0.35s ease-in-out'
         }}
       >
-        {/* Drawer Header */}
-        <div className="p-4 border-bottom border-2 d-flex align-items-center justify-content-between text-white" style={{ backgroundColor: '#0E2E1D', borderColor: '#CFA34C' }}>
+        {/* Drawer Header (Green Header Bar with Close Button) */}
+        <div className="p-3 px-4 d-flex align-items-center justify-content-between text-white" style={{ backgroundColor: '#25854C' }}>
           <div className="d-flex align-items-center">
-            <img src="/newfav.png" alt="Logo" style={{ height: '38px', marginRight: '10px' }} />
-            <div>
-              <h6 className="m-0 text-uppercase font-weight-bold" style={{ fontSize: '0.95rem' }}>
-                <span style={{ color: '#34D399' }}>La Chrysalide</span> <span style={{ color: '#FBBF24' }}>Suite</span>
-              </h6>
-              <small className="text-white-50 text-uppercase font-weight-bold" style={{ fontSize: '0.62rem', letterSpacing: '1px' }}>
-                Hôtel • Parakou
-              </small>
-            </div>
+            <img src="/newfav.png" alt="Logo" style={{ height: '36px', marginRight: '10px', filter: 'brightness(0) invert(1)' }} />
+            <h6 className="m-0 text-uppercase font-weight-bold text-white" style={{ fontSize: '1rem', letterSpacing: '0.5px' }}>
+              LA CHRYSALIDE SUITE
+            </h6>
           </div>
 
           <button 
             type="button" 
-            className="btn btn-sm text-white rounded-circle d-flex align-items-center justify-content-center"
+            className="btn text-white rounded-3 d-flex align-items-center justify-content-center p-1 border-0"
             onClick={toggleDrawer}
-            style={{ width: '36px', height: '36px', backgroundColor: 'rgba(255, 255, 255, 0.15)' }}
+            style={{ width: '38px', height: '38px', backgroundColor: 'rgba(255, 255, 255, 0.2)' }}
             aria-label="Fermer le menu"
           >
-            <X size={20} />
+            <X size={22} />
           </button>
         </div>
 
-        {/* Drawer Navigation Links */}
-        <div className="p-3 flex-grow-1 overflow-y-auto">
-          <p className="text-uppercase font-weight-bold text-muted px-2 mb-2" style={{ fontSize: '0.7rem', letterSpacing: '1.2px' }}>
-            Menu Principal
-          </p>
+        {/* Drawer Navigation List matching BUSOLA layout */}
+        <div className="flex-grow-1 overflow-y-auto p-0">
+          <ul className="list-group list-group-flush w-100 m-0 p-0 border-0">
+            
+            {/* Accueil */}
+            <li className="list-group-item p-0 border-bottom">
+              <button 
+                onClick={() => handleNavClick('hero')}
+                className={`w-100 text-start py-3 px-4 btn rounded-0 border-0 font-weight-bold d-flex align-items-center justify-content-between ${activeItem === 'hero' ? 'bg-light text-chrysalide-green border-start border-4' : 'text-dark'}`}
+                style={{ borderColor: activeItem === 'hero' ? '#25854C' : 'transparent', fontSize: '0.98rem' }}
+              >
+                <span>Accueil</span>
+              </button>
+            </li>
 
-          <div className="d-flex flex-column gap-1">
-            {menuItems.map((item, idx) => {
-              const IconComp = item.icon;
-              return (
-                <button
-                  key={idx}
-                  onClick={() => handleNavClick(item.target)}
-                  className="btn text-start text-dark font-weight-bold rounded-3 p-2 px-3 hover-drawer-item d-flex align-items-center justify-content-between border-0"
-                  style={{ transition: 'all 0.2s ease', backgroundColor: 'transparent' }}
-                >
-                  <div className="d-flex align-items-center">
-                    <div 
-                      className="rounded-3 d-flex align-items-center justify-content-center me-3 flex-shrink-0" 
-                      style={{ width: '36px', height: '36px', backgroundColor: item.bg }}
-                    >
-                      <IconComp size={18} style={{ color: item.color }} />
-                    </div>
-                    <span style={{ fontSize: '0.9rem' }}>{item.label}</span>
-                  </div>
-                  <ChevronRight size={16} className="text-muted drawer-arrow opacity-50" />
-                </button>
-              );
-            })}
+            {/* À propos Accordion Dropdown */}
+            <li className="list-group-item p-0 border-bottom">
+              <button 
+                onClick={() => setAboutOpen(!aboutOpen)}
+                className="w-100 text-start py-3 px-4 btn rounded-0 border-0 font-weight-bold text-dark d-flex align-items-center justify-content-between"
+                style={{ fontSize: '0.98rem' }}
+              >
+                <span>À propos</span>
+                {aboutOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+              </button>
 
-            {/* Admin Link inside mobile drawer */}
-            <a 
-              href={adminDashboardUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="btn text-start text-dark font-weight-bold rounded-3 p-2 px-3 hover-drawer-item d-flex align-items-center justify-content-between border-0 mt-2"
-              style={{ backgroundColor: 'rgba(207, 163, 76, 0.1)', border: '1px solid rgba(207, 163, 76, 0.3)' }}
-            >
-              <div className="d-flex align-items-center">
-                <div 
-                  className="rounded-3 d-flex align-items-center justify-content-center me-3 flex-shrink-0" 
-                  style={{ width: '36px', height: '36px', backgroundColor: '#0E2E1D' }}
-                >
-                  <ShieldCheck size={18} style={{ color: '#FBBF24' }} />
+              {aboutOpen && (
+                <div className="bg-light border-top border-bottom">
+                  <button 
+                    onClick={() => handleNavClick('about')}
+                    className="w-100 text-start py-2.5 ps-5 pe-4 btn rounded-0 border-0 text-secondary small d-block border-bottom"
+                    style={{ fontSize: '0.9rem' }}
+                  >
+                    À propos de nous
+                  </button>
+                  <button 
+                    onClick={() => handleNavClick('team')}
+                    className="w-100 text-start py-2.5 ps-5 pe-4 btn rounded-0 border-0 text-secondary small d-block border-bottom"
+                    style={{ fontSize: '0.9rem' }}
+                  >
+                    La Team
+                  </button>
+                  <button 
+                    onClick={() => handleNavClick('video-presentation')}
+                    className="w-100 text-start py-2.5 ps-5 pe-4 btn rounded-0 border-0 text-secondary small d-block border-bottom"
+                    style={{ fontSize: '0.9rem' }}
+                  >
+                    Immersion Vidéo
+                  </button>
+                  <button 
+                    onClick={() => handleNavClick('faq')}
+                    className="w-100 text-start py-2.5 ps-5 pe-4 btn rounded-0 border-0 text-secondary small d-block"
+                    style={{ fontSize: '0.9rem' }}
+                  >
+                    Centre de ressources (FAQ)
+                  </button>
                 </div>
-                <span style={{ fontSize: '0.9rem', color: '#0E2E1D' }}>Dashboard Admin</span>
-              </div>
-              <ChevronRight size={16} className="text-muted drawer-arrow opacity-50" />
-            </a>
-          </div>
+              )}
+            </li>
 
-          <hr className="my-3 text-muted opacity-25" />
+            {/* Chambres */}
+            <li className="list-group-item p-0 border-bottom">
+              <button 
+                onClick={() => handleNavClick('rooms')}
+                className={`w-100 text-start py-3 px-4 btn rounded-0 border-0 font-weight-bold d-flex align-items-center justify-content-between ${activeItem === 'rooms' ? 'bg-light text-chrysalide-green border-start border-4' : 'text-dark'}`}
+                style={{ borderColor: activeItem === 'rooms' ? '#25854C' : 'transparent', fontSize: '0.98rem' }}
+              >
+                <span>Chambres Ventilées & Climatisées</span>
+              </button>
+            </li>
 
-          {/* Contact Box */}
-          <div className="bg-light p-3 rounded-3 border">
-            <small className="text-muted text-uppercase font-weight-bold d-block mb-2" style={{ fontSize: '0.68rem', letterSpacing: '1px' }}>
-              Service Réception 24h/24
-            </small>
-            
-            <a href="tel:+2290159188023" className="text-dark font-weight-bold text-decoration-none d-flex align-items-center mb-2 small">
-              <Phone size={14} className="me-2 text-chrysalide-gold" />
-              +229 0159188023
-            </a>
-            
-            <a href="https://wa.me/2290159188023" target="_blank" rel="noreferrer" className="text-chrysalide-green font-weight-bold text-decoration-none d-flex align-items-center small">
-              <MessageCircle size={14} className="me-2" />
-              WhatsApp Direct 24/7
-            </a>
-          </div>
+            {/* Événements & Privatisation */}
+            <li className="list-group-item p-0 border-bottom">
+              <button 
+                onClick={() => handleNavClick('events')}
+                className={`w-100 text-start py-3 px-4 btn rounded-0 border-0 font-weight-bold d-flex align-items-center justify-content-between ${activeItem === 'events' ? 'bg-light text-chrysalide-green border-start border-4' : 'text-dark'}`}
+                style={{ borderColor: activeItem === 'events' ? '#25854C' : 'transparent', fontSize: '0.98rem' }}
+              >
+                <span>Événements & Privatisation</span>
+                <span className="badge bg-warning text-dark small" style={{ fontSize: '0.65rem' }}>NEW</span>
+              </button>
+            </li>
+
+            {/* Nos services */}
+            <li className="list-group-item p-0 border-bottom">
+              <button 
+                onClick={() => handleNavClick('services')}
+                className={`w-100 text-start py-3 px-4 btn rounded-0 border-0 font-weight-bold d-flex align-items-center justify-content-between ${activeItem === 'services' ? 'bg-light text-chrysalide-green border-start border-4' : 'text-dark'}`}
+                style={{ borderColor: activeItem === 'services' ? '#25854C' : 'transparent', fontSize: '0.98rem' }}
+              >
+                <span>Nos services & prestations</span>
+              </button>
+            </li>
+
+            {/* Comment réserver ? */}
+            <li className="list-group-item p-0 border-bottom">
+              <button 
+                onClick={() => handleNavClick('process')}
+                className={`w-100 text-start py-3 px-4 btn rounded-0 border-0 font-weight-bold d-flex align-items-center justify-content-between ${activeItem === 'process' ? 'bg-light text-chrysalide-green border-start border-4' : 'text-dark'}`}
+                style={{ borderColor: activeItem === 'process' ? '#25854C' : 'transparent', fontSize: '0.98rem' }}
+              >
+                <span>Comment réserver ?</span>
+              </button>
+            </li>
+
+            {/* Contact & Accès */}
+            <li className="list-group-item p-0 border-bottom">
+              <button 
+                onClick={() => handleNavClick('contact-location')}
+                className={`w-100 text-start py-3 px-4 btn rounded-0 border-0 font-weight-bold d-flex align-items-center justify-content-between ${activeItem === 'contact-location' ? 'bg-light text-chrysalide-green border-start border-4' : 'text-dark'}`}
+                style={{ borderColor: activeItem === 'contact-location' ? '#25854C' : 'transparent', fontSize: '0.98rem' }}
+              >
+                <span>Contact & Localisation</span>
+              </button>
+            </li>
+
+            {/* Dashboard Admin */}
+            <li className="list-group-item p-0 border-bottom">
+              <a 
+                href={adminDashboardUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="w-100 text-start py-3 px-4 btn rounded-0 border-0 font-weight-bold text-chrysalide-gold d-flex align-items-center justify-content-between text-decoration-none"
+                style={{ fontSize: '0.98rem' }}
+              >
+                <span>Dashboard Admin</span>
+                <ShieldCheck size={18} />
+              </a>
+            </li>
+
+          </ul>
         </div>
 
-        {/* Drawer Footer CTA */}
-        <div className="p-3 border-top bg-light">
+        {/* Drawer Bottom CTA Button matching BUSOLA bottom button */}
+        <div className="p-4 bg-white border-top">
           <button 
-            className="btn btn-success text-white font-weight-bold text-uppercase w-100 py-2 px-3 shadow-sm rounded-3 d-flex align-items-center justify-content-center"
+            className="btn text-white font-weight-bold text-uppercase w-100 py-3 px-4 shadow-sm rounded-pill d-flex align-items-center justify-content-center position-relative"
             onClick={() => {
               setIsOpen(false);
               onOpenBooking();
             }}
-            style={{ backgroundColor: '#25854C', borderColor: '#25854C', fontSize: '0.88rem' }}
+            style={{ backgroundColor: '#CFA34C', borderColor: '#CFA34C', fontSize: '0.95rem', letterSpacing: '0.5px' }}
           >
-            <CalendarCheck size={18} className="me-2" />
             Réserver un séjour
+            <div 
+              className="position-absolute end-0 me-1 rounded-circle d-flex align-items-center justify-content-center text-white"
+              style={{ width: '38px', height: '38px', backgroundColor: '#25854C' }}
+            >
+              <CalendarCheck size={18} />
+            </div>
           </button>
         </div>
 
