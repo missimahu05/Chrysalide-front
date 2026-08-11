@@ -29,6 +29,42 @@
   --shadow-purple: 0 4px 15px rgba(139, 30, 168, 0.3);
 }
 
+/* BOOTSTRAP BLUE OVERRIDES TO MATCH OFFICIAL LA CHRYSALIDE SUITE LOGO PALETTE */
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary:disabled {
+  background-color: #25854C !important;
+  border-color: #25854C !important;
+  color: #FFFFFF !important;
+}
+
+.btn-outline-primary {
+  color: #25854C !important;
+  border-color: #25854C !important;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active {
+  background-color: #25854C !important;
+  border-color: #25854C !important;
+  color: #FFFFFF !important;
+}
+
+.text-primary {
+  color: #25854C !important;
+}
+
+.bg-primary {
+  background-color: #25854C !important;
+}
+
+.bg-light {
+  background-color: #FAF8F5 !important;
+}
+
 * {
   margin: 0;
   padding: 0;
