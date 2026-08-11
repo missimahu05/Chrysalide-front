@@ -35,8 +35,8 @@ export default function Navbar({ onOpenBooking }) {
 
   return (
     <>
-      {/* Top Header Bar with Custom High-End Palette */}
-      <header className="container-fluid px-3 px-lg-4 sticky-top shadow border-bottom border-2" style={{ backgroundColor: '#0E2E1D', borderColor: '#CFA34C', zIndex: 1050 }}>
+      {/* Top Header Bar with Harmonized Light Luxury Palette */}
+      <header className="container-fluid px-3 px-lg-4 sticky-top shadow-sm border-bottom border-2" style={{ backgroundColor: '#FFFFFF', borderColor: '#CFA34C', zIndex: 1050 }}>
         <div className="d-flex align-items-center justify-content-between py-2 py-md-3">
           
           {/* Left: Mobile-Only Hamburger Toggle + Brand Logo */}
@@ -45,12 +45,12 @@ export default function Navbar({ onOpenBooking }) {
             {/* Hamburger button: HIDDEN ON DESKTOP (d-lg-none), VISIBLE ON MOBILE */}
             <button 
               type="button" 
-              className="btn btn-outline-light me-3 d-flex d-lg-none align-items-center justify-content-center shadow-sm rounded-3"
+              className="btn btn-outline-dark me-3 d-flex d-lg-none align-items-center justify-content-center shadow-sm rounded-3"
               onClick={toggleDrawer}
               aria-label="Menu de navigation mobile"
-              style={{ width: '42px', height: '42px', borderColor: 'rgba(207, 163, 76, 0.6)', backgroundColor: 'rgba(255, 255, 255, 0.08)' }}
+              style={{ width: '42px', height: '42px', borderColor: '#CFA34C', backgroundColor: '#FAF8F5' }}
             >
-              <Menu size={22} style={{ color: '#FBBF24' }} />
+              <Menu size={22} className="text-dark" />
             </button>
 
             {/* Brand Logo */}
@@ -62,9 +62,9 @@ export default function Navbar({ onOpenBooking }) {
               />
               <div>
                 <h5 className="m-0 text-uppercase font-weight-bold" style={{ fontSize: '1.05rem', letterSpacing: '0.5px' }}>
-                  <span style={{ color: '#34D399' }}>La Chrysalide</span> <span style={{ color: '#FBBF24' }}>Suite</span>
+                  <span className="text-chrysalide-green">La Chrysalide</span> <span className="text-chrysalide-gold">Suite</span>
                 </h5>
-                <small className="text-uppercase font-weight-bold d-none d-sm-block" style={{ fontSize: '0.62rem', letterSpacing: '1.5px', color: '#E2E8F0' }}>
+                <small className="text-chrysalide-purple text-uppercase font-weight-bold d-none d-sm-block" style={{ fontSize: '0.62rem', letterSpacing: '1.5px' }}>
                   Parakou • Hôtel & Résidences
                 </small>
               </div>
@@ -73,23 +73,23 @@ export default function Navbar({ onOpenBooking }) {
 
           {/* Center (Desktop Inline Navigation Links) */}
           <nav className="d-none d-lg-flex align-items-center gap-3 gap-xl-4 font-weight-bold" style={{ fontSize: '0.88rem' }}>
-            <a href="#hero" className="text-white text-decoration-none hover-gold transition-all">Accueil</a>
-            <a href="#about" className="text-white-50 text-decoration-none hover-gold transition-all">À propos</a>
-            <a href="#rooms" className="text-white-50 text-decoration-none hover-gold transition-all">Chambres</a>
-            <a href="#events" className="text-warning text-decoration-none hover-gold transition-all d-flex align-items-center" style={{ color: '#FBBF24' }}>
+            <a href="#hero" className="text-dark text-decoration-none hover-gold transition-all">Accueil</a>
+            <a href="#about" className="text-secondary text-decoration-none hover-gold transition-all">À propos</a>
+            <a href="#rooms" className="text-secondary text-decoration-none hover-gold transition-all">Chambres</a>
+            <a href="#events" className="text-chrysalide-gold text-decoration-none hover-gold transition-all d-flex align-items-center">
               <span className="badge bg-warning text-dark me-1" style={{ fontSize: '0.65rem' }}>NEW</span>Événements
             </a>
-            <a href="#services" className="text-white-50 text-decoration-none hover-gold transition-all">Services</a>
-            <a href="#process" className="text-white-50 text-decoration-none hover-gold transition-all">Réservation</a>
-            <a href="#contact-location" className="text-white-50 text-decoration-none hover-gold transition-all">Contact</a>
+            <a href="#services" className="text-secondary text-decoration-none hover-gold transition-all">Services</a>
+            <a href="#process" className="text-secondary text-decoration-none hover-gold transition-all">Réservation</a>
+            <a href="#contact-location" className="text-secondary text-decoration-none hover-gold transition-all">Contact</a>
             
             {/* Admin Dashboard Connection */}
             <a 
               href={adminDashboardUrl}
               target="_blank"
               rel="noreferrer"
-              className="text-decoration-none px-2 py-1 rounded border d-flex align-items-center"
-              style={{ color: '#FBBF24', borderColor: 'rgba(207, 163, 76, 0.4)', fontSize: '0.8rem', backgroundColor: 'rgba(207, 163, 76, 0.1)' }}
+              className="text-decoration-none px-2 py-1 rounded border d-flex align-items-center font-weight-bold"
+              style={{ color: '#CFA34C', borderColor: 'rgba(207, 163, 76, 0.4)', fontSize: '0.8rem', backgroundColor: 'rgba(207, 163, 76, 0.08)' }}
             >
               <ShieldCheck size={14} className="me-1" />
               Espace Admin
@@ -98,8 +98,8 @@ export default function Navbar({ onOpenBooking }) {
 
           {/* Right: Call & Booking CTA */}
           <div className="d-flex align-items-center">
-            <a href="tel:+2290159188023" className="btn btn-sm btn-outline-light me-2 me-md-3 d-none d-md-inline-flex align-items-center font-weight-bold rounded-3" style={{ borderColor: 'rgba(255, 255, 255, 0.3)', color: '#E2E8F0' }}>
-              <Phone size={14} className="me-2" style={{ color: '#FBBF24' }} />+229 0159188023
+            <a href="tel:+2290159188023" className="btn btn-sm btn-outline-dark me-2 me-md-3 d-none d-md-inline-flex align-items-center font-weight-bold rounded-3">
+              <Phone size={14} className="me-2 text-chrysalide-gold" />+229 0159188023
             </a>
             <button 
               className="btn btn-warning py-2 px-3 px-md-4 text-uppercase font-weight-bold shadow-sm rounded-3 d-inline-flex align-items-center text-dark"

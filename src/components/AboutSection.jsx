@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function AboutSection({ onOpenBooking }) {
   return (
-    <section className="container-xxl py-5" id="about">
+    <section className="container-xxl min-vh-lg-100 d-flex align-items-center py-5" id="about">
       <div className="container py-2 py-md-4">
         <div className="row g-4 g-lg-5 align-items-center">
           <div className="col-lg-6">

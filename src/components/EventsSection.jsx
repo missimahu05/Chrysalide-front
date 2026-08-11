@@ -32,7 +32,7 @@ export default function EventsSection({ onOpenBooking }) {
   ];
 
   return (
-    <section className="container-fluid py-5 border-top border-bottom border-light" id="events" style={{ backgroundColor: '#FAF8F5' }}>
+    <section className="container-fluid min-vh-lg-100 d-flex align-items-center py-5 border-top border-bottom border-light" id="events" style={{ backgroundColor: '#FAF8F5' }}>
       <div className="container py-2 py-md-4">
         
         {/* Title */}

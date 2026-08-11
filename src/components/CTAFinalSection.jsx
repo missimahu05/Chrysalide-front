@@ -3,7 +3,7 @@ import React from 'react';
 export default function CTAFinalSection({ onOpenBooking }) {
   return (
     <section 
-      className="container-fluid py-5 text-white position-relative overflow-hidden" 
+      className="container-fluid min-vh-lg-100 d-flex align-items-center py-5 text-white position-relative overflow-hidden" 
       id="cta-final"
       style={{ 
         background: 'linear-gradient(135deg, #0F2D1A 0%, #25082D 100%)',
