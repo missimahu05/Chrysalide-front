@@ -15,7 +15,7 @@ export default function TeamSection() {
   ];
 
   return (
-    <section className="container-xxl py-5 bg-light" id="team">
+    <section className="container-xxl min-vh-100 d-flex align-items-center py-5 bg-light" id="team">
       <div className="container py-3">
         <div className="text-center mb-4 mb-md-5">
           <h6 className="section-title text-center text-chrysalide-gold text-uppercase mb-2 font-weight-bold">

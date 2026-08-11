@@ -28,7 +28,7 @@ export default function TestimonialsSection() {
   const [activeIdx, setActiveIdx] = useState(0);
 
   return (
-    <section className="container-fluid bg-light py-5 d-flex align-items-center border-top border-bottom border-light" id="testimonials">
+    <section className="container-fluid min-vh-100 bg-light py-5 d-flex align-items-center border-top border-bottom border-light" id="testimonials">
       <div className="container py-3">
         <div className="text-center mb-4 mb-md-5">
           <h6 className="section-title text-center text-chrysalide-gold text-uppercase mb-2 font-weight-bold">Témoignages Clients</h6>

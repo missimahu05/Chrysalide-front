@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function ContactLocationSection() {
   return (
-    <section className="container-xxl py-5 my-4 bg-light border-top border-bottom border-light" id="contact-location">
+    <section className="container-xxl min-vh-100 d-flex align-items-center py-5 bg-light border-top border-bottom border-light" id="contact-location">
       <div className="container">
         
         {/* Title */}

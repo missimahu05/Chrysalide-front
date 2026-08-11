@@ -17,7 +17,7 @@ export default function VideoSection({ onOpenBooking }) {
   };
 
   return (
-    <section className="container-xxl py-5 my-4 bg-white" id="video-presentation">
+    <section className="container-xxl min-vh-100 d-flex align-items-center py-5 bg-white" id="video-presentation">
       <div className="container">
         <div className="text-center mb-4">
           <h6 className="section-title text-center text-chrysalide-gold text-uppercase mb-2 font-weight-bold">

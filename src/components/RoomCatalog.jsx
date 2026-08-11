@@ -10,14 +10,14 @@ export default function RoomCatalog({ onSelectRoom, selectedFilter = 'all' }) {
     : roomsData.filter(r => r.category === filter);
 
   return (
-    <section className="container-xxl py-5 bg-light" id="rooms">
+    <section className="container-xxl min-vh-100 d-flex align-items-center py-5 bg-light" id="rooms">
       <div className="container py-3">
         <div className="text-center mb-4 mb-md-5">
           <h6 className="section-title text-center text-chrysalide-gold text-uppercase mb-2 font-weight-bold">
             Nos hébergements
           </h6>
           <h2 className="mb-3 text-dark font-weight-bold fs-3 fs-md-2">
-            Découvrez nos <span className="text-chrysalide-green">Chambres &</span> <span className="text-chrysalide-gold">Suites</span>
+            Découvrez nos <span className="text-chrysalide-green">Chambres Ventilées</span> & <span className="text-chrysalide-gold">Climatisées</span>
           </h2>
           
           <div className="d-flex flex-nowrap overflow-auto py-2 px-1 gap-2 justify-content-start justify-content-md-center catalog-filter-scroll" style={{ WebkitOverflowScrolling: 'touch', msOverflowStyle: 'none', scrollbarWidth: 'none' }}>
@@ -53,29 +53,17 @@ export default function RoomCatalog({ onSelectRoom, selectedFilter = 'all' }) {
                     alt={room.name} 
                     style={{ objectFit: 'cover', transition: 'transform 0.4s' }}
                   />
-                  <div className="position-absolute top-0 start-0 m-3 py-1 px-3 bg-success text-white font-weight-bold rounded-pill shadow text-uppercase" style={{ fontSize: '0.72rem', zIndex: 3, backgroundColor: '#25854C' }}>
-                    {room.category === 'ventilee' ? 'Ventilée' : 'Climatisée'}
-                  </div>
-                  {/* High Contrast Price Badge on Photo */}
-                  <div 
-                    className="position-absolute top-0 end-0 m-3 py-1 px-3 font-weight-bold rounded-pill shadow-lg text-white" 
-                    style={{ fontSize: '0.88rem', zIndex: 3, backgroundColor: '#0E2E1D', border: '1.5px solid #CFA34C' }}
-                  >
-                    <span style={{ color: '#FBBF24' }}>{room.price.toLocaleString('fr-FR')}</span> FCFA / nuit
+                  <div className="position-absolute top-0 start-0 m-3 py-1 px-3 text-white font-weight-bold rounded-pill shadow text-uppercase" style={{ fontSize: '0.75rem', zIndex: 3, backgroundColor: room.category === 'ventilee' ? '#25854C' : '#CFA34C' }}>
+                    {room.category === 'ventilee' ? 'Chambre Ventilée' : 'Chambre Climatisée'}
                   </div>
                 </div>
 
                 <div className="p-4 d-flex flex-column flex-grow-1">
-                  <div className="d-flex justify-content-between align-items-start mb-2">
-                    <h5 className="mb-0 text-dark font-weight-bold fs-5">{room.name}</h5>
-                  </div>
+                  <h5 className="mb-1 text-dark font-weight-bold fs-5">{room.name}</h5>
 
-                  {/* High Visibility Price Box in Card Body */}
-                  <div className="bg-light p-2 px-3 rounded-3 border my-2 d-flex align-items-center justify-content-between">
-                    <span className="text-uppercase small font-weight-bold text-muted">Tarif par nuit</span>
-                    <span className="font-weight-bold fs-4 text-chrysalide-green">
-                      {room.price.toLocaleString('fr-FR')} <small className="fs-6 font-weight-bold text-dark">FCFA</small>
-                    </span>
+                  {/* Single Clean & Prominent Price Line */}
+                  <div className="text-chrysalide-gold font-weight-bold fs-4 mb-3">
+                    {room.price.toLocaleString('fr-FR')} {room.currency} <span className="fs-6 text-muted font-weight-normal">/ {room.period}</span>
                   </div>
 
                   <div className="d-flex flex-wrap gap-2 text-muted mb-3 small">
