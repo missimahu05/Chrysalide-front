@@ -12,9 +12,9 @@ export const roomsData = [
     bathrooms: '1 salle de bain',
     hasWifi: true,
     size: '25 m²',
-    image: '/img/rooms/room-ventilated.jpeg',
+    image: '/photos/2026-08-05-09.49.04.jpeg',
     gallery: [
-      '/img/rooms/room-ventilated.jpeg',
+      '/photos/2026-08-05-09.49.04.jpeg',
       '/photos/2026-08-05-09.49.04-1.jpeg',
       '/photos/2026-08-05-09.49.04-2.jpeg'
     ],
@@ -35,9 +35,9 @@ export const roomsData = [
     bathrooms: '1 salle de bain',
     hasWifi: true,
     size: '30 m²',
-    image: '/img/rooms/room-ac-confort.jpeg',
+    image: '/photos/2026-08-05-09.49.05.jpeg',
     gallery: [
-      '/img/rooms/room-ac-confort.jpeg',
+      '/photos/2026-08-05-09.49.05.jpeg',
       '/photos/2026-08-05-09.49.05-1.jpeg',
       '/photos/2026-08-05-09.49.08-1.jpeg',
       '/photos/2026-08-05-09.49.06-1.jpeg'

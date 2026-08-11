@@ -71,17 +71,30 @@ export default function Navbar({ onOpenBooking }) {
             </a>
           </div>
 
-          {/* Center (Desktop Inline Navigation Links) */}
+          {/* Center (Desktop Inline Navigation Links with Lucide-react Icons) */}
           <nav className="d-none d-lg-flex align-items-center gap-3 gap-xl-4 font-weight-bold" style={{ fontSize: '0.88rem' }}>
-            <a href="#hero" className="text-dark text-decoration-none hover-gold transition-all">Accueil</a>
-            <a href="#about" className="text-secondary text-decoration-none hover-gold transition-all">À propos</a>
-            <a href="#rooms" className="text-secondary text-decoration-none hover-gold transition-all">Chambres</a>
-            <a href="#events" className="text-chrysalide-gold text-decoration-none hover-gold transition-all d-flex align-items-center">
-              <span className="badge bg-warning text-dark me-1" style={{ fontSize: '0.65rem' }}>NEW</span>Événements
+            <a href="#hero" className="text-dark text-decoration-none hover-gold transition-all d-flex align-items-center">
+              <Home size={15} className="me-1 text-chrysalide-gold" />Accueil
             </a>
-            <a href="#services" className="text-secondary text-decoration-none hover-gold transition-all">Services</a>
-            <a href="#process" className="text-secondary text-decoration-none hover-gold transition-all">Réservation</a>
-            <a href="#contact-location" className="text-secondary text-decoration-none hover-gold transition-all">Contact</a>
+            <a href="#about" className="text-secondary text-decoration-none hover-gold transition-all d-flex align-items-center">
+              <Info size={15} className="me-1 text-chrysalide-green" />À propos
+            </a>
+            <a href="#rooms" className="text-secondary text-decoration-none hover-gold transition-all d-flex align-items-center">
+              <BedDouble size={15} className="me-1 text-chrysalide-gold" />Chambres
+            </a>
+            <a href="#events" className="text-chrysalide-gold text-decoration-none hover-gold transition-all d-flex align-items-center">
+              <span className="badge bg-warning text-dark me-1" style={{ fontSize: '0.65rem' }}>NEW</span>
+              <Calendar size={15} className="me-1" />Événements
+            </a>
+            <a href="#services" className="text-secondary text-decoration-none hover-gold transition-all d-flex align-items-center">
+              <Sparkles size={15} className="me-1 text-chrysalide-green" />Services
+            </a>
+            <a href="#process" className="text-secondary text-decoration-none hover-gold transition-all d-flex align-items-center">
+              <CalendarCheck size={15} className="me-1 text-chrysalide-gold" />Réservation
+            </a>
+            <a href="#contact-location" className="text-secondary text-decoration-none hover-gold transition-all d-flex align-items-center">
+              <MapPin size={15} className="me-1 text-chrysalide-green" />Contact
+            </a>
             
             {/* Admin Dashboard Connection */}
             <a 
