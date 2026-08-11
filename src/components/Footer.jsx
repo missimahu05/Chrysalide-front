@@ -41,10 +41,14 @@ export default function Footer({ onOpenBooking }) {
             <ul className="list-unstyled mb-0" style={{ fontSize: '0.9rem' }}>
               <li className="mb-2"><a href="#hero" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-chevron-right me-2 text-chrysalide-gold small"></i>Accueil</a></li>
               <li className="mb-2"><a href="#about" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-chevron-right me-2 text-chrysalide-gold small"></i>À propos de nous</a></li>
-              <li className="mb-2"><a href="#services" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-chevron-right me-2 text-chrysalide-gold small"></i>Nos Services VIP</a></li>
               <li className="mb-2"><a href="#rooms" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-chevron-right me-2 text-chrysalide-gold small"></i>Nos Chambres & Tarifs</a></li>
-              <li className="mb-2"><a href="#video-presentation" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-chevron-right me-2 text-chrysalide-gold small"></i>Présentation Vidéo</a></li>
-              <li className="mb-2"><a href="#testimonials" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-chevron-right me-2 text-chrysalide-gold small"></i>Témoignages Clients</a></li>
+              <li className="mb-2"><a href="#events" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-chevron-right me-2 text-chrysalide-gold small"></i>Événements & Privatisation</a></li>
+              <li className="mb-2"><a href="#services" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-chevron-right me-2 text-chrysalide-gold small"></i>Services & Bar Lounge</a></li>
+              <li className="mb-2">
+                <a href={import.meta.env.VITE_ADMIN_DASHBOARD_URL || "https://admin-chrysalide.vercel.app"} target="_blank" rel="noreferrer" className="text-warning font-weight-bold text-decoration-none hover-gold transition-all">
+                  <i className="fa fa-user-shield me-2 text-chrysalide-gold small"></i>Espace Admin
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -56,10 +60,10 @@ export default function Footer({ onOpenBooking }) {
             <ul className="list-unstyled mb-0" style={{ fontSize: '0.9rem' }}>
               <li className="mb-2"><a href="#rooms" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-star me-2 text-chrysalide-gold small"></i>Ventilée (15.000 FCFA)</a></li>
               <li className="mb-2"><a href="#rooms" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-star me-2 text-chrysalide-gold small"></i>Climatisée (25.000 FCFA)</a></li>
+              <li className="mb-2"><a href="#rooms" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-star me-2 text-chrysalide-gold small"></i>Deluxe Climatisée (30.000 FCFA)</a></li>
               <li className="mb-2"><a href="#rooms" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-star me-2 text-chrysalide-gold small"></i>Suite VIP (45.000 FCFA)</a></li>
               <li className="mb-2"><a href="#rooms" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-star me-2 text-chrysalide-gold small"></i>Appartement (60.000 FCFA)</a></li>
-              <li className="mb-2"><a href="#services" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-cocktail me-2 text-chrysalide-gold small"></i>Bar Lounge & Cave à Vin</a></li>
-              <li className="mb-2"><a href="#services" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-smoking me-2 text-chrysalide-gold small"></i>Espace Chicha VIP</a></li>
+              <li className="mb-2"><a href="#events" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-glass-cheers me-2 text-chrysalide-gold small"></i>Soirées & Réceptions Privées</a></li>
             </ul>
           </div>
 

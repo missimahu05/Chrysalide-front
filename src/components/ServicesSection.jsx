@@ -45,37 +45,37 @@ export default function ServicesSection({ onSelectCategory }) {
   ];
 
   return (
-    <section className="container-xxl py-5 min-vh-100 d-flex align-items-center" id="services">
-      <div className="container">
-        <div className="text-center mb-5">
+    <section className="container-xxl py-5" id="services">
+      <div className="container py-2 py-md-4">
+        <div className="text-center mb-4 mb-md-5">
           <h6 className="section-title text-center text-chrysalide-gold text-uppercase mb-2 font-weight-bold">
             Nos Prestations Exclusives
           </h6>
-          <h1 className="mb-4 text-dark font-weight-bold">
+          <h2 className="mb-3 text-dark font-weight-bold fs-3 fs-md-2">
             Découvrez l’univers <span className="text-chrysalide-green">La Chrysalide</span> <span className="text-chrysalide-gold">Suite</span>
-          </h1>
-          <p className="text-muted" style={{ maxWidth: '750px', margin: '0 auto' }}>
+          </h2>
+          <p className="text-muted small fs-6" style={{ maxWidth: '750px', margin: '0 auto' }}>
             Localisé au quartier Nima à Parakou, notre complexe associe hôtel haut de gamme, restaurant, bar lounge, cave à vin et espace chicha.
           </p>
         </div>
 
-        <div className="row g-4 justify-content-center">
+        <div className="row g-3 g-md-4 justify-content-center">
           {services.map((srv) => (
-            <div className="col-lg-4 col-md-6" key={srv.id}>
+            <div className="col-lg-4 col-md-6 col-12" key={srv.id}>
               <div 
-                className="service-item rounded h-100 shadow-sm border p-4 text-center d-flex flex-column align-items-center bg-white border-top border-3"
+                className="service-item rounded-4 h-100 shadow-sm border p-4 text-center d-flex flex-column align-items-center bg-white border-top border-4"
                 style={{ borderColor: srv.id === 'rooms' ? '#25854C' : srv.id === 'wine' ? '#7A288A' : '#CFA34C', cursor: 'pointer', transition: 'all 0.3s' }}
                 onClick={() => onSelectCategory && onSelectCategory(srv.id)}
               >
-                <span className="badge bg-light text-dark mb-3 px-3 py-2 text-uppercase font-weight-bold border">
+                <span className="badge bg-light text-dark mb-3 px-3 py-2 text-uppercase font-weight-bold border rounded-pill" style={{ fontSize: '0.72rem' }}>
                   {srv.badge}
                 </span>
-                <div className="service-icon bg-transparent border rounded p-1 mb-3" style={{ width: '70px', height: '70px' }}>
-                  <div className="w-100 h-100 border rounded d-flex align-items-center justify-content-center bg-light">
-                    <i className={`fa ${srv.icon} fa-2x ${srv.colorClass}`}></i>
+                <div className="service-icon bg-transparent border rounded-circle p-1 mb-3" style={{ width: '68px', height: '68px' }}>
+                  <div className="w-100 h-100 border rounded-circle d-flex align-items-center justify-content-center bg-light">
+                    <i className={`fa ${srv.icon} fa-xl ${srv.colorClass}`}></i>
                   </div>
                 </div>
-                <h5 className="mb-3 font-weight-bold text-dark">{srv.title}</h5>
+                <h5 className="mb-2 font-weight-bold text-dark fs-5">{srv.title}</h5>
                 <p className="text-secondary small mb-0 leading-relaxed">{srv.description}</p>
               </div>
             </div>

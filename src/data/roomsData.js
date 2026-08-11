@@ -3,7 +3,7 @@ export const roomsData = [
     id: 'room-1',
     name: 'Chambre Ventilée Standard',
     category: 'ventilee',
-    categoryLabel: 'Ventilée',
+    categoryLabel: 'Chambre Ventilée',
     price: 15000,
     currency: 'FCFA',
     period: 'nuit',
@@ -16,15 +16,15 @@ export const roomsData = [
       '/photos/2026-08-05-09.49.04-1.jpeg',
       '/photos/2026-08-05-09.49.04-2.jpeg'
     ],
-    amenities: ['Ventilateur de plafond', 'TV Canal+', 'Wi-Fi Haut Débit', 'Salle de bain privée', 'Room Service 24/7'],
-    description: 'Chambre spacieuse et très bien aérée au quartier Nima, idéale pour les séjours confortables à budget maîtrisé.',
+    amenities: ['Ventilateur de plafond puissant', 'TV Canal+', 'Wi-Fi Haut Débit', 'Salle de bain privée moderne', 'Room Service 24/7'],
+    description: 'Chambre spacieuse et parfaitement aérée au quartier Nima à Parakou, idéale pour les séjours confortables et économiques.',
     featured: true
   },
   {
     id: 'room-2',
     name: 'Chambre Climatisée Confort',
     category: 'climatisee',
-    categoryLabel: 'Climatisée',
+    categoryLabel: 'Chambre Climatisée',
     price: 25000,
     currency: 'FCFA',
     period: 'nuit',
@@ -37,15 +37,36 @@ export const roomsData = [
       '/photos/2026-08-05-09.49.05-1.jpeg',
       '/photos/2026-08-05-09.49.05-2.jpeg'
     ],
-    amenities: ['Climatisation Split', 'TV Écran Plat HD', 'Wi-Fi Haut Débit', 'Mini-bar', 'Bureau de travail', 'Coffre-fort'],
-    description: 'Une chambre élégante climatisée offrant une fraîcheur constante, un lit douillet et des équipements haut de gamme.',
+    amenities: ['Climatisation Split silencieuse', 'TV Écran Plat HD', 'Wi-Fi Haut Débit', 'Mini-bar', 'Bureau de travail', 'Coffre-fort'],
+    description: 'Une chambre élégante avec climatisation individuelle offrant une fraîcheur idéale, un lit douillet et des équipements modernes.',
     featured: true
   },
   {
     id: 'room-3',
-    name: 'Suite Exécutive Prestige VIP',
-    category: 'suite',
-    categoryLabel: 'Suite VIP',
+    name: 'Chambre Climatisée Deluxe',
+    category: 'climatisee',
+    categoryLabel: 'Chambre Climatisée',
+    price: 30000,
+    currency: 'FCFA',
+    period: 'nuit',
+    capacity: 2,
+    bedType: 'Lit King Size Luxueux',
+    size: '35 m²',
+    image: '/img/rooms/room-ac-deluxe.jpeg',
+    gallery: [
+      '/img/rooms/room-ac-deluxe.jpeg',
+      '/photos/2026-08-05-09.49.08-1.jpeg',
+      '/photos/2026-08-05-09.49.09.jpeg'
+    ],
+    amenities: ['Climatisation Inverter', 'Insonorisation supérieure', 'Service Bar Lounge direct', 'Séchoir à cheveux', 'Mini-bar garni'],
+    description: 'Un havre de tranquillité climatisé avec insonorisation renforcée et accès direct aux prestations VIP du complexe.',
+    featured: true
+  },
+  {
+    id: 'room-4',
+    name: 'Suite Climatisée VIP Prestige',
+    category: 'climatisee',
+    categoryLabel: 'Chambre Climatisée',
     price: 45000,
     currency: 'FCFA',
     period: 'nuit',
@@ -59,14 +80,14 @@ export const roomsData = [
       '/photos/2026-08-05-09.49.06-2.jpeg'
     ],
     amenities: ['Salon privé séparé', 'Climatisation Inverter', 'TV 4K Canal+ / Netflix', 'Accès Bar Lounge & Cave à vin', 'Petit-déjeuner inclus', 'Service Majordome'],
-    description: 'Le sommet du luxe à La Chrysalide Suite. Un espace généreux avec salon privé et finitions soignées.',
+    description: 'Le sommet du luxe climatisé à La Chrysalide Suite. Un espace généreux avec salon privé et finitions très soignées.',
     featured: true
   },
   {
-    id: 'room-4',
-    name: 'Appartement Résidentiel Meublé',
-    category: 'appartement',
-    categoryLabel: 'Appartement',
+    id: 'room-5',
+    name: 'Appartement Climatisé Meublé',
+    category: 'climatisee',
+    categoryLabel: 'Chambre Climatisée',
     price: 60000,
     currency: 'FCFA',
     period: 'nuit',
@@ -79,29 +100,8 @@ export const roomsData = [
       '/photos/2026-08-05-09.49.07-1.jpeg',
       '/photos/2026-08-05-09.49.07-2.jpeg'
     ],
-    amenities: ['Cuisine équipée moderne', '2 Chambres autonomes', 'Grand Salon & Salle à manger', 'Balcon privé', 'Garage privé sécurisé'],
-    description: 'Parfait pour les séjours en famille ou de longue durée. Appartement de haut standing entièrement équipé avec autonomie complète.',
+    amenities: ['Cuisine équipée moderne', '2 Chambres autonomes climatisées', 'Grand Salon & Salle à manger', 'Balcon privé', 'Garage privé sécurisé'],
+    description: 'Parfait pour les séjours en famille ou de longue durée. Appartement climatisé de haut standing entièrement équipé.',
     featured: true
-  },
-  {
-    id: 'room-5',
-    name: 'Chambre Climatisée Deluxe',
-    category: 'climatisee',
-    categoryLabel: 'Climatisée',
-    price: 30000,
-    currency: 'FCFA',
-    period: 'nuit',
-    capacity: 2,
-    bedType: 'Lit King Size Luxueux',
-    size: '35 m²',
-    image: '/img/rooms/room-ac-deluxe.jpeg',
-    gallery: [
-      '/img/rooms/room-ac-deluxe.jpeg',
-      '/photos/2026-08-05-09.49.08-1.jpeg',
-      '/photos/2026-08-05-09.49.09.jpeg'
-    ],
-    amenities: ['Climatisation', 'Insonorisation supérieure', 'Service Bar Lounge direct', 'Séchoir à cheveux'],
-    description: 'Un havre de tranquillité avec insonorisation renforcée et accès rapide aux services du complexe.',
-    featured: false
   }
 ];

@@ -72,13 +72,13 @@ export default function HeroCarousel({ onOpenBooking }) {
   };
 
   return (
-    <div className="container-fluid p-0 position-relative" id="hero" style={{ minHeight: '100vh', height: '100vh', overflow: 'hidden' }}>
-      <div className="carousel slide h-100 position-relative">
-        <div className="carousel-inner h-100" style={{ backgroundColor: '#0F172B' }}>
+    <div className="container-fluid p-0 position-relative hero-carousel-wrapper" id="hero" style={{ overflow: 'hidden' }}>
+      <div className="carousel slide position-relative hero-carousel-inner">
+        <div className="carousel-inner" style={{ backgroundColor: '#0F172B' }}>
           {slides.map((slide, index) => (
             <div 
               key={slide.id} 
-              className={`carousel-item h-100 ${index === activeIndex ? 'active' : ''}`}
+              className={`carousel-item ${index === activeIndex ? 'active' : ''}`}
               style={{
                 display: index === activeIndex ? 'block' : 'none',
                 transition: 'opacity 0.8s ease-in-out',
@@ -86,30 +86,30 @@ export default function HeroCarousel({ onOpenBooking }) {
               }}
             >
               <img 
-                className="w-100 h-100" 
+                className="w-100 hero-slide-img" 
                 src={slide.image} 
                 alt={slide.titleGreen} 
-                style={{ objectFit: 'cover', filter: 'brightness(0.6)' }}
+                style={{ objectFit: 'cover', filter: 'brightness(0.55)' }}
               />
-              <div className="carousel-caption d-flex flex-column align-items-center justify-content-center h-100" style={{ top: 0, bottom: 0, background: 'rgba(15, 23, 43, 0.45)' }}>
-                <div className="p-3 text-center" style={{ maxWidth: '950px' }}>
-                  <h6 className="section-title text-chrysalide-gold text-uppercase mb-3 animated slideInDown font-weight-bold" style={{ letterSpacing: '3px' }}>
+              <div className="carousel-caption d-flex flex-column align-items-center justify-content-center h-100 p-2 p-md-4" style={{ top: 0, bottom: 0, background: 'rgba(15, 23, 43, 0.45)' }}>
+                <div className="p-2 p-md-3 text-center" style={{ maxWidth: '950px' }}>
+                  <h6 className="section-title text-chrysalide-gold text-uppercase mb-2 mb-md-3 animated slideInDown font-weight-bold" style={{ letterSpacing: '1.5px', fontSize: '0.82rem' }}>
                     {slide.subtitle}
                   </h6>
-                  <h1 className="display-2 text-white mb-3 animated slideInDown font-weight-bold" style={{ textShadow: '0 4px 15px rgba(0,0,0,0.85)', lineHeight: '1.2' }}>
+                  <h1 className="hero-heading text-white mb-2 mb-md-3 animated slideInDown font-weight-bold" style={{ textShadow: '0 4px 15px rgba(0,0,0,0.85)', lineHeight: '1.2' }}>
                     <span className="text-chrysalide-green">{slide.titleGreen}</span>{' '}
                     <span className="text-chrysalide-gold">{slide.titleGold}</span>
                   </h1>
-                  <p className="text-white-50 fs-5 mb-4 px-md-5 font-weight-medium" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.7)' }}>
+                  <p className="text-white-50 fs-6 fs-md-5 mb-3 mb-md-4 px-1 px-md-5 font-weight-medium" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.7)' }}>
                     {slide.description}
                   </p>
-                  <div className="d-flex justify-content-center gap-3 pt-2">
-                    <a href="#rooms" className="btn btn-primary py-md-3 px-md-5 animated slideInLeft me-2 text-uppercase font-weight-bold shadow-lg">
+                  <div className="d-flex flex-column flex-sm-row justify-content-center gap-2 gap-sm-3 pt-2">
+                    <a href="#rooms" className="btn btn-primary py-2 py-md-3 px-4 px-md-5 animated slideInLeft text-uppercase font-weight-bold shadow-lg">
                       {slide.btnText1}
                     </a>
                     <button 
                       onClick={onOpenBooking} 
-                      className="btn btn-light py-md-3 px-md-5 animated slideInRight text-uppercase font-weight-bold shadow-lg"
+                      className="btn btn-light py-2 py-md-3 px-4 px-md-5 animated slideInRight text-uppercase font-weight-bold shadow-lg"
                     >
                       {slide.btnText2}
                     </button>
@@ -124,9 +124,9 @@ export default function HeroCarousel({ onOpenBooking }) {
           className="carousel-control-prev" 
           type="button" 
           onClick={handlePrev}
-          style={{ zIndex: 10, background: 'none', border: 'none', width: '8%' }}
+          style={{ zIndex: 10, background: 'none', border: 'none', width: '10%' }}
         >
-          <span className="carousel-control-prev-icon" aria-hidden="true" style={{ width: '3.5rem', height: '3.5rem' }}></span>
+          <span className="carousel-control-prev-icon" aria-hidden="true" style={{ width: '2.2rem', height: '2.2rem' }}></span>
           <span className="visually-hidden">Précédent</span>
         </button>
 
@@ -134,9 +134,9 @@ export default function HeroCarousel({ onOpenBooking }) {
           className="carousel-control-next" 
           type="button" 
           onClick={handleNext}
-          style={{ zIndex: 10, background: 'none', border: 'none', width: '8%' }}
+          style={{ zIndex: 10, background: 'none', border: 'none', width: '10%' }}
         >
-          <span className="carousel-control-next-icon" aria-hidden="true" style={{ width: '3.5rem', height: '3.5rem' }}></span>
+          <span className="carousel-control-next-icon" aria-hidden="true" style={{ width: '2.2rem', height: '2.2rem' }}></span>
           <span className="visually-hidden">Suivant</span>
         </button>
       </div>

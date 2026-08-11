@@ -31,17 +31,17 @@ export default function FAQSection({ onOpenBooking }) {
   };
 
   return (
-    <section className="container-fluid py-5 min-vh-100 d-flex align-items-center border-top border-bottom border-light" id="faq" style={{ backgroundColor: '#F4F5F7' }}>
-      <div className="container py-4">
+    <section className="container-fluid py-5 border-top border-bottom border-light" id="faq" style={{ backgroundColor: '#F4F5F7' }}>
+      <div className="container py-2 py-md-4">
         
-        <div className="text-center mb-5">
+        <div className="text-center mb-4 mb-md-5">
           <h6 className="section-title text-center text-chrysalide-gold text-uppercase mb-2 font-weight-bold">
             Questions Fréquentes
           </h6>
-          <h2 className="text-dark font-weight-bold">
+          <h2 className="text-dark font-weight-bold fs-3 fs-md-2 mb-2">
             Tout savoir sur <span className="text-chrysalide-green">La Chrysalide</span> <span className="text-chrysalide-gold">Suite</span>
           </h2>
-          <p className="text-muted leading-relaxed" style={{ maxWidth: '700px', margin: '0 auto' }}>
+          <p className="text-muted leading-relaxed small fs-6" style={{ maxWidth: '700px', margin: '0 auto' }}>
             Retrouvez les réponses aux questions les plus posées par nos clients et résidents.
           </p>
         </div>
@@ -52,24 +52,24 @@ export default function FAQSection({ onOpenBooking }) {
               {faqs.map((f, idx) => {
                 const isOpen = openIdx === idx;
                 return (
-                  <div key={idx} className="accordion-item mb-3 border-0 rounded-4 shadow-sm overflow-hidden bg-white">
+                  <div key={idx} className="accordion-item mb-2 mb-md-3 border-0 rounded-4 shadow-sm overflow-hidden bg-white">
                     <h2 className="accordion-header" id={`heading-${idx}`}>
                       <button
-                        className={`accordion-button ${isOpen ? '' : 'collapsed'} fw-bold text-dark fs-6 py-3 px-4 shadow-none bg-white d-flex justify-content-between align-items-center w-100 text-start`}
+                        className={`accordion-button ${isOpen ? '' : 'collapsed'} fw-bold text-dark fs-6 py-3 px-3 px-md-4 shadow-none bg-white d-flex justify-content-between align-items-center w-100 text-start`}
                         type="button"
                         onClick={() => toggleFaq(idx)}
                         aria-expanded={isOpen}
                         style={{ borderLeft: isOpen ? '5px solid #CFA34C' : '5px solid transparent', transition: 'all 0.3s ease' }}
                       >
-                        <span>
-                          <i className="fa fa-question-circle text-chrysalide-gold me-3"></i>
+                        <span className="pe-2">
+                          <i className="fa fa-question-circle text-chrysalide-gold me-2 me-md-3"></i>
                           {f.q}
                         </span>
-                        <i className={`fa ${isOpen ? 'fa-chevron-up text-chrysalide-green' : 'fa-chevron-down text-muted'} ms-2`}></i>
+                        <i className={`fa ${isOpen ? 'fa-chevron-up text-chrysalide-green' : 'fa-chevron-down text-muted'} ms-2 flex-shrink-0`}></i>
                       </button>
                     </h2>
                     {isOpen && (
-                      <div className="accordion-body px-4 pb-4 pt-1 text-muted leading-relaxed" style={{ fontSize: '0.95rem' }}>
+                      <div className="accordion-body px-3 px-md-4 pb-3 pt-1 text-muted leading-relaxed small fs-6">
                         {f.a}
                       </div>
                     )}
@@ -78,16 +78,16 @@ export default function FAQSection({ onOpenBooking }) {
               })}
             </div>
 
-            <div className="bg-white rounded-4 p-4 mt-4 text-center shadow-sm border border-light d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
-              <div className="text-start">
-                <h6 className="fw-bold mb-1 text-dark">Vous avez une autre question ?</h6>
+            <div className="bg-white rounded-4 p-3 p-md-4 mt-4 text-center shadow-sm border border-light d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+              <div className="text-start text-center text-md-start">
+                <h6 className="fw-bold mb-1 text-dark fs-6">Vous avez une autre question ?</h6>
                 <small className="text-muted">Notre équipe de réception vous répond immédiatement sur WhatsApp.</small>
               </div>
               <a 
                 href="https://wa.me/2290159188023" 
                 target="_blank" 
                 rel="noreferrer"
-                className="btn btn-success font-weight-bold text-uppercase px-4 py-2 shadow-sm text-nowrap"
+                className="btn btn-success font-weight-bold text-uppercase px-4 py-2 shadow-sm text-nowrap rounded-3 w-100 w-md-auto"
                 style={{ backgroundColor: '#25854C', borderColor: '#25854C' }}
               >
                 <i className="fab fa-whatsapp me-2"></i>Posez votre question

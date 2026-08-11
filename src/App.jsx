@@ -7,6 +7,7 @@ import AboutSection from './components/AboutSection';
 import RoomCatalog from './components/RoomCatalog';
 import VideoSection from './components/VideoSection';
 import ServicesSection from './components/ServicesSection';
+import EventsSection from './components/EventsSection';
 import ProcessSection from './components/ProcessSection';
 import TestimonialsSection from './components/TestimonialsSection';
 import FAQSection from './components/FAQSection';
@@ -74,6 +75,9 @@ export default function App() {
 
         {/* Section 6: VIP Services & Prestations */}
         <ServicesSection onSelectCategory={handleSelectCategory} />
+
+        {/* Section 6.5: Événements & Privatisation */}
+        <EventsSection onOpenBooking={() => handleOpenBooking()} />
 
         {/* Section 7: Process Steps (Comment réserver ?) */}
         <ProcessSection onOpenBooking={() => handleOpenBooking()} />

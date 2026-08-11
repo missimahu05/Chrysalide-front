@@ -567,6 +567,95 @@ body {
   color: var(--color-text-muted);
 }
 
+/* RESPONSIVE & MOBILE OVERHAUL STYLES */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+.hero-carousel-wrapper {
+  min-height: 520px;
+  height: 80vh;
+}
+
+.hero-carousel-inner,
+.hero-carousel-inner .carousel-inner,
+.hero-carousel-inner .carousel-item,
+.hero-slide-img {
+  height: 100%;
+  min-height: 520px;
+}
+
+.hero-heading {
+  font-size: clamp(1.6rem, 5vw, 3.5rem);
+}
+
+/* Custom scrollbar for horizontal filter pills */
+.catalog-filter-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Section titles mobile adjustments */
+@media (max-width: 768px) {
+  .hero-carousel-wrapper {
+    min-height: 440px;
+    height: 75vh;
+  }
+  
+  .hero-carousel-inner,
+  .hero-carousel-inner .carousel-inner,
+  .hero-carousel-inner .carousel-item,
+  .hero-slide-img {
+    min-height: 440px;
+  }
+
+  .section-title::before {
+    width: 25px;
+    margin-right: 5px;
+  }
+
+  .section-title::after {
+    width: 25px;
+    margin-left: 5px;
+  }
+
+  .booking-bar-container {
+    margin-top: 0;
+    padding-top: 1.5rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .booking-bar-container {
+    margin-top: -50px;
+    z-index: 10;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-carousel-wrapper {
+    min-height: 420px;
+    height: 70vh;
+  }
+  
+  .hero-carousel-inner,
+  .hero-carousel-inner .carousel-inner,
+  .hero-carousel-inner .carousel-item,
+  .hero-slide-img {
+    min-height: 420px;
+  }
+
+  .section-title {
+    letter-spacing: 1px !important;
+    font-size: 0.8rem !important;
+  }
+
+  .section-title::before,
+  .section-title::after {
+    display: none;
+  }
+}
+
 @media (max-width: 850px) {
   .subhero-grid, .tiles-grid-2x2 {
     grid-template-columns: 1fr;
