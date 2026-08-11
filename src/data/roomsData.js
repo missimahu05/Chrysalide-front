@@ -64,14 +64,14 @@ export const roomsData = [
   },
   {
     id: 'room-4',
-    name: 'Suite Climatisée VIP Prestige',
+    name: 'Chambre Climatisée Supérieure',
     category: 'climatisee',
     categoryLabel: 'Chambre Climatisée',
     price: 45000,
     currency: 'FCFA',
     period: 'nuit',
     capacity: 3,
-    bedType: 'Lit Super King Size + Salon',
+    bedType: 'Lit Super King Size + Espace Détente',
     size: '50 m²',
     image: '/img/rooms/room-suite-vip.jpeg',
     gallery: [
@@ -79,8 +79,8 @@ export const roomsData = [
       '/photos/2026-08-05-09.49.06-1.jpeg',
       '/photos/2026-08-05-09.49.06-2.jpeg'
     ],
-    amenities: ['Salon privé séparé', 'Climatisation Inverter', 'TV 4K Canal+ / Netflix', 'Accès Bar Lounge & Cave à vin', 'Petit-déjeuner inclus', 'Service Majordome'],
-    description: 'Le sommet du luxe climatisé à La Chrysalide Suite. Un espace généreux avec salon privé et finitions très soignées.',
+    amenities: ['Espace détente séparé', 'Climatisation Inverter', 'TV 4K Canal+', 'Accès Bar Lounge & Cave à vin', 'Petit-déjeuner inclus'],
+    description: 'Une chambre climatisée vaste et raffinée à La Chrysalide Suite. Un espace généreux avec salon privé et finitions soignées.',
     featured: true
   },
   {

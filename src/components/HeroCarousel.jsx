@@ -35,7 +35,7 @@ export default function HeroCarousel({ onOpenBooking }) {
     {
       id: 4,
       image: '/img/hero/4.jpeg',
-      subtitle: 'Chambres Ventilées & Climatisées, Suites VIP',
+      subtitle: 'Chambres Ventilées & Climatisées',
       titleGreen: 'Confort &',
       titleGold: 'Sécurité 24h/24',
       description: 'Hébergements de standing totalement équipés et surveillés pour votre tranquillité d’esprit.',
