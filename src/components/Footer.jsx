@@ -44,11 +44,7 @@ export default function Footer({ onOpenBooking }) {
               <li className="mb-2"><a href="#rooms" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-chevron-right me-2 text-chrysalide-gold small"></i>Nos Chambres & Tarifs</a></li>
               <li className="mb-2"><a href="#events" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-chevron-right me-2 text-chrysalide-gold small"></i>Événements & Privatisation</a></li>
               <li className="mb-2"><a href="#services" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-chevron-right me-2 text-chrysalide-gold small"></i>Services & Bar Lounge</a></li>
-              <li className="mb-2">
-                <a href={import.meta.env.VITE_ADMIN_DASHBOARD_URL || "https://admin-chrysalide.vercel.app"} target="_blank" rel="noreferrer" className="text-warning font-weight-bold text-decoration-none hover-gold transition-all">
-                  <i className="fa fa-user-shield me-2 text-chrysalide-gold small"></i>Espace Admin
-                </a>
-              </li>
+              <li className="mb-2"><a href="#contact-location" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-chevron-right me-2 text-chrysalide-gold small"></i>Contact & Localisation</a></li>
             </ul>
           </div>
 

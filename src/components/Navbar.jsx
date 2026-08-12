@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
 import { 
   Menu, X, Home, Info, BedDouble, Calendar, Sparkles, 
-  HelpCircle, MapPin, Phone, MessageCircle, CalendarCheck, ChevronDown, ChevronUp, ShieldCheck, Users, PlayCircle
+  MapPin, Phone, CalendarCheck, ChevronDown, ChevronUp
 } from 'lucide-react';
 
 export default function Navbar({ onOpenBooking }) {
   const [isOpen, setIsOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
   const [activeItem, setActiveItem] = useState('hero');
-
-  const adminDashboardUrl = import.meta.env.VITE_ADMIN_DASHBOARD_URL || 'https://admin-chrysalide.vercel.app';
 
   const toggleDrawer = () => {
     setIsOpen(!isOpen);
@@ -26,53 +24,76 @@ export default function Navbar({ onOpenBooking }) {
 
   return (
     <>
-      {/* Top Header Bar with Light Luxury Palette */}
+      {/* Top Header Bar with Standard Responsive Layout */}
       <header className="container-fluid px-3 px-lg-4 sticky-top shadow-sm border-bottom border-2" style={{ backgroundColor: '#FFFFFF', borderColor: '#CFA34C', zIndex: 1050 }}>
         <div className="d-flex align-items-center justify-content-between py-2 py-md-3">
           
-          {/* Left: Mobile Toggle + Brand Logo */}
-          <div className="d-flex align-items-center">
-            <button 
-              type="button" 
-              className="btn me-3 d-flex d-lg-none align-items-center justify-content-center shadow-sm rounded-3 border-0"
-              onClick={toggleDrawer}
-              aria-label="Menu de navigation mobile"
-              style={{ width: '42px', height: '42px', backgroundColor: '#25854C', color: '#FFFFFF' }}
-            >
-              <Menu size={22} />
-            </button>
+          {/* Left: Brand Logo */}
+          <a href="#hero" className="navbar-brand d-flex align-items-center m-0 text-decoration-none">
+            <img 
+              src="/newfav.png" 
+              alt="Logo La Chrysalide Suite" 
+              style={{ height: '42px', width: 'auto', marginRight: '10px', objectFit: 'contain' }} 
+            />
+            <div>
+              <h5 className="m-0 text-uppercase font-weight-bold" style={{ fontSize: '1.05rem', letterSpacing: '0.5px' }}>
+                <span className="text-chrysalide-green">La Chrysalide</span> <span className="text-chrysalide-gold">Suite</span>
+              </h5>
+              <small className="text-chrysalide-purple text-uppercase font-weight-bold d-none d-sm-block" style={{ fontSize: '0.62rem', letterSpacing: '1.5px' }}>
+                Parakou • Hôtel & Résidences
+              </small>
+            </div>
+          </a>
 
-            {/* Brand Logo */}
-            <a href="#hero" className="navbar-brand d-flex align-items-center m-0 text-decoration-none">
-              <img 
-                src="/newfav.png" 
-                alt="Logo La Chrysalide Suite" 
-                style={{ height: '42px', width: 'auto', marginRight: '10px', objectFit: 'contain' }} 
-              />
-              <div>
-                <h5 className="m-0 text-uppercase font-weight-bold" style={{ fontSize: '1.05rem', letterSpacing: '0.5px' }}>
-                  <span className="text-chrysalide-green">La Chrysalide</span> <span className="text-chrysalide-gold">Suite</span>
-                </h5>
-                <small className="text-chrysalide-purple text-uppercase font-weight-bold d-none d-sm-block" style={{ fontSize: '0.62rem', letterSpacing: '1.5px' }}>
-                  Parakou • Hôtel & Résidences
-                </small>
-              </div>
+          {/* Center: Desktop Horizontal Navigation Menu (Visible ONLY on Desktop >= 992px) */}
+          <nav className="d-none d-lg-flex align-items-center gap-3 gap-xl-4 font-weight-bold" style={{ fontSize: '0.88rem' }}>
+            <a href="#hero" onClick={() => handleNavClick('hero')} className={`text-decoration-none transition-all d-flex align-items-center ${activeItem === 'hero' ? 'text-chrysalide-green' : 'text-dark hover-gold'}`}>
+              <Home size={15} className="me-1 text-chrysalide-gold" />Accueil
             </a>
-          </div>
+            <a href="#about" onClick={() => handleNavClick('about')} className={`text-decoration-none transition-all d-flex align-items-center ${activeItem === 'about' ? 'text-chrysalide-green' : 'text-secondary hover-gold'}`}>
+              <Info size={15} className="me-1 text-chrysalide-green" />À propos
+            </a>
+            <a href="#rooms" onClick={() => handleNavClick('rooms')} className={`text-decoration-none transition-all d-flex align-items-center ${activeItem === 'rooms' ? 'text-chrysalide-green' : 'text-secondary hover-gold'}`}>
+              <BedDouble size={15} className="me-1 text-chrysalide-gold" />Chambres
+            </a>
+            <a href="#events" onClick={() => handleNavClick('events')} className={`text-decoration-none transition-all d-flex align-items-center ${activeItem === 'events' ? 'text-chrysalide-green' : 'text-chrysalide-gold hover-gold'}`}>
+              <span className="badge bg-warning text-dark me-1" style={{ fontSize: '0.65rem' }}>NEW</span>
+              <Calendar size={15} className="me-1" />Événements
+            </a>
+            <a href="#services" onClick={() => handleNavClick('services')} className={`text-decoration-none transition-all d-flex align-items-center ${activeItem === 'services' ? 'text-chrysalide-green' : 'text-secondary hover-gold'}`}>
+              <Sparkles size={15} className="me-1 text-chrysalide-green" />Services
+            </a>
+            <a href="#process" onClick={() => handleNavClick('process')} className={`text-decoration-none transition-all d-flex align-items-center ${activeItem === 'process' ? 'text-chrysalide-green' : 'text-secondary hover-gold'}`}>
+              <CalendarCheck size={15} className="me-1 text-chrysalide-gold" />Réservation
+            </a>
+            <a href="#contact-location" onClick={() => handleNavClick('contact-location')} className={`text-decoration-none transition-all d-flex align-items-center ${activeItem === 'contact-location' ? 'text-chrysalide-green' : 'text-secondary hover-gold'}`}>
+              <MapPin size={15} className="me-1 text-chrysalide-green" />Contact
+            </a>
+          </nav>
 
-          {/* Navigation Menu links removed on desktop; Hamburger menu used strictly on tablet & smartphone (d-lg-none) */}
-
-          {/* Right: Phone & Booking */}
-          <div className="d-flex align-items-center">
-            <a href="tel:+2290159188023" className="btn btn-sm btn-outline-dark me-2 me-md-3 d-none d-md-inline-flex align-items-center font-weight-bold rounded-3">
+          {/* Right: Phone, Booking CTA & Hamburger Menu Toggle (Visible ONLY on Mobile & Tablet < 992px) */}
+          <div className="d-flex align-items-center gap-2">
+            <a href="tel:+2290159188023" className="btn btn-sm btn-outline-dark d-none d-md-inline-flex align-items-center font-weight-bold rounded-3">
               <Phone size={14} className="me-2 text-chrysalide-gold" />+229 0159188023
             </a>
+            
             <button 
               className="btn py-2 px-3 px-md-4 text-uppercase font-weight-bold shadow-sm rounded-3 d-inline-flex align-items-center text-white border-0"
               onClick={onOpenBooking}
               style={{ backgroundColor: '#25854C', fontSize: '0.85rem' }}
             >
               <CalendarCheck size={16} className="me-2" />Réserver
+            </button>
+
+            {/* Standard Mobile/Tablet Hamburger Toggle Button */}
+            <button 
+              type="button" 
+              className="btn ms-1 ms-md-2 d-flex d-lg-none align-items-center justify-content-center shadow-sm rounded-3 border-0"
+              onClick={toggleDrawer}
+              aria-label="Menu de navigation mobile"
+              style={{ width: '42px', height: '42px', backgroundColor: '#25854C', color: '#FFFFFF' }}
+            >
+              <Menu size={24} />
             </button>
           </div>
 
@@ -88,7 +109,7 @@ export default function Navbar({ onOpenBooking }) {
         ></div>
       )}
 
-      {/* Mobile Side-Drawer Menu matching BUSOLA style screenshot */}
+      {/* Mobile Side-Drawer Menu (Smartphone & Tablette) */}
       <aside 
         className="position-fixed top-0 start-0 h-100 bg-white shadow-lg d-flex flex-column"
         style={{ 
@@ -102,7 +123,7 @@ export default function Navbar({ onOpenBooking }) {
         {/* Drawer Header (Green Header Bar with Close Button) */}
         <div className="p-3 px-4 d-flex align-items-center justify-content-between text-white" style={{ backgroundColor: '#25854C' }}>
           <div className="d-flex align-items-center">
-            <img src="/newfav.png" alt="Logo" style={{ height: '36px', marginRight: '10px', filter: 'brightness(0) invert(1)' }} />
+            <img src="/newfav.png" alt="Logo" style={{ height: '36px', width: 'auto', marginRight: '10px', borderRadius: '6px' }} />
             <h6 className="m-0 text-uppercase font-weight-bold text-white" style={{ fontSize: '1rem', letterSpacing: '0.5px' }}>
               LA CHRYSALIDE SUITE
             </h6>
@@ -119,7 +140,7 @@ export default function Navbar({ onOpenBooking }) {
           </button>
         </div>
 
-        {/* Drawer Navigation List matching BUSOLA layout */}
+        {/* Drawer Navigation List */}
         <div className="flex-grow-1 overflow-y-auto p-0">
           <ul className="list-group list-group-flush w-100 m-0 p-0 border-0">
             
@@ -235,24 +256,10 @@ export default function Navbar({ onOpenBooking }) {
               </button>
             </li>
 
-            {/* Dashboard Admin */}
-            <li className="list-group-item p-0 border-bottom">
-              <a 
-                href={adminDashboardUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="w-100 text-start py-3 px-4 btn rounded-0 border-0 font-weight-bold text-chrysalide-gold d-flex align-items-center justify-content-between text-decoration-none"
-                style={{ fontSize: '0.98rem' }}
-              >
-                <span>Dashboard Admin</span>
-                <ShieldCheck size={18} />
-              </a>
-            </li>
-
           </ul>
         </div>
 
-        {/* Drawer Bottom CTA Button matching BUSOLA bottom button */}
+        {/* Drawer Bottom CTA Button */}
         <div className="p-4 bg-white border-top">
           <button 
             className="btn text-white font-weight-bold text-uppercase w-100 py-3 px-4 shadow-sm rounded-pill d-flex align-items-center justify-content-center position-relative"
