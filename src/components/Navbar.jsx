@@ -109,14 +109,14 @@ export default function Navbar({ onOpenBooking }) {
         ></div>
       )}
 
-      {/* Mobile Side-Drawer Menu (Smartphone & Tablette) */}
+      {/* Mobile Side-Drawer Menu (Smartphone & Tablette - Glisse de droite à gauche) */}
       <aside 
-        className="position-fixed top-0 start-0 h-100 bg-white shadow-lg d-flex flex-column"
+        className="position-fixed top-0 end-0 h-100 bg-white shadow-lg d-flex flex-column"
         style={{ 
           width: '320px', 
           maxWidth: '85vw', 
           zIndex: 1070, 
-          transform: isOpen ? 'translateX(0)' : 'translateX(-100%)', 
+          transform: isOpen ? 'translateX(0)' : 'translateX(100%)', 
           transition: 'transform 0.35s ease-in-out'
         }}
       >
