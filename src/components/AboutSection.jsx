@@ -10,7 +10,7 @@ export default function AboutSection({ onOpenBooking }) {
   const leftColumnImages = [
     {
       id: 1,
-      img: '/img/rooms/room-ac-deluxe.jpeg',
+      img: '/photos/2026-08-05-09.49.05.jpeg',
       title: 'Chambres Climatisées',
       sub: 'Confort & Calme Absolu',
       tag: 'Hébergement',
@@ -19,7 +19,7 @@ export default function AboutSection({ onOpenBooking }) {
     },
     {
       id: 2,
-      img: '/img/rooms/room-ventilated.jpeg',
+      img: '/photos/2026-08-05-09.49.04.jpeg',
       title: 'Chambres Ventilées',
       sub: 'Espace & Fraîcheur',
       tag: 'Hébergement',
