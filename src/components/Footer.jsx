@@ -69,7 +69,9 @@ export default function Footer({ onOpenBooking }) {
               Contact & Accès
             </h5>
             <p className="mb-2 text-white-50" style={{ fontSize: '0.88rem' }}>
-              <i className="fa fa-map-marker-alt me-2 text-chrysalide-green"></i>Quartier Nima, Parakou, Bénin
+              <a href="https://maps.app.goo.gl/bci8qTMKYKRBK5Ye7" target="_blank" rel="noreferrer" className="text-white-50 text-decoration-none hover-gold">
+                <i className="fa fa-map-marker-alt me-2 text-chrysalide-green"></i>Quartier Nima, Parakou, Bénin (Google Maps)
+              </a>
             </p>
             <p className="mb-2" style={{ fontSize: '0.88rem' }}>
               <a href="tel:+2290159188023" className="text-white-50 text-decoration-none hover-gold">

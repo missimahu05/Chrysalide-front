@@ -34,9 +34,17 @@ export default function ContactLocationSection() {
                   </div>
                   <div>
                     <h6 className="fw-bold mb-1 text-dark" style={{ fontSize: '0.95rem' }}>Adresse Physique</h6>
-                    <p className="text-muted mb-0 font-weight-medium small">
+                    <p className="text-muted mb-1 font-weight-medium small">
                       <strong>Quartier Nima</strong>, Parakou, République du Bénin
                     </p>
+                    <a 
+                      href="https://maps.app.goo.gl/bci8qTMKYKRBK5Ye7" 
+                      target="_blank" 
+                      rel="noreferrer" 
+                      className="btn btn-sm text-chrysalide-green font-weight-bold p-0 text-decoration-underline small"
+                    >
+                      <i className="fa fa-map-marked-alt me-1"></i>Voir la position exacte sur Google Maps
+                    </a>
                   </div>
                 </div>
 
@@ -103,6 +111,15 @@ export default function ContactLocationSection() {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
+              <a 
+                href="https://maps.app.goo.gl/bci8qTMKYKRBK5Ye7" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="position-absolute bottom-0 end-0 m-3 btn btn-sm btn-dark text-white font-weight-bold shadow-lg text-uppercase"
+                style={{ zIndex: 10, backdropFilter: 'blur(6px)', fontSize: '0.78rem' }}
+              >
+                <i className="fa fa-map-marked-alt me-1.5 text-warning"></i>Ouvrir dans Google Maps
+              </a>
             </div>
           </div>
 
