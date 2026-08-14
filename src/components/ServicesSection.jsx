@@ -54,7 +54,7 @@ export default function ServicesSection({ onSelectCategory }) {
 
   return (
     <section className="container-xxl min-vh-100 d-flex align-items-center py-5" id="services">
-      <div className="container py-2 py-md-4">
+      <div className="container-fluid px-3 px-md-5 py-4">
         
         {/* Header */}
         <div className="text-center mb-4 mb-md-5">

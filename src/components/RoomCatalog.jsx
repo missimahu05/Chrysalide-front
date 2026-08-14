@@ -11,7 +11,7 @@ export default function RoomCatalog({ onSelectRoom, selectedFilter = 'all' }) {
 
   return (
     <section className="container-xxl min-vh-100 d-flex align-items-center py-5 bg-white" id="rooms">
-      <div className="container py-3">
+      <div className="container-fluid px-3 px-md-5 py-4">
         
         {/* Title Section matching chrysalide-rosy style */}
         <div className="text-center mb-4 mb-md-5">

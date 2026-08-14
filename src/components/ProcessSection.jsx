@@ -28,7 +28,7 @@ export default function ProcessSection({ onOpenBooking }) {
 
   return (
     <section className="container-fluid min-vh-100 d-flex align-items-center py-5 border-top border-bottom border-light" id="process" style={{ backgroundColor: '#F0F7F2' }}>
-      <div className="container py-2 py-md-4">
+      <div className="container-fluid px-3 px-md-5 py-4">
         
         <div className="text-center mb-4 mb-md-5">
           <h6 className="section-title text-center text-chrysalide-gold text-uppercase mb-2 font-weight-bold">

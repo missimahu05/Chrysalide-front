@@ -15,7 +15,7 @@ export default function AboutSection({ onOpenBooking }) {
       sub: 'Confort & Calme Absolu',
       tag: 'Hébergement',
       icon: BedDouble,
-      height: '360px'
+      height: '420px'
     },
     {
       id: 2,
@@ -24,35 +24,35 @@ export default function AboutSection({ onOpenBooking }) {
       sub: 'Espace & Fraîcheur',
       tag: 'Hébergement',
       icon: BedDouble,
-      height: '240px'
+      height: '300px'
     }
   ];
 
   const rightColumnImages = [
     {
       id: 3,
-      img: '/img/gallery/chrysalide-real-3.jpeg',
+      img: '/photos/2026-08-05-09.49.06-1.jpeg',
       title: 'Bar Lounge VIP & Resto',
       sub: 'Ambiance feutrée, boissons & grillades',
       tag: 'Lounge 24/7',
       icon: Wine,
-      height: '420px'
+      height: '460px'
     },
     {
       id: 4,
-      img: '/img/gallery/chrysalide-real-4.jpeg',
+      img: '/photos/2026-08-05-09.49.07.jpeg',
       title: 'Salons & Conciergerie',
       sub: 'Service attentionné & Sécurité 24h/24',
       tag: 'Service',
       icon: ShieldCheck,
-      height: '220px'
+      height: '260px'
     }
   ];
 
   return (
     <section className="w-100 min-vh-100 d-flex align-items-center py-5 position-relative bg-white" id="about">
       
-      <div className="container py-2 py-md-4">
+      <div className="container-fluid px-3 px-md-5 py-4">
         
         <div className="row g-4 g-lg-5 align-items-center">
           
