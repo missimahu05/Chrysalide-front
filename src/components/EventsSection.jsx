@@ -8,7 +8,7 @@ export default function EventsSection({ onOpenBooking }) {
       badge: 'Célébrations',
       icon: 'fa-glass-cheers',
       color: '#CFA34C',
-      image: '/photos/2026-08-05-09.48.59.jpeg',
+      image: '/img/gallery/chrysalide-real-7.jpeg',
       description: 'Offrez-vous une réception inoubliable dans un cadre raffiné et sécurisé à Parakou. Service traiteur, décoration et hébergement des invités sur mesure.'
     },
     {
@@ -17,7 +17,7 @@ export default function EventsSection({ onOpenBooking }) {
       badge: 'Business',
       icon: 'fa-briefcase',
       color: '#25854C',
-      image: '/photos/2026-08-05-09.49.03.jpeg',
+      image: '/img/gallery/chrysalide-real-6.jpeg',
       description: 'Organisez vos réunions de travail, formations ou assemblées d’affaires avec équipements audiovisuels, Wi-Fi très haut débit et pause-café gourmande.'
     },
     {
@@ -26,7 +26,7 @@ export default function EventsSection({ onOpenBooking }) {
       badge: 'Exclusivité VIP',
       icon: 'fa-music',
       color: '#7A288A',
-      image: '/photos/2026-08-05-09.48.58.jpeg',
+      image: '/img/gallery/chrysalide-real-8.jpeg',
       description: 'Privatisez notre Bar Lounge, Espace Chicha ou Cave à Vin pour vos anniversaires, cocktails d’entreprise ou soirées VIP en toute discrétion.'
     }
   ];
