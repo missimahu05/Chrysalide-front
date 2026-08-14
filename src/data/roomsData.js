@@ -39,8 +39,7 @@ export const roomsData = [
     gallery: [
       '/photos/2026-08-05-09.49.05.jpeg',
       '/photos/2026-08-05-09.49.05-1.jpeg',
-      '/photos/2026-08-05-09.49.05-2.jpeg',
-      '/img/gallery/chrysalide-real-3.jpeg'
+      '/photos/2026-08-05-09.49.05-2.jpeg'
     ],
     amenities: ['Climatisation Split silencieuse', 'TV Écran Plat HD', 'Wi-Fi Haut Débit', 'Mini-bar', 'Salle de bain privée moderne', 'Coffre-fort'],
     description: 'Un espace élégant et confortable, parfaitement équipé pour vous garantir un séjour agréable et reposant à La Chrysalide Suite.',
