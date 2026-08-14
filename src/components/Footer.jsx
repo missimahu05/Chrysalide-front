@@ -22,7 +22,7 @@ export default function Footer({ onOpenBooking }) {
               </div>
             </a>
             <p className="text-white-50 mb-3 leading-relaxed" style={{ fontSize: '0.88rem' }}>
-              Complex hôtelier et résidentiel d'exception à Parakou (Quartier Nima). Chambres ventilées et climatisées, Suites VIP, Bar Lounge, Cave à Vin et Restauration.
+              Complexe hôtelier d'exception à Parakou (Quartier Nima). Chambres ventilées et climatisées, Bar Lounge, Cave à Vin et Restauration.
             </p>
             <button 
               onClick={onOpenBooking} 
@@ -54,12 +54,11 @@ export default function Footer({ onOpenBooking }) {
               Nos Offres & Tarifs
             </h5>
             <ul className="list-unstyled mb-0" style={{ fontSize: '0.9rem' }}>
-              <li className="mb-2"><a href="#rooms" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-star me-2 text-chrysalide-gold small"></i>Ventilée (15.000 FCFA)</a></li>
-              <li className="mb-2"><a href="#rooms" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-star me-2 text-chrysalide-gold small"></i>Climatisée (25.000 FCFA)</a></li>
-              <li className="mb-2"><a href="#rooms" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-star me-2 text-chrysalide-gold small"></i>Deluxe Climatisée (30.000 FCFA)</a></li>
-              <li className="mb-2"><a href="#rooms" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-star me-2 text-chrysalide-gold small"></i>Suite VIP (45.000 FCFA)</a></li>
-              <li className="mb-2"><a href="#rooms" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-star me-2 text-chrysalide-gold small"></i>Appartement (60.000 FCFA)</a></li>
-              <li className="mb-2"><a href="#events" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-glass-cheers me-2 text-chrysalide-gold small"></i>Soirées & Réceptions Privées</a></li>
+              <li className="mb-2"><a href="#rooms" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-star me-2 text-chrysalide-gold small"></i>Chambre Ventilée (15.000 FCFA/nuit)</a></li>
+              <li className="mb-2"><a href="#rooms" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-star me-2 text-chrysalide-gold small"></i>Chambre Climatisée (25.000 FCFA/nuit)</a></li>
+              <li className="mb-2"><a href="#events" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-glass-cheers me-2 text-chrysalide-gold small"></i>Mariages & Réceptions Privées</a></li>
+              <li className="mb-2"><a href="#events" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-briefcase me-2 text-chrysalide-gold small"></i>Séminaires & Conférences Pro</a></li>
+              <li className="mb-2"><a href="#events" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-cocktail me-2 text-chrysalide-gold small"></i>Soirées Privées Lounge & Chicha</a></li>
             </ul>
           </div>
 
