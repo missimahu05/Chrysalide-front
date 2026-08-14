@@ -57,7 +57,8 @@ export default function EventsSection({ onOpenBooking }) {
                   <img 
                     src={evt.image} 
                     alt={evt.title} 
-                    className="w-100 h-100 object-fit-cover"
+                    className="w-100 h-100"
+                    style={{ objectFit: 'cover' }}
                   />
                   <div 
                     className="position-absolute top-0 start-0 m-3 px-3 py-1 text-white font-weight-bold rounded-pill shadow-sm text-uppercase"
