@@ -611,16 +611,16 @@ html, body {
 }
 
 .hero-carousel-wrapper {
-  min-height: clamp(540px, 85vh, 100vh);
-  height: clamp(540px, 85vh, 100vh);
+  min-height: 100vh;
+  height: 100vh;
 }
 
 .hero-carousel-inner,
 .hero-carousel-inner .carousel-inner,
 .hero-carousel-inner .carousel-item,
 .hero-slide-img {
-  min-height: clamp(540px, 85vh, 100vh);
-  height: clamp(540px, 85vh, 100vh);
+  min-height: 100vh;
+  height: 100vh;
 }
 
 .hero-heading {
@@ -654,8 +654,8 @@ html, body {
   .hero-carousel-inner .carousel-inner,
   .hero-carousel-inner .carousel-item,
   .hero-slide-img {
-    min-height: clamp(500px, 80vh, 750px);
-    height: clamp(500px, 80vh, 750px);
+    min-height: 100vh;
+    height: 100vh;
   }
 
   .booking-bar-container {
