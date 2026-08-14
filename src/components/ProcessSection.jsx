@@ -65,13 +65,13 @@ export default function ProcessSection({ onOpenBooking }) {
                   {s.desc}
                 </p>
 
-                <button 
-                  onClick={onOpenBooking} 
-                  className="btn btn-sm btn-outline-dark font-weight-bold text-uppercase rounded-3"
+                <a 
+                  href="#rooms" 
+                  className="btn btn-sm btn-outline-dark font-weight-bold text-uppercase rounded-3 text-decoration-none"
                   style={{ fontSize: '0.78rem' }}
                 >
-                  Commencer ici <i className="fa fa-arrow-right ms-1"></i>
-                </button>
+                  Voir le catalogue <i className="fa fa-arrow-right ms-1"></i>
+                </a>
               </div>
             </div>
           ))}

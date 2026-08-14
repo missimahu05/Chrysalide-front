@@ -83,22 +83,16 @@ export default function EventsSection({ onOpenBooking }) {
                     {evt.description}
                   </p>
 
-                  <div className="d-flex gap-2 pt-3 border-top mt-auto">
+                  <div className="pt-3 border-top mt-auto">
                     <a 
-                      href="https://wa.me/2290159188023?text=Bonjour,%20je%20souhaite%20demander%20un%20devis%20pour%20un%20événement%20à%20La%20Chrysalide%20Suite." 
+                      href={`https://wa.me/2290159188023?text=${encodeURIComponent(`Bonjour, je souhaite demander un devis pour : ${evt.title} à La Chrysalide Suite.`)}`}
                       target="_blank" 
                       rel="noreferrer"
-                      className="btn btn-outline-dark btn-sm rounded-3 py-2 px-3 flex-fill font-weight-bold text-uppercase"
+                      className="btn w-100 rounded-3 py-2.5 font-weight-bold text-uppercase text-white shadow-sm transition-all"
+                      style={{ backgroundColor: '#25854C', fontSize: '0.82rem' }}
                     >
-                      <i className="fab fa-whatsapp me-1 text-success"></i>Devis WhatsApp
+                      <i className="fab fa-whatsapp me-2"></i>Demander un Devis Sur-Mesure
                     </a>
-                    <button 
-                      onClick={onOpenBooking} 
-                      className="btn btn-warning btn-sm rounded-3 py-2 px-3 flex-fill font-weight-bold text-uppercase shadow-sm text-dark"
-                      style={{ backgroundColor: '#CFA34C', borderColor: '#CFA34C' }}
-                    >
-                      Privatiser
-                    </button>
                   </div>
                 </div>
               </div>

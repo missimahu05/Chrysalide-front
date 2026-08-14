@@ -10,7 +10,9 @@ export default function HeroCarousel({ onOpenBooking }) {
       titleGold: 'Suite',
       description: 'Un cadre d’exception alliant élégance, confort absolu et sérénité au cœur de Parakou.',
       btnText1: 'Nos Chambres',
-      btnText2: 'Réserver Séjour'
+      btnLink1: '#rooms',
+      btnText2: 'Réserver Séjour',
+      btnAction2: 'booking'
     },
     {
       id: 2,
@@ -20,7 +22,9 @@ export default function HeroCarousel({ onOpenBooking }) {
       titleGold: 'Cave à Vin',
       description: 'Dégustez notre sélection de vins d’exception, cocktails signature et espace Chicha dans une atmosphère VIP.',
       btnText1: 'Découvrir le Bar',
-      btnText2: 'Réserver une Table'
+      btnLink1: '#events',
+      btnText2: 'Réserver une Table',
+      btnLink2: 'https://wa.me/2290159188023?text=Bonjour,%20je%20souhaite%20réserver%20une%20table%20au%20Bar%20Lounge%20de%20La%20Chrysalide%20Suite.'
     },
     {
       id: 3,
@@ -30,7 +34,9 @@ export default function HeroCarousel({ onOpenBooking }) {
       titleGold: 'Restauration',
       description: 'Savourez une cuisine délicieuse avec nos plats préparés sur place pour vos repas d’affaires ou de famille.',
       btnText1: 'Notre Carte',
-      btnText2: 'Commander'
+      btnLink1: '#events',
+      btnText2: 'Commander',
+      btnLink2: 'https://wa.me/2290159188023?text=Bonjour,%20je%20souhaite%20passer%20une%20commande%20au%20restaurant%20de%20La%20Chrysalide%20Suite.'
     },
     {
       id: 4,
@@ -40,7 +46,9 @@ export default function HeroCarousel({ onOpenBooking }) {
       titleGold: 'Sécurité 24h/24',
       description: 'Hébergements de standing totalement équipés et surveillés pour votre tranquillité d’esprit.',
       btnText1: 'Voir nos Offres',
-      btnText2: 'Réserver en Ligne'
+      btnLink1: '#rooms',
+      btnText2: 'Réserver en Ligne',
+      btnAction2: 'booking'
     },
     {
       id: 5,
@@ -50,7 +58,9 @@ export default function HeroCarousel({ onOpenBooking }) {
       titleGold: 'Parakou',
       description: 'Profitez d’un séjour mémorable à La Chrysalide Suite avec un service personnalisé à votre écoute.',
       btnText1: 'En savoir plus',
-      btnText2: 'Nous Contacter'
+      btnLink1: '#about',
+      btnText2: 'Nous Contacter',
+      btnLink2: '#contact-location'
     }
   ];
 
@@ -104,16 +114,37 @@ export default function HeroCarousel({ onOpenBooking }) {
                     {slide.description}
                   </p>
                   <div className="d-flex flex-column flex-sm-row justify-content-center gap-2 gap-sm-3 pt-2">
-                    <a href="#rooms" className="btn btn-primary py-2.5 py-md-3 px-3 px-sm-4 px-md-5 animated slideInLeft text-uppercase font-weight-bold shadow-lg" style={{ fontSize: '0.85rem' }}>
+                    <a href={slide.btnLink1 || '#rooms'} className="btn btn-primary py-2.5 py-md-3 px-3 px-sm-4 px-md-5 animated slideInLeft text-uppercase font-weight-bold shadow-lg" style={{ fontSize: '0.85rem' }}>
                       {slide.btnText1}
                     </a>
-                    <button 
-                      onClick={onOpenBooking} 
-                      className="btn btn-light py-2.5 py-md-3 px-3 px-sm-4 px-md-5 animated slideInRight text-uppercase font-weight-bold shadow-lg"
-                      style={{ fontSize: '0.85rem' }}
-                    >
-                      {slide.btnText2}
-                    </button>
+                    
+                    {slide.btnAction2 === 'booking' ? (
+                      <button 
+                        onClick={onOpenBooking} 
+                        className="btn btn-light py-2.5 py-md-3 px-3 px-sm-4 px-md-5 animated slideInRight text-uppercase font-weight-bold shadow-lg"
+                        style={{ fontSize: '0.85rem' }}
+                      >
+                        {slide.btnText2}
+                      </button>
+                    ) : slide.btnLink2?.startsWith('http') ? (
+                      <a 
+                        href={slide.btnLink2} 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        className="btn btn-light py-2.5 py-md-3 px-3 px-sm-4 px-md-5 animated slideInRight text-uppercase font-weight-bold shadow-lg"
+                        style={{ fontSize: '0.85rem' }}
+                      >
+                        {slide.btnText2}
+                      </a>
+                    ) : (
+                      <a 
+                        href={slide.btnLink2 || '#contact-location'} 
+                        className="btn btn-light py-2.5 py-md-3 px-3 px-sm-4 px-md-5 animated slideInRight text-uppercase font-weight-bold shadow-lg"
+                        style={{ fontSize: '0.85rem' }}
+                      >
+                        {slide.btnText2}
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>

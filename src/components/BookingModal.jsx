@@ -8,8 +8,8 @@ export default function BookingModal({ isOpen, onClose, selectedRoom, searchPara
     email: '',
     checkIn: searchParams?.checkIn || '',
     checkOut: searchParams?.checkOut || '',
-    roomType: selectedRoom?.name || 'Chambre Climatisée Confort',
-    roomPrice: selectedRoom?.price || 25000,
+    roomType: selectedRoom ? selectedRoom.name : 'Chambres climatisées',
+    roomPrice: selectedRoom ? selectedRoom.price : 25000,
     guests: searchParams?.guests || '2',
     notes: ''
   });
@@ -220,19 +220,12 @@ Merci de confirmer la disponibilité !`;
                         value={formData.roomType}
                         onChange={(e) => {
                           const val = e.target.value;
-                          let price = 25000;
-                          if (val.includes('Ventilée')) price = 15000;
-                          else if (val.includes('Deluxe')) price = 30000;
-                          else if (val.includes('VIP')) price = 45000;
-                          else if (val.includes('Appartement')) price = 60000;
+                          const price = val === 'Chambres ventilées' ? 15000 : 25000;
                           setFormData({ ...formData, roomType: val, roomPrice: price });
                         }}
                       >
-                        <option value="Chambre Ventilée Standard">Chambre Ventilée Standard (15.000 FCFA)</option>
-                        <option value="Chambre Climatisée Confort">Chambre Climatisée Confort (25.000 FCFA)</option>
-                        <option value="Chambre Climatisée Deluxe">Chambre Climatisée Deluxe (30.000 FCFA)</option>
-                        <option value="Suite Climatisée VIP Prestige">Suite Climatisée VIP Prestige (45.000 FCFA)</option>
-                        <option value="Appartement Climatisé Meublé">Appartement Climatisé Meublé (60.000 FCFA)</option>
+                        <option value="Chambres ventilées">Chambre Ventilée (15.000 FCFA / nuit)</option>
+                        <option value="Chambres climatisées">Chambre Climatisée (25.000 FCFA / nuit)</option>
                       </select>
                     </div>
 

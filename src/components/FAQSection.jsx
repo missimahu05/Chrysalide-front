@@ -4,7 +4,7 @@ export default function FAQSection({ onOpenBooking }) {
   const faqs = [
     {
       q: "Quels sont les tarifs des chambres et des suites ?",
-      a: "Nos tarifs s'adaptent à toutes vos exigences : Chambre Ventilée Standard à 15.000 FCFA/nuit, Chambre Climatisée Confort à 25.000 FCFA/nuit, Chambre Climatisée Deluxe à 30.000 FCFA/nuit, Suite VIP Prestige à 45.000 FCFA/nuit et Appartement Meublé 2 chambres à 60.000 FCFA/nuit."
+      a: "Nos tarifs sont de 15.000 FCFA/nuit pour la Chambre Ventilée et de 25.000 FCFA/nuit pour la Chambre Climatisée."
     },
     {
       q: "Où se situe exactement La Chrysalide Suite à Parakou ?",

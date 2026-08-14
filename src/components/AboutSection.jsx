@@ -109,13 +109,13 @@ export default function AboutSection({ onOpenBooking }) {
 
             {/* Main Action Button */}
             <div className="pt-2">
-              <button 
-                onClick={onOpenBooking} 
-                className="btn py-2.5 py-md-3 px-4 px-md-5 text-uppercase font-weight-bold shadow rounded-3 text-white border-0 w-100 w-sm-auto"
+              <a 
+                href="#rooms" 
+                className="btn py-2.5 py-md-3 px-4 px-md-5 text-uppercase font-weight-bold shadow rounded-3 text-white border-0 w-100 w-sm-auto d-inline-block text-center text-decoration-none"
                 style={{ backgroundColor: '#25854C', fontSize: '0.85rem' }}
               >
-                EN SAVOIR PLUS & RÉSERVER
-              </button>
+                <i className="fa fa-bed me-2"></i>DÉCOUVRIR NOS CHAMBRES & TARIFS
+              </a>
             </div>
 
           </div>
