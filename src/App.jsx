@@ -51,7 +51,7 @@ export default function App() {
     <div className="bg-white text-dark min-vh-100 font-sans">
       <Navbar onOpenBooking={() => handleOpenBooking()} />
       
-      <main>
+      <main style={{ paddingTop: '72px' }}>
         {/* Section 1: Hero Carousel */}
         <HeroCarousel onOpenBooking={() => handleOpenBooking()} />
 
@@ -73,10 +73,7 @@ export default function App() {
         {/* Section 5: Video Presentation */}
         <VideoSection onOpenBooking={() => handleOpenBooking()} />
 
-        {/* Section 6: VIP Services & Prestations */}
-        <ServicesSection onSelectCategory={handleSelectCategory} />
-
-        {/* Section 6.5: Événements & Privatisation */}
+        {/* Section 6: Événements, Bar Lounge & Privatisation */}
         <EventsSection onOpenBooking={() => handleOpenBooking()} />
 
         {/* Section 7: Process Steps (Comment réserver ?) */}

@@ -10,7 +10,7 @@ export default function AboutSection({ onOpenBooking }) {
   const leftColumnImages = [
     {
       id: 1,
-      img: '/photos/2026-08-05-09.49.05-1.jpeg',
+      img: '/photos/2026-08-05-09.49.05.jpeg',
       title: 'Chambres Climatisées',
       sub: 'Confort & Calme Absolu',
       tag: 'Hébergement',
@@ -31,7 +31,7 @@ export default function AboutSection({ onOpenBooking }) {
   const rightColumnImages = [
     {
       id: 3,
-      img: '/photos/2026-08-05-09.49.06-1.jpeg',
+      img: '/img/gallery/chrysalide-real-3.jpeg',
       title: 'Bar Lounge VIP & Resto',
       sub: 'Ambiance feutrée, boissons & grillades',
       tag: 'Lounge 24/7',
@@ -40,7 +40,7 @@ export default function AboutSection({ onOpenBooking }) {
     },
     {
       id: 4,
-      img: '/photos/2026-08-05-09.49.07.jpeg',
+      img: '/img/gallery/chrysalide-real-4.jpeg',
       title: 'Salons & Conciergerie',
       sub: 'Service attentionné & Sécurité 24h/24',
       tag: 'Service',

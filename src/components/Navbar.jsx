@@ -25,7 +25,7 @@ export default function Navbar({ onOpenBooking }) {
   return (
     <>
       {/* Top Header Bar with Standard Responsive Layout */}
-      <header className="container-fluid px-3 px-lg-4 sticky-top shadow-sm border-bottom border-2" style={{ backgroundColor: '#FFFFFF', borderColor: '#CFA34C', zIndex: 1050 }}>
+      <header className="container-fluid px-3 px-lg-4 fixed-top shadow-sm border-bottom border-2" style={{ backgroundColor: '#FFFFFF', borderColor: '#CFA34C', zIndex: 1050 }}>
         <div className="d-flex align-items-center justify-content-between py-2 py-md-3">
           
           {/* Left: Brand Logo */}
