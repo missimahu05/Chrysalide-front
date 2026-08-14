@@ -33,9 +33,9 @@ export default function HeroCarousel({ onOpenBooking }) {
       titleGreen: 'Restaurant &',
       titleGold: 'Restauration',
       description: 'Savourez une cuisine délicieuse avec nos plats préparés sur place pour vos repas d’affaires ou de famille.',
-      btnText1: 'Notre Carte',
+      btnText1: 'Voir la Carte',
       btnLink1: '#events',
-      btnText2: 'Commander',
+      btnText2: 'Commander un Repas',
       btnLink2: 'https://wa.me/2290159188023?text=Bonjour,%20je%20souhaite%20passer%20une%20commande%20au%20restaurant%20de%20La%20Chrysalide%20Suite.'
     },
     {
@@ -81,9 +81,35 @@ export default function HeroCarousel({ onOpenBooking }) {
     setActiveIndex((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
+  const handleSmoothScroll = (e, target) => {
+    if (target && target.startsWith('#')) {
+      e.preventDefault();
+      const elem = document.querySelector(target);
+      if (elem) {
+        elem.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <div className="container-fluid p-0 position-relative hero-carousel-wrapper" id="hero" style={{ overflow: 'hidden' }}>
       <div className="carousel slide position-relative hero-carousel-inner">
+        
+        {/* Carousel Indicators (Dots) */}
+        <div className="carousel-indicators" style={{ zIndex: 15, marginBottom: '1.2rem' }}>
+          {slides.map((_, idx) => (
+            <button
+              key={idx}
+              type="button"
+              className={`rounded-circle mx-1 ${idx === activeIndex ? 'active bg-warning' : 'bg-white opacity-50'}`}
+              style={{ width: '12px', height: '12px', border: 'none', transition: 'all 0.3s' }}
+              onClick={() => setActiveIndex(idx)}
+              aria-label={`Diapositive ${idx + 1}`}
+            ></button>
+          ))}
+        </div>
+
+        {/* Carousel Inner Slides */}
         <div className="carousel-inner" style={{ backgroundColor: '#0F172B' }}>
           {slides.map((slide, index) => (
             <div 
@@ -113,8 +139,15 @@ export default function HeroCarousel({ onOpenBooking }) {
                   <p className="text-white-50 small fs-md-5 mb-3 mb-md-4 px-1 px-md-5 font-weight-medium" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.7)', fontSize: 'clamp(0.85rem, 2.2vw, 1.1rem)' }}>
                     {slide.description}
                   </p>
+                  
+                  {/* Dynamic Action Buttons for Active Slide */}
                   <div className="d-flex flex-column flex-sm-row justify-content-center gap-2 gap-sm-3 pt-2">
-                    <a href={slide.btnLink1 || '#rooms'} className="btn btn-primary py-2.5 py-md-3 px-3 px-sm-4 px-md-5 animated slideInLeft text-uppercase font-weight-bold shadow-lg" style={{ fontSize: '0.85rem' }}>
+                    <a 
+                      href={slide.btnLink1 || '#rooms'} 
+                      onClick={(e) => handleSmoothScroll(e, slide.btnLink1)}
+                      className="btn btn-primary py-2.5 py-md-3 px-3 px-sm-4 px-md-5 animated slideInLeft text-uppercase font-weight-bold shadow-lg" 
+                      style={{ fontSize: '0.85rem' }}
+                    >
                       {slide.btnText1}
                     </a>
                     
@@ -139,6 +172,7 @@ export default function HeroCarousel({ onOpenBooking }) {
                     ) : (
                       <a 
                         href={slide.btnLink2 || '#contact-location'} 
+                        onClick={(e) => handleSmoothScroll(e, slide.btnLink2)}
                         className="btn btn-light py-2.5 py-md-3 px-3 px-sm-4 px-md-5 animated slideInRight text-uppercase font-weight-bold shadow-lg"
                         style={{ fontSize: '0.85rem' }}
                       >
@@ -152,6 +186,7 @@ export default function HeroCarousel({ onOpenBooking }) {
           ))}
         </div>
 
+        {/* Carousel Prev/Next Navigation Controls */}
         <button 
           className="carousel-control-prev" 
           type="button" 
