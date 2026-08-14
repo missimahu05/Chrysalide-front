@@ -10,7 +10,7 @@ export default function AboutSection({ onOpenBooking }) {
   const leftColumnImages = [
     {
       id: 1,
-      img: '/photos/2026-08-05-09.49.05.jpeg',
+      img: '/photos/2026-08-05-09.49.05-1.jpeg',
       title: 'Chambres Climatisées',
       sub: 'Confort & Calme Absolu',
       tag: 'Hébergement',
@@ -75,34 +75,34 @@ export default function AboutSection({ onOpenBooking }) {
             </p>
 
             {/* 3 Green Outline Stat Cards matching chrysalide-rosy design */}
-            <div className="row g-3 mb-4">
+            <div className="row g-2 g-sm-3 mb-4">
               <div className="col-4">
-                <div className="bg-white rounded-3 p-3 text-center border shadow-sm h-100" style={{ borderColor: 'rgba(37, 133, 76, 0.3)' }}>
-                  <div className="d-inline-flex p-2 rounded-circle mb-2" style={{ backgroundColor: 'rgba(37, 133, 76, 0.1)' }}>
-                    <BedDouble size={22} style={{ color: '#25854C' }} />
+                <div className="bg-white rounded-3 p-2 p-sm-3 text-center border shadow-sm h-100" style={{ borderColor: 'rgba(37, 133, 76, 0.3)' }}>
+                  <div className="d-inline-flex p-1.5 p-sm-2 rounded-circle mb-1 mb-sm-2" style={{ backgroundColor: 'rgba(37, 133, 76, 0.1)' }}>
+                    <BedDouble size={18} style={{ color: '#25854C' }} />
                   </div>
-                  <h4 className="mb-0 font-weight-bold text-dark fs-4">15+</h4>
-                  <p className="mb-0 text-muted font-weight-medium text-uppercase" style={{ fontSize: '0.7rem' }}>Chambres</p>
+                  <h4 className="mb-0 font-weight-bold text-dark fs-5 fs-sm-4">15+</h4>
+                  <p className="mb-0 text-muted font-weight-medium text-uppercase" style={{ fontSize: '0.65rem' }}>Chambres</p>
                 </div>
               </div>
 
               <div className="col-4">
-                <div className="bg-white rounded-3 p-3 text-center border shadow-sm h-100" style={{ borderColor: 'rgba(37, 133, 76, 0.3)' }}>
-                  <div className="d-inline-flex p-2 rounded-circle mb-2" style={{ backgroundColor: 'rgba(37, 133, 76, 0.1)' }}>
-                    <Users size={22} style={{ color: '#25854C' }} />
+                <div className="bg-white rounded-3 p-2 p-sm-3 text-center border shadow-sm h-100" style={{ borderColor: 'rgba(37, 133, 76, 0.3)' }}>
+                  <div className="d-inline-flex p-1.5 p-sm-2 rounded-circle mb-1 mb-sm-2" style={{ backgroundColor: 'rgba(37, 133, 76, 0.1)' }}>
+                    <Users size={18} style={{ color: '#25854C' }} />
                   </div>
-                  <h4 className="mb-0 font-weight-bold text-dark fs-4">24/7</h4>
-                  <p className="mb-0 text-muted font-weight-medium text-uppercase" style={{ fontSize: '0.7rem' }}>Personnel</p>
+                  <h4 className="mb-0 font-weight-bold text-dark fs-5 fs-sm-4">24/7</h4>
+                  <p className="mb-0 text-muted font-weight-medium text-uppercase" style={{ fontSize: '0.65rem' }}>Personnel</p>
                 </div>
               </div>
 
               <div className="col-4">
-                <div className="bg-white rounded-3 p-3 text-center border shadow-sm h-100" style={{ borderColor: 'rgba(37, 133, 76, 0.3)' }}>
-                  <div className="d-inline-flex p-2 rounded-circle mb-2" style={{ backgroundColor: 'rgba(37, 133, 76, 0.1)' }}>
-                    <ShieldCheck size={22} style={{ color: '#25854C' }} />
+                <div className="bg-white rounded-3 p-2 p-sm-3 text-center border shadow-sm h-100" style={{ borderColor: 'rgba(37, 133, 76, 0.3)' }}>
+                  <div className="d-inline-flex p-1.5 p-sm-2 rounded-circle mb-1 mb-sm-2" style={{ backgroundColor: 'rgba(37, 133, 76, 0.1)' }}>
+                    <ShieldCheck size={18} style={{ color: '#25854C' }} />
                   </div>
-                  <h4 className="mb-0 font-weight-bold text-dark fs-4">100%</h4>
-                  <p className="mb-0 text-muted font-weight-medium text-uppercase" style={{ fontSize: '0.7rem' }}>Confort</p>
+                  <h4 className="mb-0 font-weight-bold text-dark fs-5 fs-sm-4">100%</h4>
+                  <p className="mb-0 text-muted font-weight-medium text-uppercase" style={{ fontSize: '0.65rem' }}>Confort</p>
                 </div>
               </div>
             </div>
@@ -111,8 +111,8 @@ export default function AboutSection({ onOpenBooking }) {
             <div className="pt-2">
               <button 
                 onClick={onOpenBooking} 
-                className="btn py-3 px-4 px-md-5 text-uppercase font-weight-bold shadow rounded-3 text-white border-0 fs-6"
-                style={{ backgroundColor: '#25854C' }}
+                className="btn py-2.5 py-md-3 px-4 px-md-5 text-uppercase font-weight-bold shadow rounded-3 text-white border-0 w-100 w-sm-auto"
+                style={{ backgroundColor: '#25854C', fontSize: '0.85rem' }}
               >
                 EN SAVOIR PLUS & RÉSERVER
               </button>

@@ -50,17 +50,17 @@ export default function VideoSection({ onOpenBooking }) {
             {/* Custom Overlay Play Button if not playing */}
             {!isPlaying && (
               <div 
-                className="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column align-items-center justify-content-center"
+                className="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column align-items-center justify-content-center p-2"
                 style={{ background: 'rgba(0, 0, 0, 0.45)', cursor: 'pointer', zIndex: 5 }}
                 onClick={togglePlay}
               >
                 <div 
                   className="rounded-circle d-flex align-items-center justify-content-center shadow-lg"
-                  style={{ width: '85px', height: '85px', backgroundColor: '#CFA34C', color: '#FFF', transition: 'transform 0.3s ease' }}
+                  style={{ width: 'clamp(55px, 12vw, 85px)', height: 'clamp(55px, 12vw, 85px)', backgroundColor: '#CFA34C', color: '#FFF', transition: 'transform 0.3s ease' }}
                 >
-                  <i className="fa fa-play fa-2x ms-1"></i>
+                  <i className="fa fa-play fa-lg fa-md-2x ms-1"></i>
                 </div>
-                <h5 className="text-white mt-3 font-weight-bold text-uppercase" style={{ letterSpacing: '1px', textShadow: '0 2px 6px rgba(0,0,0,0.8)' }}>
+                <h5 className="text-white mt-2 mt-md-3 font-weight-bold text-uppercase text-center fs-6 fs-md-5" style={{ letterSpacing: '1px', textShadow: '0 2px 6px rgba(0,0,0,0.8)' }}>
                   Lancer la Présentation Vidéo
                 </h5>
               </div>
@@ -69,33 +69,33 @@ export default function VideoSection({ onOpenBooking }) {
         </div>
 
         {/* Features banner below video */}
-        <div className="row g-4 mt-4 text-center">
+        <div className="row g-2 g-md-4 mt-3 mt-md-4 text-center">
           <div className="col-md-3 col-6">
-            <div className="p-3 bg-light rounded shadow-sm border border-light">
-              <i className="fa fa-cocktail text-chrysalide-gold fa-2x mb-2"></i>
-              <h6 className="fw-bold mb-1 text-dark">Bar Lounge & Cocktails</h6>
-              <small className="text-muted">Ambiance chic et raffinée</small>
+            <div className="p-2 p-sm-3 bg-light rounded shadow-sm border border-light h-100">
+              <i className="fa fa-cocktail text-chrysalide-gold fa-lg fa-md-2x mb-2"></i>
+              <h6 className="fw-bold mb-1 text-dark fs-6" style={{ fontSize: '0.88rem' }}>Bar Lounge</h6>
+              <small className="text-muted d-block" style={{ fontSize: '0.75rem' }}>Ambiance chic & raffinée</small>
             </div>
           </div>
           <div className="col-md-3 col-6">
-            <div className="p-3 bg-light rounded shadow-sm border border-light">
-              <i className="fa fa-wine-bottle text-chrysalide-purple fa-2x mb-2"></i>
-              <h6 className="fw-bold mb-1 text-dark">Cave à Vin</h6>
-              <small className="text-muted">Sélection de grand crus</small>
+            <div className="p-2 p-sm-3 bg-light rounded shadow-sm border border-light h-100">
+              <i className="fa fa-wine-bottle text-chrysalide-purple fa-lg fa-md-2x mb-2"></i>
+              <h6 className="fw-bold mb-1 text-dark fs-6" style={{ fontSize: '0.88rem' }}>Cave à Vin</h6>
+              <small className="text-muted d-block" style={{ fontSize: '0.75rem' }}>Grands crus & dégustations</small>
             </div>
           </div>
           <div className="col-md-3 col-6">
-            <div className="p-3 bg-light rounded shadow-sm border border-light">
-              <i className="fa fa-utensils text-chrysalide-green fa-2x mb-2"></i>
-              <h6 className="fw-bold mb-1 text-dark">Restauration</h6>
-              <small className="text-muted">Plats gourmands sur place</small>
+            <div className="p-2 p-sm-3 bg-light rounded shadow-sm border border-light h-100">
+              <i className="fa fa-utensils text-chrysalide-green fa-lg fa-md-2x mb-2"></i>
+              <h6 className="fw-bold mb-1 text-dark fs-6" style={{ fontSize: '0.88rem' }}>Restauration</h6>
+              <small className="text-muted d-block" style={{ fontSize: '0.75rem' }}>Plats gourmands sur place</small>
             </div>
           </div>
           <div className="col-md-3 col-6">
-            <div className="p-3 bg-light rounded shadow-sm border border-light">
-              <i className="fa fa-hotel text-chrysalide-gold fa-2x mb-2"></i>
-              <h6 className="fw-bold mb-1 text-dark">Chambres & Suites</h6>
-              <small className="text-muted">Sécurité & Confort 24h/24</small>
+            <div className="p-2 p-sm-3 bg-light rounded shadow-sm border border-light h-100">
+              <i className="fa fa-hotel text-chrysalide-gold fa-lg fa-md-2x mb-2"></i>
+              <h6 className="fw-bold mb-1 text-dark fs-6" style={{ fontSize: '0.88rem' }}>Chambres & Suites</h6>
+              <small className="text-muted d-block" style={{ fontSize: '0.75rem' }}>Sécurité & Confort 24h/24</small>
             </div>
           </div>
         </div>

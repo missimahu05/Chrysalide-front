@@ -155,13 +155,13 @@ Merci de confirmer la disponibilité !`;
                     <div className="col-6">
                       <button 
                         type="button"
-                        className={`btn w-100 py-3 px-2 text-start rounded-3 border-2 d-flex align-items-center ${paymentMode === 'whatsapp' ? 'btn-outline-success active bg-light border-success' : 'btn-outline-secondary'}`}
+                        className={`btn w-100 py-2.5 py-md-3 px-2 text-start rounded-3 border-2 d-flex align-items-center ${paymentMode === 'whatsapp' ? 'btn-outline-success active bg-light border-success' : 'btn-outline-secondary'}`}
                         onClick={() => setPaymentMode('whatsapp')}
                       >
-                        <i className="fab fa-whatsapp fa-2x text-success me-2 me-md-3 flex-shrink-0"></i>
+                        <i className="fab fa-whatsapp fa-lg fa-md-2x text-success me-2 flex-shrink-0"></i>
                         <div>
-                          <strong className="d-block text-dark small leading-tight">WhatsApp Direct</strong>
-                          <small className="text-muted d-none d-md-block" style={{ fontSize: '0.72rem' }}>Discussion & validation gratuite</small>
+                          <strong className="d-block text-dark leading-tight" style={{ fontSize: '0.8rem' }}>WhatsApp Direct</strong>
+                          <small className="text-muted d-none d-md-block" style={{ fontSize: '0.7rem' }}>Discussion & validation gratuite</small>
                         </div>
                       </button>
                     </div>
@@ -169,13 +169,13 @@ Merci de confirmer la disponibilité !`;
                     <div className="col-6">
                       <button 
                         type="button"
-                        className={`btn w-100 py-3 px-2 text-start rounded-3 border-2 d-flex align-items-center ${paymentMode === 'feexpay' ? 'btn-outline-warning active bg-light border-warning' : 'btn-outline-secondary'}`}
+                        className={`btn w-100 py-2.5 py-md-3 px-2 text-start rounded-3 border-2 d-flex align-items-center ${paymentMode === 'feexpay' ? 'btn-outline-warning active bg-light border-warning' : 'btn-outline-secondary'}`}
                         onClick={() => setPaymentMode('feexpay')}
                       >
-                        <i className="fa fa-mobile-alt fa-2x text-warning me-2 me-md-3 flex-shrink-0" style={{ color: '#CFA34C' }}></i>
+                        <i className="fa fa-mobile-alt fa-lg fa-md-2x text-warning me-2 flex-shrink-0" style={{ color: '#CFA34C' }}></i>
                         <div>
-                          <strong className="d-block text-dark small leading-tight">Payer par MoMo / FeexPay</strong>
-                          <small className="text-muted d-none d-md-block" style={{ fontSize: '0.72rem' }}>MTN, Moov, Wave, Carte</small>
+                          <strong className="d-block text-dark leading-tight" style={{ fontSize: '0.8rem' }}>MoMo / FeexPay</strong>
+                          <small className="text-muted d-none d-md-block" style={{ fontSize: '0.7rem' }}>MTN, Moov, Wave, Carte</small>
                         </div>
                       </button>
                     </div>

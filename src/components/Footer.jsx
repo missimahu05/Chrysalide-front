@@ -133,7 +133,7 @@ export default function Footer({ onOpenBooking }) {
         {/* Bottom Copyright Bar */}
         <div className="pt-3 border-top border-secondary border-opacity-25">
           <div className="row align-items-center">
-            <div className="col-md-6 text-center text-md-start text-white-50" style={{ fontSize: '0.85rem' }}>
+            <div className="col-md-6 text-center text-md-start text-white-50 mb-2 mb-md-0" style={{ fontSize: '0.85rem' }}>
               &copy; {new Date().getFullYear()} <strong className="text-white"><span className="text-chrysalide-green">La Chrysalide</span> <span className="text-chrysalide-gold">Suite</span></strong>. Tous droits réservés.
             </div>
             <div className="col-md-6 text-center text-md-end text-white-50" style={{ fontSize: '0.85rem' }}>

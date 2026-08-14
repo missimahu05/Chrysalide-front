@@ -91,25 +91,26 @@ export default function HeroCarousel({ onOpenBooking }) {
                 alt={slide.titleGreen} 
                 style={{ objectFit: 'cover', filter: 'brightness(0.55)' }}
               />
-              <div className="carousel-caption d-flex flex-column align-items-center justify-content-center h-100 p-2 p-md-4" style={{ top: 0, bottom: 0, background: 'rgba(15, 23, 43, 0.45)' }}>
-                <div className="p-2 p-md-3 text-center" style={{ maxWidth: '950px' }}>
-                  <h6 className="section-title text-chrysalide-gold text-uppercase mb-2 mb-md-3 animated slideInDown font-weight-bold" style={{ letterSpacing: '1.5px', fontSize: '0.82rem' }}>
+              <div className="carousel-caption d-flex flex-column align-items-center justify-content-center h-100 p-2 p-sm-3 p-md-4" style={{ top: 0, bottom: 0, background: 'rgba(15, 23, 43, 0.45)' }}>
+                <div className="p-1 p-sm-2 p-md-3 text-center" style={{ maxWidth: '950px' }}>
+                  <h6 className="section-title text-chrysalide-gold text-uppercase mb-2 mb-md-3 animated slideInDown font-weight-bold" style={{ letterSpacing: '1.2px', fontSize: 'clamp(0.72rem, 2vw, 0.85rem)' }}>
                     {slide.subtitle}
                   </h6>
                   <h1 className="hero-heading text-white mb-2 mb-md-3 animated slideInDown font-weight-bold" style={{ textShadow: '0 4px 15px rgba(0,0,0,0.85)', lineHeight: '1.2' }}>
                     <span className="text-chrysalide-green">{slide.titleGreen}</span>{' '}
                     <span className="text-chrysalide-gold">{slide.titleGold}</span>
                   </h1>
-                  <p className="text-white-50 fs-6 fs-md-5 mb-3 mb-md-4 px-1 px-md-5 font-weight-medium" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.7)' }}>
+                  <p className="text-white-50 small fs-md-5 mb-3 mb-md-4 px-1 px-md-5 font-weight-medium" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.7)', fontSize: 'clamp(0.85rem, 2.2vw, 1.1rem)' }}>
                     {slide.description}
                   </p>
                   <div className="d-flex flex-column flex-sm-row justify-content-center gap-2 gap-sm-3 pt-2">
-                    <a href="#rooms" className="btn btn-primary py-2 py-md-3 px-4 px-md-5 animated slideInLeft text-uppercase font-weight-bold shadow-lg">
+                    <a href="#rooms" className="btn btn-primary py-2.5 py-md-3 px-3 px-sm-4 px-md-5 animated slideInLeft text-uppercase font-weight-bold shadow-lg" style={{ fontSize: '0.85rem' }}>
                       {slide.btnText1}
                     </a>
                     <button 
                       onClick={onOpenBooking} 
-                      className="btn btn-light py-2 py-md-3 px-4 px-md-5 animated slideInRight text-uppercase font-weight-bold shadow-lg"
+                      className="btn btn-light py-2.5 py-md-3 px-3 px-sm-4 px-md-5 animated slideInRight text-uppercase font-weight-bold shadow-lg"
+                      style={{ fontSize: '0.85rem' }}
                     >
                       {slide.btnText2}
                     </button>
@@ -124,9 +125,10 @@ export default function HeroCarousel({ onOpenBooking }) {
           className="carousel-control-prev" 
           type="button" 
           onClick={handlePrev}
-          style={{ zIndex: 10, background: 'none', border: 'none', width: '10%' }}
+          aria-label="Diapositive précédente"
+          style={{ zIndex: 10, background: 'none', border: 'none', width: '12%' }}
         >
-          <span className="carousel-control-prev-icon" aria-hidden="true" style={{ width: '2.2rem', height: '2.2rem' }}></span>
+          <span className="carousel-control-prev-icon" aria-hidden="true" style={{ width: '1.8rem', height: '1.8rem' }}></span>
           <span className="visually-hidden">Précédent</span>
         </button>
 
@@ -134,9 +136,10 @@ export default function HeroCarousel({ onOpenBooking }) {
           className="carousel-control-next" 
           type="button" 
           onClick={handleNext}
-          style={{ zIndex: 10, background: 'none', border: 'none', width: '10%' }}
+          aria-label="Diapositive suivante"
+          style={{ zIndex: 10, background: 'none', border: 'none', width: '12%' }}
         >
-          <span className="carousel-control-next-icon" aria-hidden="true" style={{ width: '2.2rem', height: '2.2rem' }}></span>
+          <span className="carousel-control-next-icon" aria-hidden="true" style={{ width: '1.8rem', height: '1.8rem' }}></span>
           <span className="visually-hidden">Suivant</span>
         </button>
       </div>

@@ -106,14 +106,15 @@ export default function EventsSection({ onOpenBooking }) {
         </div>
 
         {/* Bottom Banner */}
-        <div className="mt-5 p-4 rounded-4 bg-white shadow-sm border border-light text-center text-md-start d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+        <div className="mt-4 mt-md-5 p-3 p-md-4 rounded-4 bg-white shadow-sm border border-light text-center text-md-start d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
           <div>
-            <h5 className="fw-bold text-dark mb-1">Besoin d'une formule sur-mesure pour votre groupe ?</h5>
+            <h5 className="fw-bold text-dark mb-1 fs-6 fs-md-5">Besoin d'une formule sur-mesure pour votre groupe ?</h5>
             <p className="text-muted small mb-0">Hébergement + Restauration + Privatisation d'espace. Contactez notre direction événementielle 24h/24.</p>
           </div>
           <a 
             href="tel:+2290159188023"
-            className="btn btn-dark font-weight-bold text-uppercase px-4 py-2 text-nowrap rounded-3"
+            className="btn btn-dark font-weight-bold text-uppercase px-4 py-2.5 text-nowrap rounded-3 w-100 w-md-auto"
+            style={{ fontSize: '0.85rem' }}
           >
             <i className="fa fa-phone-alt me-2 text-chrysalide-gold"></i>Appeler le +229 0159188023
           </a>

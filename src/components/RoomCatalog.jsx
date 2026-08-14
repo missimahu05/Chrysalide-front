@@ -27,24 +27,24 @@ export default function RoomCatalog({ onSelectRoom, selectedFilter = 'all' }) {
           </h2>
           
           {/* Category Filter Pills */}
-          <div className="d-flex flex-nowrap overflow-auto py-3 px-1 gap-2 justify-content-center catalog-filter-scroll">
+          <div className="d-flex flex-nowrap overflow-auto py-3 px-1 gap-2 justify-content-start justify-content-md-center catalog-filter-scroll">
             <button 
-              className={`btn btn-sm text-nowrap px-4 py-2 text-uppercase font-weight-bold rounded-pill border-0 transition-all ${filter === 'all' ? 'text-white' : 'bg-light text-dark'}`}
-              style={{ backgroundColor: filter === 'all' ? '#25854C' : '#F4F5F7' }}
+              className={`btn btn-sm text-nowrap px-3 px-md-4 py-2 text-uppercase font-weight-bold rounded-pill border-0 transition-all ${filter === 'all' ? 'text-white' : 'bg-light text-dark'}`}
+              style={{ backgroundColor: filter === 'all' ? '#25854C' : '#F4F5F7', fontSize: '0.8rem' }}
               onClick={() => setFilter('all')}
             >
               Toutes les offres
             </button>
             <button 
-              className={`btn btn-sm text-nowrap px-4 py-2 text-uppercase font-weight-bold rounded-pill border-0 transition-all ${filter === 'ventilee' ? 'text-white' : 'bg-light text-dark'}`}
-              style={{ backgroundColor: filter === 'ventilee' ? '#25854C' : '#F4F5F7' }}
+              className={`btn btn-sm text-nowrap px-3 px-md-4 py-2 text-uppercase font-weight-bold rounded-pill border-0 transition-all ${filter === 'ventilee' ? 'text-white' : 'bg-light text-dark'}`}
+              style={{ backgroundColor: filter === 'ventilee' ? '#25854C' : '#F4F5F7', fontSize: '0.8rem' }}
               onClick={() => setFilter('ventilee')}
             >
               <i className="fa fa-fan me-1"></i>Chambres Ventilées
             </button>
             <button 
-              className={`btn btn-sm text-nowrap px-4 py-2 text-uppercase font-weight-bold rounded-pill border-0 transition-all ${filter === 'climatisee' ? 'text-white' : 'bg-light text-dark'}`}
-              style={{ backgroundColor: filter === 'climatisee' ? '#25854C' : '#F4F5F7' }}
+              className={`btn btn-sm text-nowrap px-3 px-md-4 py-2 text-uppercase font-weight-bold rounded-pill border-0 transition-all ${filter === 'climatisee' ? 'text-white' : 'bg-light text-dark'}`}
+              style={{ backgroundColor: filter === 'climatisee' ? '#25854C' : '#F4F5F7', fontSize: '0.8rem' }}
               onClick={() => setFilter('climatisee')}
             >
               <i className="fa fa-snowflake me-1"></i>Chambres Climatisées
@@ -59,7 +59,7 @@ export default function RoomCatalog({ onSelectRoom, selectedFilter = 'all' }) {
               <div className="bg-white rounded-4 overflow-hidden shadow-sm border h-100 d-flex flex-column transition-all hover-shadow">
                 
                 {/* Photo with Green Price Badge at Bottom Left */}
-                <div className="position-relative overflow-hidden" style={{ height: '260px' }}>
+                <div className="position-relative overflow-hidden" style={{ height: '230px' }}>
                   <img 
                     className="img-fluid w-100 h-100" 
                     src={room.image} 
@@ -69,18 +69,18 @@ export default function RoomCatalog({ onSelectRoom, selectedFilter = 'all' }) {
                   {/* Price Tag Badge on Photo */}
                   <div 
                     className="position-absolute bottom-0 start-0 m-3 px-3 py-1 text-white font-weight-bold rounded-3 shadow-sm"
-                    style={{ backgroundColor: '#25854C', fontSize: '0.85rem', zIndex: 3 }}
+                    style={{ backgroundColor: '#25854C', fontSize: '0.82rem', zIndex: 3 }}
                   >
                     {room.price.toLocaleString('fr-FR')} {room.currency} / {room.period}
                   </div>
                 </div>
 
                 {/* Card Content */}
-                <div className="p-4 d-flex flex-column flex-grow-1">
-                  <div className="d-flex justify-content-between align-items-center mb-3">
+                <div className="p-3 p-md-4 d-flex flex-column flex-grow-1">
+                  <div className="d-flex justify-content-between align-items-center mb-2 mb-md-3">
                     <h4 className="mb-0 text-dark font-weight-bold fs-5">{room.name}</h4>
                     {/* 5 Green Stars */}
-                    <div style={{ color: '#25854C', fontSize: '0.9rem' }}>
+                    <div style={{ color: '#25854C', fontSize: '0.85rem' }}>
                       <i className="fa fa-star me-1"></i>
                       <i className="fa fa-star me-1"></i>
                       <i className="fa fa-star me-1"></i>
@@ -90,15 +90,15 @@ export default function RoomCatalog({ onSelectRoom, selectedFilter = 'all' }) {
                   </div>
 
                   {/* Amenities Row */}
-                  <div className="d-flex align-items-center gap-3 text-secondary mb-3 small font-weight-medium">
+                  <div className="d-flex flex-wrap align-items-center gap-2 gap-md-3 text-secondary mb-3 small font-weight-medium">
                     <span className="d-flex align-items-center">
                       <i className="fa fa-bed text-chrysalide-green me-1"></i>{room.bedType}
                     </span>
-                    <span className="text-muted">|</span>
+                    <span className="text-muted d-none d-sm-inline">|</span>
                     <span className="d-flex align-items-center">
                       <i className="fa fa-bath text-chrysalide-green me-1"></i>{room.bathrooms}
                     </span>
-                    <span className="text-muted">|</span>
+                    <span className="text-muted d-none d-sm-inline">|</span>
                     <span className="d-flex align-items-center">
                       <i className="fa fa-wifi text-chrysalide-green me-1"></i>Wi-Fi
                     </span>
@@ -110,17 +110,17 @@ export default function RoomCatalog({ onSelectRoom, selectedFilter = 'all' }) {
                   </p>
 
                   {/* Dual Action Buttons */}
-                  <div className="d-flex gap-2 pt-3 border-top mt-auto">
+                  <div className="d-flex flex-column flex-sm-row gap-2 pt-3 border-top mt-auto">
                     <button 
-                      className="btn py-2.5 px-3 flex-fill text-uppercase font-weight-bold text-white rounded-3 shadow-sm border-0"
-                      style={{ backgroundColor: '#25854C', fontSize: '0.82rem' }}
+                      className="btn py-2 px-3 flex-fill text-uppercase font-weight-bold text-white rounded-3 shadow-sm border-0"
+                      style={{ backgroundColor: '#25854C', fontSize: '0.8rem' }}
                       onClick={() => setActiveModalRoom(room)}
                     >
                       VOIR DÉTAILS
                     </button>
                     <button 
-                      className="btn py-2.5 px-3 flex-fill text-uppercase font-weight-bold text-white rounded-3 shadow-sm border-0"
-                      style={{ backgroundColor: '#1E293B', fontSize: '0.82rem' }}
+                      className="btn py-2 px-3 flex-fill text-uppercase font-weight-bold text-white rounded-3 shadow-sm border-0"
+                      style={{ backgroundColor: '#1E293B', fontSize: '0.8rem' }}
                       onClick={() => onSelectRoom(room)}
                     >
                       RÉSERVER MAINTENANT

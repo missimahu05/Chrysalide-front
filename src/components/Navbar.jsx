@@ -33,10 +33,11 @@ export default function Navbar({ onOpenBooking }) {
             <img 
               src="/newfav.png" 
               alt="Logo La Chrysalide Suite" 
-              style={{ height: '42px', width: 'auto', marginRight: '10px', objectFit: 'contain' }} 
+              className="me-2"
+              style={{ height: '38px', width: 'auto', objectFit: 'contain' }} 
             />
             <div>
-              <h5 className="m-0 text-uppercase font-weight-bold" style={{ fontSize: '1.05rem', letterSpacing: '0.5px' }}>
+              <h5 className="m-0 text-uppercase font-weight-bold" style={{ fontSize: 'clamp(0.88rem, 2.5vw, 1.05rem)', letterSpacing: '0.5px' }}>
                 <span className="text-chrysalide-green">La Chrysalide</span> <span className="text-chrysalide-gold">Suite</span>
               </h5>
               <small className="text-chrysalide-purple text-uppercase font-weight-bold d-none d-sm-block" style={{ fontSize: '0.62rem', letterSpacing: '1.5px' }}>
@@ -45,55 +46,55 @@ export default function Navbar({ onOpenBooking }) {
             </div>
           </a>
 
-          {/* Center: Desktop Horizontal Navigation Menu (Visible ONLY on Desktop >= 992px) */}
-          <nav className="d-none d-lg-flex align-items-center gap-3 gap-xl-4 font-weight-bold" style={{ fontSize: '0.88rem' }}>
-            <a href="#hero" onClick={() => handleNavClick('hero')} className={`text-decoration-none transition-all d-flex align-items-center ${activeItem === 'hero' ? 'text-chrysalide-green' : 'text-dark hover-gold'}`}>
-              <Home size={15} className="me-1 text-chrysalide-gold" />Accueil
+          {/* Center: Desktop Horizontal Navigation Menu (Visible ONLY on Desktop >= 1200px) */}
+          <nav className="d-none d-xl-flex align-items-center gap-3 gap-xxl-4 font-weight-bold" style={{ fontSize: '0.85rem' }}>
+            <a href="#hero" onClick={() => handleNavClick('hero')} className={`text-decoration-none transition-all d-flex align-items-center text-nowrap ${activeItem === 'hero' ? 'text-chrysalide-green' : 'text-dark hover-gold'}`}>
+              <Home size={15} className="me-1 text-chrysalide-gold flex-shrink-0" />Accueil
             </a>
-            <a href="#about" onClick={() => handleNavClick('about')} className={`text-decoration-none transition-all d-flex align-items-center ${activeItem === 'about' ? 'text-chrysalide-green' : 'text-secondary hover-gold'}`}>
-              <Info size={15} className="me-1 text-chrysalide-green" />À propos
+            <a href="#about" onClick={() => handleNavClick('about')} className={`text-decoration-none transition-all d-flex align-items-center text-nowrap ${activeItem === 'about' ? 'text-chrysalide-green' : 'text-secondary hover-gold'}`}>
+              <Info size={15} className="me-1 text-chrysalide-green flex-shrink-0" />À propos
             </a>
-            <a href="#rooms" onClick={() => handleNavClick('rooms')} className={`text-decoration-none transition-all d-flex align-items-center ${activeItem === 'rooms' ? 'text-chrysalide-green' : 'text-secondary hover-gold'}`}>
-              <BedDouble size={15} className="me-1 text-chrysalide-gold" />Chambres
+            <a href="#rooms" onClick={() => handleNavClick('rooms')} className={`text-decoration-none transition-all d-flex align-items-center text-nowrap ${activeItem === 'rooms' ? 'text-chrysalide-green' : 'text-secondary hover-gold'}`}>
+              <BedDouble size={15} className="me-1 text-chrysalide-gold flex-shrink-0" />Chambres
             </a>
-            <a href="#events" onClick={() => handleNavClick('events')} className={`text-decoration-none transition-all d-flex align-items-center ${activeItem === 'events' ? 'text-chrysalide-green' : 'text-chrysalide-gold hover-gold'}`}>
-              <span className="badge bg-warning text-dark me-1" style={{ fontSize: '0.65rem' }}>NEW</span>
-              <Calendar size={15} className="me-1" />Événements
+            <a href="#events" onClick={() => handleNavClick('events')} className={`text-decoration-none transition-all d-flex align-items-center text-nowrap ${activeItem === 'events' ? 'text-chrysalide-green' : 'text-chrysalide-gold hover-gold'}`}>
+              <span className="badge bg-warning text-dark me-1" style={{ fontSize: '0.62rem' }}>NEW</span>
+              <Calendar size={15} className="me-1 flex-shrink-0" />Événements
             </a>
-            <a href="#services" onClick={() => handleNavClick('services')} className={`text-decoration-none transition-all d-flex align-items-center ${activeItem === 'services' ? 'text-chrysalide-green' : 'text-secondary hover-gold'}`}>
-              <Sparkles size={15} className="me-1 text-chrysalide-green" />Services
+            <a href="#services" onClick={() => handleNavClick('services')} className={`text-decoration-none transition-all d-flex align-items-center text-nowrap ${activeItem === 'services' ? 'text-chrysalide-green' : 'text-secondary hover-gold'}`}>
+              <Sparkles size={15} className="me-1 text-chrysalide-green flex-shrink-0" />Services
             </a>
-            <a href="#process" onClick={() => handleNavClick('process')} className={`text-decoration-none transition-all d-flex align-items-center ${activeItem === 'process' ? 'text-chrysalide-green' : 'text-secondary hover-gold'}`}>
-              <CalendarCheck size={15} className="me-1 text-chrysalide-gold" />Réservation
+            <a href="#process" onClick={() => handleNavClick('process')} className={`text-decoration-none transition-all d-flex align-items-center text-nowrap ${activeItem === 'process' ? 'text-chrysalide-green' : 'text-secondary hover-gold'}`}>
+              <CalendarCheck size={15} className="me-1 text-chrysalide-gold flex-shrink-0" />Réservation
             </a>
-            <a href="#contact-location" onClick={() => handleNavClick('contact-location')} className={`text-decoration-none transition-all d-flex align-items-center ${activeItem === 'contact-location' ? 'text-chrysalide-green' : 'text-secondary hover-gold'}`}>
-              <MapPin size={15} className="me-1 text-chrysalide-green" />Contact
+            <a href="#contact-location" onClick={() => handleNavClick('contact-location')} className={`text-decoration-none transition-all d-flex align-items-center text-nowrap ${activeItem === 'contact-location' ? 'text-chrysalide-green' : 'text-secondary hover-gold'}`}>
+              <MapPin size={15} className="me-1 text-chrysalide-green flex-shrink-0" />Contact
             </a>
           </nav>
 
-          {/* Right: Phone, Booking CTA & Hamburger Menu Toggle (Visible ONLY on Mobile & Tablet < 992px) */}
+          {/* Right: Phone, Booking CTA & Hamburger Menu Toggle */}
           <div className="d-flex align-items-center gap-2">
-            <a href="tel:+2290159188023" className="btn btn-sm btn-outline-dark d-none d-md-inline-flex align-items-center font-weight-bold rounded-3">
-              <Phone size={14} className="me-2 text-chrysalide-gold" />+229 0159188023
+            <a href="tel:+2290159188023" className="btn btn-sm btn-outline-dark d-none d-xxl-inline-flex align-items-center font-weight-bold rounded-3 text-nowrap">
+              <Phone size={14} className="me-2 text-chrysalide-gold flex-shrink-0" />+229 0159188023
             </a>
             
             <button 
-              className="btn py-2 px-3 px-md-4 text-uppercase font-weight-bold shadow-sm rounded-3 d-inline-flex align-items-center text-white border-0"
+              className="btn py-2 px-3 text-uppercase font-weight-bold shadow-sm rounded-3 d-inline-flex align-items-center text-white text-nowrap border-0"
               onClick={onOpenBooking}
-              style={{ backgroundColor: '#25854C', fontSize: '0.85rem' }}
+              style={{ backgroundColor: '#25854C', fontSize: '0.8rem' }}
             >
-              <CalendarCheck size={16} className="me-2" />Réserver
+              <CalendarCheck size={15} className="me-1.5 flex-shrink-0" />Réserver
             </button>
 
-            {/* Standard Mobile/Tablet Hamburger Toggle Button */}
+            {/* Standard Mobile/Tablet Hamburger Toggle Button (Visible on screens < 1200px) */}
             <button 
               type="button" 
-              className="btn ms-1 ms-md-2 d-flex d-lg-none align-items-center justify-content-center shadow-sm rounded-3 border-0"
+              className="btn ms-1 d-flex d-xl-none align-items-center justify-content-center shadow-sm rounded-3 border-0"
               onClick={toggleDrawer}
               aria-label="Menu de navigation mobile"
-              style={{ width: '42px', height: '42px', backgroundColor: '#25854C', color: '#FFFFFF' }}
+              style={{ width: '40px', height: '40px', backgroundColor: '#25854C', color: '#FFFFFF' }}
             >
-              <Menu size={24} />
+              <Menu size={22} />
             </button>
           </div>
 
