@@ -8,7 +8,7 @@ export default function TeamSection() {
       image: '/img/team-1.jpeg'
     },
     {
-      name: 'Bhilal CHITOU',
+      name: 'Jolidon HOUNGUE',
       role: 'Gérant & Exploitation',
       image: '/img/team-2.jpeg'
     }
