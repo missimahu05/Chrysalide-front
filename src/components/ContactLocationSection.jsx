@@ -1,6 +1,8 @@
 import React from 'react';
 
 export default function ContactLocationSection() {
+  const mapLink = "https://maps.app.goo.gl/yhHdgrsgHU1yNCg98";
+
   return (
     <section className="container-xxl min-vh-100 d-flex align-items-center py-5 bg-light border-top border-bottom border-light" id="contact-location">
       <div className="container">
@@ -38,7 +40,7 @@ export default function ContactLocationSection() {
                       <strong>Quartier Nima</strong>, Parakou, République du Bénin
                     </p>
                     <a 
-                      href="https://maps.app.goo.gl/bci8qTMKYKRBK5Ye7" 
+                      href={mapLink}
                       target="_blank" 
                       rel="noreferrer" 
                       className="btn btn-sm text-chrysalide-green font-weight-bold p-0 text-decoration-underline small"
@@ -112,7 +114,7 @@ export default function ContactLocationSection() {
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
               <a 
-                href="https://maps.app.goo.gl/bci8qTMKYKRBK5Ye7" 
+                href={mapLink} 
                 target="_blank" 
                 rel="noreferrer" 
                 className="position-absolute bottom-0 end-0 m-3 btn btn-sm btn-dark text-white font-weight-bold shadow-lg text-uppercase"

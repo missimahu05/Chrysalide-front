@@ -3,14 +3,14 @@ import React from 'react';
 export default function TeamSection() {
   const teamMembers = [
     {
-      name: 'Keroll FANOUKOUA',
-      role: 'Gérant & Direction',
-      image: '/img/team-1.jpeg'
+      name: 'Patrice PENANI',
+      role: 'Manager',
+      image: '/img/team/Manager.jpeg'
     },
     {
-      name: 'Jolidon HOUNGUE',
-      role: 'Gérant & Exploitation',
-      image: '/img/team-2.jpeg'
+      name: 'FASSINOU Herman Audrey',
+      role: 'Le CC (Chargé de Clientèle)',
+      image: '/img/team/CC.jpeg'
     }
   ];
 
@@ -22,7 +22,7 @@ export default function TeamSection() {
             Notre équipe
           </h6>
           <h2 className="mb-3 text-dark font-weight-bold fs-3 fs-md-2">
-            Rencontrez notre <span className="text-chrysalide-green">Direction</span>
+            Rencontrez notre <span className="text-chrysalide-green">Direction & Équipe</span>
           </h2>
           <p className="text-muted small fs-6" style={{ maxWidth: '650px', margin: '0 auto' }}>
             Une équipe passionnée et dévouée à rendre votre séjour agréable et mémorable à <strong><span className="text-chrysalide-green">La Chrysalide</span> <span className="text-chrysalide-gold">Suite</span></strong>.
@@ -31,20 +31,20 @@ export default function TeamSection() {
 
         <div className="row g-4 justify-content-center">
           {teamMembers.map((member, idx) => (
-            <div className="col-lg-4 col-md-6 col-12" key={idx}>
-              <div className="team-item rounded shadow-sm bg-white overflow-hidden text-center h-100 border-top border-3" style={{ borderColor: '#25854C' }}>
-                <div className="position-relative" style={{ height: '280px' }}>
+            <div className="col-lg-5 col-md-6 col-12" key={idx}>
+              <div className="team-item rounded-4 shadow-sm bg-white overflow-hidden text-center h-100 border-top border-4" style={{ borderColor: '#25854C' }}>
+                <div className="position-relative" style={{ height: '320px' }}>
                   <img 
                     className="img-fluid w-100 h-100" 
                     src={member.image} 
                     alt={member.name}
-                    style={{ objectFit: 'cover' }} 
+                    style={{ objectFit: 'cover', objectPosition: 'top' }} 
                   />
                   <div className="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                    <a className="btn btn-square btn-primary mx-1 shadow-sm" href="tel:+2290159188023" aria-label="Téléphone">
+                    <a className="btn btn-square btn-primary mx-1 shadow-sm rounded-circle" href="tel:+2290159188023" aria-label="Téléphone">
                       <i className="fa fa-phone-alt"></i>
                     </a>
-                    <a className="btn btn-square btn-success mx-1 shadow-sm" href="https://wa.me/2290159188023" target="_blank" rel="noreferrer" aria-label="WhatsApp" style={{ backgroundColor: '#25854C', borderColor: '#25854C' }}>
+                    <a className="btn btn-square btn-success mx-1 shadow-sm rounded-circle" href="https://wa.me/2290159188023" target="_blank" rel="noreferrer" aria-label="WhatsApp" style={{ backgroundColor: '#25854C', borderColor: '#25854C' }}>
                       <i className="fab fa-whatsapp"></i>
                     </a>
                   </div>

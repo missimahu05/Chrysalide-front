@@ -10,8 +10,8 @@ const getImgUrl = (url) => {
 
 // Fallback statique si l'API est indisponible
 const FALLBACK_ROOMS = [
-  { id: 'room-ventilee', name: 'Chambres ventilées', category: 'ventilee', categoryLabel: 'Chambre Ventilée', price: 15000, currency: 'FCFA', period: 'nuit', bedType: '1 Lit', bathrooms: '1 salle de bain', image: '/photos/2026-08-05-09.49.04.jpeg', gallery: ['/photos/2026-08-05-09.49.04.jpeg', '/photos/2026-08-05-09.49.04-1.jpeg', '/photos/2026-08-05-09.49.04-2.jpeg'], amenities: ['Ventilateur de plafond puissant', 'TV Canal+', 'Wi-Fi Haut Débit', 'Salle de bain privée', 'Room Service 24/7'], description: 'Un espace élégant et confortable, parfaitement équipé pour un séjour agréable à La Chrysalide Suite.', available: true },
-  { id: 'room-climatisee', name: 'Chambres climatisées', category: 'climatisee', categoryLabel: 'Chambre Climatisée', price: 25000, currency: 'FCFA', period: 'nuit', bedType: '1 Lit', bathrooms: '1 salle de bain', image: '/photos/2026-08-05-09.49.05.jpeg', gallery: ['/photos/2026-08-05-09.49.05.jpeg', '/photos/2026-08-05-09.49.05-1.jpeg', '/photos/2026-08-05-09.49.05-2.jpeg'], amenities: ['Climatisation Split silencieuse', 'TV Écran Plat HD', 'Wi-Fi Haut Débit', 'Mini-bar', 'Salle de bain privée moderne', 'Coffre-fort'], description: 'Climatisation dernière génération, décoration élégante et équipements premium pour votre confort absolu.', available: true }
+  { id: 'room-ventilee', name: 'Chambres ventilées', category: 'ventilee', categoryLabel: 'Chambre Ventilée', price: 7500, currency: 'FCFA', period: 'nuit', bedType: '1 Lit', bathrooms: '1 salle de bain', image: '/photos/2026-08-05-09.49.04.jpeg', gallery: ['/photos/2026-08-05-09.49.04.jpeg', '/photos/2026-08-05-09.49.04-1.jpeg', '/photos/2026-08-05-09.49.04-2.jpeg'], amenities: ['Ventilateur de plafond puissant', 'TV Canal+', 'Wi-Fi Haut Débit', 'Salle de bain privée', 'Room Service 24/7'], description: 'Un espace élégant et confortable, parfaitement équipé pour un séjour agréable à La Chrysalide Suite.', available: true },
+  { id: 'room-climatisee', name: 'Chambres climatisées', category: 'climatisee', categoryLabel: 'Chambre Climatisée', price: 12500, currency: 'FCFA', period: 'nuit', bedType: '1 Lit', bathrooms: '1 salle de bain', image: '/photos/2026-08-05-09.49.05.jpeg', gallery: ['/photos/2026-08-05-09.49.05.jpeg', '/photos/2026-08-05-09.49.05-1.jpeg', '/photos/2026-08-05-09.49.05-2.jpeg'], amenities: ['Climatisation Split silencieuse', 'TV Écran Plat HD', 'Wi-Fi Haut Débit', 'Mini-bar', 'Salle de bain privée moderne', 'Coffre-fort'], description: 'Climatisation dernière génération, décoration élégante et équipements premium pour votre confort absolu.', available: true }
 ];
 
 function RoomSkeleton() {
@@ -49,8 +49,8 @@ export default function RoomCatalog({ onSelectRoom, selectedFilter = 'all' }) {
 
   const categories = [
     { id: 'all', label: 'Toutes les offres', icon: null },
-    { id: 'ventilee', label: 'Chambres Ventilées', icon: 'fa-fan' },
-    { id: 'climatisee', label: 'Chambres Climatisées', icon: 'fa-snowflake' },
+    { id: 'ventilee', label: 'Chambres Ventilées (7.500 F)', icon: 'fa-fan' },
+    { id: 'climatisee', label: 'Chambres Climatisées (12.500 F)', icon: 'fa-snowflake' },
     { id: 'suite', label: 'Suite VIP', icon: 'fa-star' },
     { id: 'appartement', label: 'Appartement', icon: 'fa-building' },
   ];
@@ -58,129 +58,179 @@ export default function RoomCatalog({ onSelectRoom, selectedFilter = 'all' }) {
   return (
     <section className="container-xxl min-vh-100 d-flex align-items-center py-5 bg-white" id="rooms">
       <div className="container-fluid px-3 px-md-5 py-4">
+        
+        {/* Title */}
         <div className="text-center mb-4 mb-md-5">
-          <div className="d-flex align-items-center justify-content-center gap-2 mb-2">
-            <span style={{ width: '30px', height: '2px', backgroundColor: '#25854C' }}></span>
-            <h6 className="text-uppercase m-0 font-weight-bold" style={{ color: '#25854C', letterSpacing: '1px', fontSize: '0.85rem' }}>NOS CHAMBRES</h6>
-            <span style={{ width: '30px', height: '2px', backgroundColor: '#25854C' }}></span>
-          </div>
-          <h2 className="text-dark font-weight-bold fs-3 fs-md-2 text-uppercase mb-0">
-            Découvrez nos <span style={{ color: '#25854C' }}>CHAMBRES</span>
+          <h6 className="section-title text-center text-chrysalide-gold text-uppercase mb-2 font-weight-bold">
+            Hébergement d'Exception
+          </h6>
+          <h2 className="mb-3 text-dark font-weight-bold fs-3 fs-md-2">
+            Explorez nos <span className="text-chrysalide-green">Chambres & Suites</span>
           </h2>
-
-          {/* Filter pills */}
-          <div className="d-flex flex-nowrap overflow-auto py-3 px-1 gap-2 justify-content-start justify-content-md-center catalog-filter-scroll">
-            {categories.map(cat => (
-              <button
-                key={cat.id}
-                className={`btn btn-sm text-nowrap px-3 px-md-4 py-2 text-uppercase font-weight-bold rounded-pill border-0 transition-all ${filter === cat.id ? 'text-white' : 'bg-light text-dark'}`}
-                style={{ backgroundColor: filter === cat.id ? '#25854C' : '#F4F5F7', fontSize: '0.8rem' }}
-                onClick={() => setFilter(cat.id)}
-              >
-                {cat.icon && <i className={`fa ${cat.icon} me-1`}></i>}{cat.label}
-              </button>
-            ))}
-          </div>
+          <p className="text-muted small fs-6" style={{ maxWidth: '650px', margin: '0 auto' }}>
+            Des chambres ventilées à <strong>7 500 FCFA</strong> et climatisées à <strong>12 500 FCFA</strong>, aménagées avec soin à Parakou.
+          </p>
         </div>
 
-        <div className="row g-4 justify-content-center">
+        {/* Category Tabs */}
+        <div className="d-flex flex-wrap justify-content-center gap-2 mb-4 mb-md-5">
+          {categories.map(cat => (
+            <button
+              key={cat.id}
+              onClick={() => setFilter(cat.id)}
+              className={`btn btn-sm px-3 py-2 rounded-pill font-weight-bold transition-all border ${
+                filter === cat.id
+                  ? 'btn-success text-white shadow-sm'
+                  : 'btn-outline-secondary text-dark bg-light'
+              }`}
+              style={filter === cat.id ? { backgroundColor: '#25854C', borderColor: '#25854C' } : {}}
+            >
+              {cat.icon && <i className={`fa ${cat.icon} me-1.5`}></i>}
+              {cat.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Room Cards Grid */}
+        <div className="row g-4">
           {loading ? (
-            [1, 2].map(i => <RoomSkeleton key={i} />)
+            <>
+              <RoomSkeleton />
+              <RoomSkeleton />
+            </>
           ) : filteredRooms.length === 0 ? (
-            <div className="col-12 text-center py-5 text-muted">
-              <i className="fa fa-bed fa-3x mb-3 d-block" style={{ color: '#25854C' }}></i>
-              Aucune chambre disponible dans cette catégorie
+            <div className="col-12 text-center py-5">
+              <i className="fa fa-bed fa-3x text-muted mb-3 opacity-50"></i>
+              <h5 className="text-muted">Aucune chambre trouvée pour cette catégorie.</h5>
             </div>
-          ) : filteredRooms.map((room) => (
-            <div className="col-lg-6 col-12" key={room.id || room._id}>
-              <div className="bg-white rounded-4 overflow-hidden shadow-sm border h-100 d-flex flex-column transition-all hover-shadow">
-                <div className="position-relative overflow-hidden" style={{ height: '230px' }}>
-                  <img className="img-fluid w-100 h-100" src={getImgUrl(room.image)} alt={room.name} style={{ objectFit: 'cover' }} />
-                  <div className="position-absolute bottom-0 start-0 m-3 px-3 py-1 text-white font-weight-bold rounded-3 shadow-sm" style={{ backgroundColor: '#25854C', fontSize: '0.82rem', zIndex: 3 }}>
-                    {room.price.toLocaleString('fr-FR')} {room.currency} / {room.period}
+          ) : (
+            filteredRooms.map(room => (
+              <div key={room.id || room._id} className="col-lg-6 col-12">
+                <div className="card h-100 rounded-4 border-0 shadow-sm overflow-hidden bg-white hover-shadow transition-all position-relative">
+                  
+                  {/* Category & Status Badges */}
+                  <div className="position-absolute top-0 start-0 m-3 d-flex gap-2" style={{ zIndex: 10 }}>
+                    <span className="badge rounded-pill bg-dark text-white px-3 py-2 shadow-sm font-weight-bold uppercase" style={{ fontSize: '0.72rem', letterSpacing: '0.5px' }}>
+                      {room.categoryLabel || room.category}
+                    </span>
+                    {room.available ? (
+                      <span className="badge rounded-pill bg-success text-white px-3 py-2 shadow-sm font-weight-bold" style={{ fontSize: '0.72rem', backgroundColor: '#25854C' }}>
+                        <i className="fa fa-check-circle me-1"></i>Disponible
+                      </span>
+                    ) : (
+                      <span className="badge rounded-pill bg-danger text-white px-3 py-2 shadow-sm font-weight-bold" style={{ fontSize: '0.72rem' }}>
+                        Sur réservation
+                      </span>
+                    )}
                   </div>
-                  {!room.available && (
-                    <div className="position-absolute top-0 end-0 m-3 px-3 py-1 text-white font-weight-bold rounded-pill" style={{ backgroundColor: '#dc3545', fontSize: '0.72rem' }}>
-                      Indisponible
+
+                  {/* Room Image */}
+                  <div className="position-relative overflow-hidden" style={{ height: '260px' }}>
+                    <img 
+                      src={getImgUrl(room.image)} 
+                      alt={room.name}
+                      className="w-100 h-100 transition-all hover-scale"
+                      style={{ objectFit: 'cover' }}
+                      onError={(e) => { e.target.src = '/photos/2026-08-05-09.49.04.jpeg'; }}
+                    />
+                    <div className="position-absolute bottom-0 start-0 w-100 p-3" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent)' }}>
+                      <div className="d-flex align-items-end justify-content-between text-white">
+                        <div>
+                          <h4 className="fw-bold m-0 text-white fs-5">{room.name}</h4>
+                          <small className="text-white-50">{room.bedType} • {room.bathrooms}</small>
+                        </div>
+                        <div className="text-end">
+                          <span className="fs-4 fw-bold" style={{ color: '#FBBF24' }}>
+                            {Number(room.price).toLocaleString('fr-FR')} {room.currency || 'FCFA'}
+                          </span>
+                          <small className="d-block text-white-50" style={{ fontSize: '0.7rem' }}>/{room.period || 'nuit'}</small>
+                        </div>
+                      </div>
                     </div>
-                  )}
-                </div>
+                  </div>
 
-                <div className="p-3 p-md-4 d-flex flex-column flex-grow-1">
-                  <div className="d-flex justify-content-between align-items-center mb-2 mb-md-3">
-                    <h4 className="mb-0 text-dark font-weight-bold fs-5">{room.name}</h4>
-                    <div style={{ color: '#25854C', fontSize: '0.85rem' }}>
-                      {[1,2,3,4,5].map(i => <i key={i} className="fa fa-star me-1"></i>)}
+                  {/* Body & Amenities */}
+                  <div className="card-body p-4 d-flex flex-column justify-content-between">
+                    <p className="text-muted small mb-3 leading-relaxed" style={{ fontSize: '0.88rem' }}>
+                      {room.description}
+                    </p>
+
+                    {/* Amenities Badges */}
+                    {room.amenities && room.amenities.length > 0 && (
+                      <div className="d-flex flex-wrap gap-1.5 mb-4">
+                        {room.amenities.slice(0, 4).map((am, i) => (
+                          <span key={i} className="badge bg-light text-secondary border px-2.5 py-1.5 font-weight-normal small">
+                            <i className="fa fa-check me-1 text-chrysalide-green"></i>{am}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* Actions */}
+                    <div className="d-flex gap-2 pt-2 border-top">
+                      <button
+                        onClick={() => setActiveModalRoom(room)}
+                        className="btn btn-outline-dark btn-sm flex-grow-1 font-weight-bold py-2 rounded-3"
+                        style={{ fontSize: '0.82rem' }}
+                      >
+                        <i className="fa fa-eye me-1 text-chrysalide-gold"></i>Détails
+                      </button>
+
+                      <button
+                        onClick={() => onSelectRoom(room)}
+                        className="btn btn-success btn-sm flex-grow-1 font-weight-bold text-uppercase py-2 rounded-3 text-white"
+                        style={{ backgroundColor: '#25854C', borderColor: '#25854C', fontSize: '0.82rem' }}
+                      >
+                        <i className="fa fa-calendar-check me-1.5"></i>Réserver
+                      </button>
                     </div>
-                  </div>
 
-                  <div className="d-flex flex-wrap align-items-center gap-2 gap-md-3 text-secondary mb-3 small font-weight-medium">
-                    <span><i className="fa fa-bed text-chrysalide-green me-1"></i>{room.bedType}</span>
-                    <span className="text-muted d-none d-sm-inline">|</span>
-                    <span><i className="fa fa-bath text-chrysalide-green me-1"></i>{room.bathrooms}</span>
-                    <span className="text-muted d-none d-sm-inline">|</span>
-                    <span><i className="fa fa-wifi text-chrysalide-green me-1"></i>Wi-Fi</span>
-                    {room.size && <><span className="text-muted d-none d-sm-inline">|</span><span><i className="fa fa-expand-arrows-alt text-chrysalide-green me-1"></i>{room.size}</span></>}
-                  </div>
-
-                  <p className="text-secondary small mb-4 flex-grow-1 leading-relaxed">{room.description}</p>
-
-                  <div className="d-flex flex-column flex-sm-row gap-2 pt-3 border-top mt-auto">
-                    <button className="btn py-2 px-3 flex-fill text-uppercase font-weight-bold text-white rounded-3 shadow-sm border-0" style={{ backgroundColor: '#25854C', fontSize: '0.8rem' }} onClick={() => setActiveModalRoom(room)}>
-                      VOIR DÉTAILS
-                    </button>
-                    <button className="btn py-2 px-3 flex-fill text-uppercase font-weight-bold text-white rounded-3 shadow-sm border-0" style={{ backgroundColor: room.available ? '#1E293B' : '#6c757d', fontSize: '0.8rem' }} onClick={() => room.available && onSelectRoom(room)} disabled={!room.available}>
-                      {room.available ? 'RÉSERVER MAINTENANT' : 'INDISPONIBLE'}
-                    </button>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))
+          )}
         </div>
+
       </div>
 
-      {/* Modal Détails */}
+      {/* Details Modal */}
       {activeModalRoom && (
-        <div className="modal fade show d-block" style={{ backgroundColor: 'rgba(0,0,0,0.65)', zIndex: 10000 }} tabIndex="-1">
-          <div className="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-            <div className="modal-content rounded-4 overflow-hidden border-0 shadow-lg">
-              <div className="modal-header text-white p-3 p-md-4" style={{ backgroundColor: '#1E293B' }}>
-                <h5 className="modal-title font-weight-bold text-uppercase fs-5">
-                  <span style={{ color: '#25854C' }}>{activeModalRoom.name}</span>
+        <div className="modal fade show d-block" style={{ backgroundColor: 'rgba(0,0,0,0.6)', zIndex: 10000 }} tabIndex="-1">
+          <div className="modal-dialog modal-dialog-centered modal-lg">
+            <div className="modal-content rounded-4 border-0 shadow-lg overflow-hidden">
+              <div className="modal-header bg-dark text-white p-3">
+                <h5 className="modal-title fw-bold text-white fs-6">
+                  <i className="fa fa-bed me-2 text-warning"></i>{activeModalRoom.name}
                 </h5>
                 <button type="button" className="btn-close btn-close-white" onClick={() => setActiveModalRoom(null)}></button>
               </div>
-              <div className="modal-body p-3 p-md-4">
-                <div className="row g-2 g-md-3 mb-4">
-                  {(activeModalRoom.gallery || [activeModalRoom.image]).map((imgUrl, i) => (
-                    <div className="col-4" key={i}>
-                      <img src={getImgUrl(imgUrl)} alt={`${activeModalRoom.name} ${i}`} className="img-fluid rounded-3 shadow-sm" style={{ height: '120px', width: '100%', objectFit: 'cover' }} />
-                    </div>
+              <div className="modal-body p-4">
+                <img src={getImgUrl(activeModalRoom.image)} alt={activeModalRoom.name} className="w-100 rounded-3 mb-3" style={{ height: '250px', objectFit: 'cover' }} />
+                <h4 className="fw-bold text-success mb-2" style={{ color: '#25854C' }}>
+                  {Number(activeModalRoom.price).toLocaleString('fr-FR')} FCFA / {activeModalRoom.period || 'nuit'}
+                </h4>
+                <p className="text-muted leading-relaxed">{activeModalRoom.description}</p>
+                <h6 className="fw-bold text-dark mt-3 mb-2">Équipements inclus :</h6>
+                <div className="d-flex flex-wrap gap-2 mb-4">
+                  {activeModalRoom.amenities?.map((am, idx) => (
+                    <span key={idx} className="badge bg-light text-dark border p-2"><i className="fa fa-check text-success me-1"></i>{am}</span>
                   ))}
                 </div>
-                <div className="d-flex flex-wrap justify-content-between align-items-center mb-3 gap-2">
-                  <h3 className="font-weight-bold m-0 fs-3" style={{ color: '#25854C' }}>
-                    {activeModalRoom.price.toLocaleString('fr-FR')} {activeModalRoom.currency} <span className="fs-6 text-muted font-weight-normal">/ {activeModalRoom.period}</span>
-                  </h3>
-                  <span className="badge py-2 px-3 text-uppercase fs-6 text-white" style={{ backgroundColor: '#25854C' }}>{activeModalRoom.categoryLabel}</span>
+                <div className="d-flex justify-content-end gap-2">
+                  <button className="btn btn-secondary btn-sm" onClick={() => setActiveModalRoom(null)}>Fermer</button>
+                  <button 
+                    className="btn btn-success btn-sm text-uppercase fw-bold px-4" 
+                    style={{ backgroundColor: '#25854C' }}
+                    onClick={() => {
+                      const roomToBook = activeModalRoom;
+                      setActiveModalRoom(null);
+                      onSelectRoom(roomToBook);
+                    }}
+                  >
+                    Réserver maintenant
+                  </button>
                 </div>
-                <p className="text-dark leading-relaxed mb-3 fs-6">{activeModalRoom.description}</p>
-                <h6 className="font-weight-bold text-uppercase mb-2 text-dark">Équipements inclus :</h6>
-                <div className="row g-2 mb-4">
-                  {(activeModalRoom.amenities || []).map((item, idx) => (
-                    <div className="col-12 col-md-6" key={idx}>
-                      <i className="fa fa-check-circle text-chrysalide-green me-2"></i>{item}
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="modal-footer bg-light p-3 d-flex flex-column flex-sm-row justify-content-between gap-2">
-                <button type="button" className="btn btn-secondary text-uppercase w-100 w-sm-auto" onClick={() => setActiveModalRoom(null)}>Fermer</button>
-                <button type="button" className="btn text-uppercase font-weight-bold px-4 shadow w-100 w-sm-auto text-white border-0" style={{ backgroundColor: '#25854C' }}
-                  onClick={() => { const r = activeModalRoom; setActiveModalRoom(null); onSelectRoom(r); }}>
-                  Réserver cette chambre
-                </button>
               </div>
             </div>
           </div>

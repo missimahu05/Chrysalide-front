@@ -1,6 +1,8 @@
 import React from 'react';
 
 export default function Footer({ onOpenBooking }) {
+  const mapLink = "https://maps.app.goo.gl/yhHdgrsgHU1yNCg98";
+
   return (
     <footer className="container-fluid text-white footer pt-5 pb-3 border-top border-3" id="contact" style={{ backgroundColor: '#2D0B36', borderColor: '#CFA34C' }}>
       <div className="container">
@@ -54,8 +56,8 @@ export default function Footer({ onOpenBooking }) {
               Nos Offres & Tarifs
             </h5>
             <ul className="list-unstyled mb-0" style={{ fontSize: '0.9rem' }}>
-              <li className="mb-2"><a href="#rooms" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-star me-2 text-chrysalide-gold small"></i>Chambre Ventilée (15.000 FCFA/nuit)</a></li>
-              <li className="mb-2"><a href="#rooms" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-star me-2 text-chrysalide-gold small"></i>Chambre Climatisée (25.000 FCFA/nuit)</a></li>
+              <li className="mb-2"><a href="#rooms" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-star me-2 text-chrysalide-gold small"></i>Chambre Ventilée (7.500 FCFA/nuit)</a></li>
+              <li className="mb-2"><a href="#rooms" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-star me-2 text-chrysalide-gold small"></i>Chambre Climatisée (12.500 FCFA/nuit)</a></li>
               <li className="mb-2"><a href="#events" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-glass-cheers me-2 text-chrysalide-gold small"></i>Mariages & Réceptions Privées</a></li>
               <li className="mb-2"><a href="#events" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-briefcase me-2 text-chrysalide-gold small"></i>Séminaires & Conférences Pro</a></li>
               <li className="mb-2"><a href="#events" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-cocktail me-2 text-chrysalide-gold small"></i>Soirées Privées Lounge & Chicha</a></li>
@@ -68,7 +70,7 @@ export default function Footer({ onOpenBooking }) {
               Contact & Accès
             </h5>
             <p className="mb-2 text-white-50" style={{ fontSize: '0.88rem' }}>
-              <a href="https://maps.app.goo.gl/bci8qTMKYKRBK5Ye7" target="_blank" rel="noreferrer" className="text-white-50 text-decoration-none hover-gold">
+              <a href={mapLink} target="_blank" rel="noreferrer" className="text-white-50 text-decoration-none hover-gold">
                 <i className="fa fa-map-marker-alt me-2 text-chrysalide-green"></i>Quartier Nima, Parakou, Bénin (Google Maps)
               </a>
             </p>
