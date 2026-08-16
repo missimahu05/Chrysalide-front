@@ -9,6 +9,12 @@ const FALLBACK_EVENTS = [
   { id: 'soiree-vip', title: 'Soirées Privées Lounge & Chicha', badge: 'Exclusivité VIP', icon: 'fa-music', color: '#7A288A', image: '/img/gallery/chrysalide-real-8.jpeg', description: 'Privatisez notre Bar Lounge, Espace Chicha ou Cave à Vin pour vos anniversaires, cocktails d\'entreprise ou soirées VIP en toute discrétion.' }
 ];
 
+const getImgUrl = (url) => {
+  if (!url) return '/img/gallery/chrysalide-real-7.jpeg';
+  if (url.startsWith('/uploads/')) return `http://localhost:5000${url}`;
+  return url;
+};
+
 export default function EventsSection({ onOpenBooking }) {
   const [eventTypes, setEventTypes] = useState([]);
   const [selectedEvent, setSelectedEvent] = useState(null);
@@ -48,7 +54,7 @@ export default function EventsSection({ onOpenBooking }) {
               <div className="col-lg-4 col-md-6 col-12" key={evt.id}>
                 <div className="bg-white rounded-4 overflow-hidden shadow-sm border h-100 d-flex flex-column transition-all hover-shadow">
                   <div className="position-relative" style={{ height: '220px' }}>
-                    <img src={evt.image} alt={evt.title} className="w-100 h-100" style={{ objectFit: 'cover' }} />
+                    <img src={getImgUrl(evt.image)} alt={evt.title} className="w-100 h-100" style={{ objectFit: 'cover' }} />
                     <div className="position-absolute top-0 start-0 m-3 px-3 py-1 text-white font-weight-bold rounded-pill shadow-sm text-uppercase" style={{ backgroundColor: evt.color, fontSize: '0.72rem' }}>
                       {evt.badge}
                     </div>

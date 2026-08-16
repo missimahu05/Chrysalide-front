@@ -2,6 +2,12 @@ import React, { useState, useEffect } from 'react';
 
 const API = 'http://localhost:5000/api';
 
+const getImgUrl = (url) => {
+  if (!url) return '/photos/2026-08-05-09.49.04.jpeg';
+  if (url.startsWith('/uploads/')) return `http://localhost:5000${url}`;
+  return url;
+};
+
 // Fallback statique si l'API est indisponible
 const FALLBACK_ROOMS = [
   { id: 'room-ventilee', name: 'Chambres ventilées', category: 'ventilee', categoryLabel: 'Chambre Ventilée', price: 15000, currency: 'FCFA', period: 'nuit', bedType: '1 Lit', bathrooms: '1 salle de bain', image: '/photos/2026-08-05-09.49.04.jpeg', gallery: ['/photos/2026-08-05-09.49.04.jpeg', '/photos/2026-08-05-09.49.04-1.jpeg', '/photos/2026-08-05-09.49.04-2.jpeg'], amenities: ['Ventilateur de plafond puissant', 'TV Canal+', 'Wi-Fi Haut Débit', 'Salle de bain privée', 'Room Service 24/7'], description: 'Un espace élégant et confortable, parfaitement équipé pour un séjour agréable à La Chrysalide Suite.', available: true },
@@ -89,7 +95,7 @@ export default function RoomCatalog({ onSelectRoom, selectedFilter = 'all' }) {
             <div className="col-lg-6 col-12" key={room.id || room._id}>
               <div className="bg-white rounded-4 overflow-hidden shadow-sm border h-100 d-flex flex-column transition-all hover-shadow">
                 <div className="position-relative overflow-hidden" style={{ height: '230px' }}>
-                  <img className="img-fluid w-100 h-100" src={room.image} alt={room.name} style={{ objectFit: 'cover' }} />
+                  <img className="img-fluid w-100 h-100" src={getImgUrl(room.image)} alt={room.name} style={{ objectFit: 'cover' }} />
                   <div className="position-absolute bottom-0 start-0 m-3 px-3 py-1 text-white font-weight-bold rounded-3 shadow-sm" style={{ backgroundColor: '#25854C', fontSize: '0.82rem', zIndex: 3 }}>
                     {room.price.toLocaleString('fr-FR')} {room.currency} / {room.period}
                   </div>
@@ -149,7 +155,7 @@ export default function RoomCatalog({ onSelectRoom, selectedFilter = 'all' }) {
                 <div className="row g-2 g-md-3 mb-4">
                   {(activeModalRoom.gallery || [activeModalRoom.image]).map((imgUrl, i) => (
                     <div className="col-4" key={i}>
-                      <img src={imgUrl} alt={`${activeModalRoom.name} ${i}`} className="img-fluid rounded-3 shadow-sm" style={{ height: '120px', width: '100%', objectFit: 'cover' }} />
+                      <img src={getImgUrl(imgUrl)} alt={`${activeModalRoom.name} ${i}`} className="img-fluid rounded-3 shadow-sm" style={{ height: '120px', width: '100%', objectFit: 'cover' }} />
                     </div>
                   ))}
                 </div>
