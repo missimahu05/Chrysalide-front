@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Menu, X, Home, Info, BedDouble, Calendar, Sparkles, 
   MapPin, Phone, CalendarCheck, ChevronDown, ChevronUp
@@ -12,6 +12,17 @@ export default function Navbar({ onOpenBooking }) {
   const toggleDrawer = () => {
     setIsOpen(!isOpen);
   };
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
 
   const handleNavClick = (targetId) => {
     setActiveItem(targetId);
@@ -86,15 +97,15 @@ export default function Navbar({ onOpenBooking }) {
               <CalendarCheck size={15} className="me-1.5 flex-shrink-0" />Réserver
             </button>
 
-            {/* Standard Mobile/Tablet Hamburger Toggle Button (Visible on screens < 1200px) */}
+            {/* Smartphone & Tablet Hamburger Toggle Button */}
             <button 
               type="button" 
               className="btn ms-1 d-flex d-xl-none align-items-center justify-content-center shadow-sm rounded-3 border-0"
               onClick={toggleDrawer}
               aria-label="Menu de navigation mobile"
-              style={{ width: '40px', height: '40px', backgroundColor: '#25854C', color: '#FFFFFF' }}
+              style={{ width: '42px', height: '42px', backgroundColor: '#25854C', color: '#FFFFFF' }}
             >
-              <Menu size={22} />
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
 
@@ -105,27 +116,27 @@ export default function Navbar({ onOpenBooking }) {
       {isOpen && (
         <div 
           className="position-fixed top-0 start-0 w-100 h-100" 
-          style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)', zIndex: 1060, backdropFilter: 'blur(3px)' }}
+          style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)', zIndex: 1080, backdropFilter: 'blur(3px)' }}
           onClick={toggleDrawer}
         ></div>
       )}
 
-      {/* Mobile Side-Drawer Menu (Smartphone & Tablette - Glisse de droite à gauche) */}
+      {/* Mobile Side-Drawer Menu (Glisse de droite à gauche pour smartphone) */}
       <aside 
         className="position-fixed top-0 end-0 h-100 bg-white shadow-lg d-flex flex-column"
         style={{ 
           width: '320px', 
           maxWidth: '85vw', 
-          zIndex: 1070, 
+          zIndex: 1090, 
           transform: isOpen ? 'translateX(0)' : 'translateX(100%)', 
           transition: 'transform 0.35s ease-in-out'
         }}
       >
-        {/* Drawer Header (Green Header Bar with Close Button) */}
+        {/* Drawer Header */}
         <div className="p-3 px-4 d-flex align-items-center justify-content-between text-white" style={{ backgroundColor: '#25854C' }}>
           <div className="d-flex align-items-center">
             <img src="/newfav.png" alt="Logo" style={{ height: '36px', width: 'auto', marginRight: '10px', borderRadius: '6px' }} />
-            <h6 className="m-0 text-uppercase font-weight-bold text-white" style={{ fontSize: '1rem', letterSpacing: '0.5px' }}>
+            <h6 className="m-0 text-uppercase font-weight-bold text-white" style={{ fontSize: '0.95rem', letterSpacing: '0.5px' }}>
               LA CHRYSALIDE SUITE
             </h6>
           </div>
@@ -181,7 +192,7 @@ export default function Navbar({ onOpenBooking }) {
                     className="w-100 text-start py-2.5 ps-5 pe-4 btn rounded-0 border-0 text-secondary small d-block border-bottom"
                     style={{ fontSize: '0.9rem' }}
                   >
-                    La Team
+                    La Team & Direction
                   </button>
                   <button 
                     onClick={() => handleNavClick('video-presentation')}

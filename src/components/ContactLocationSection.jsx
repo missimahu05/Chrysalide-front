@@ -2,6 +2,7 @@ import React from 'react';
 
 export default function ContactLocationSection() {
   const mapLink = "https://maps.app.goo.gl/yhHdgrsgHU1yNCg98";
+  const embedUrl = "https://maps.google.com/maps?q=9.360140,2.652972&z=17&output=embed";
 
   return (
     <section className="container-xxl min-vh-100 d-flex align-items-center py-5 bg-light border-top border-bottom border-light" id="contact-location">
@@ -45,7 +46,7 @@ export default function ContactLocationSection() {
                       rel="noreferrer" 
                       className="btn btn-sm text-chrysalide-green font-weight-bold p-0 text-decoration-underline small"
                     >
-                      <i className="fa fa-map-marked-alt me-1"></i>Voir la position exacte sur Google Maps
+                      <i className="fa fa-map-marked-alt me-1"></i>Ouvrir la position exacte dans l'application Google Maps
                     </a>
                   </div>
                 </div>
@@ -100,15 +101,15 @@ export default function ContactLocationSection() {
             </div>
           </div>
 
-          {/* Right: Interactive Google Maps Frame */}
+          {/* Right: Interactive Google Maps Frame Centered Exact on La Chrysalide Suite */}
           <div className="col-lg-7">
-            <div className="bg-white rounded-4 p-2 shadow-sm border border-light h-100 overflow-hidden position-relative" style={{ minHeight: '280px' }}>
+            <div className="bg-white rounded-4 p-2 shadow-sm border border-light h-100 overflow-hidden position-relative" style={{ minHeight: '380px' }}>
               <iframe
-                title="Google Maps La Chrysalide Suite Nima Parakou"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15757.241088219468!2d2.6189333!3d9.3512964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1032338ff7ff2fb7%3A0xd647180bfd03f0b2!2sParakou%2C%20Benin!5e0!3m2!1sen!2sbj!4v1700000000000!5m2!1sen!2sbj"
+                title="Carte Google Maps - La Chrysalide Suite Parakou Nima"
+                src={embedUrl}
                 width="100%"
                 height="100%"
-                style={{ minHeight: '280px', border: 0, borderRadius: '12px' }}
+                style={{ minHeight: '380px', border: 0, borderRadius: '12px' }}
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -120,7 +121,7 @@ export default function ContactLocationSection() {
                 className="position-absolute bottom-0 end-0 m-3 btn btn-sm btn-dark text-white font-weight-bold shadow-lg text-uppercase"
                 style={{ zIndex: 10, backdropFilter: 'blur(6px)', fontSize: '0.78rem' }}
               >
-                <i className="fa fa-map-marked-alt me-1.5 text-warning"></i>Ouvrir dans Google Maps
+                <i className="fa fa-map-marked-alt me-1.5 text-warning"></i>Ouvrir l'itinéraire complet
               </a>
             </div>
           </div>
