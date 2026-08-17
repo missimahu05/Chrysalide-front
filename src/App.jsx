@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import HeroCarousel from './components/HeroCarousel';
 import BookingBar from './components/BookingBar';
@@ -6,7 +6,6 @@ import TrustBar from './components/TrustBar';
 import AboutSection from './components/AboutSection';
 import RoomCatalog from './components/RoomCatalog';
 import VideoSection from './components/VideoSection';
-import ServicesSection from './components/ServicesSection';
 import EventsSection from './components/EventsSection';
 import ProcessSection from './components/ProcessSection';
 import TestimonialsSection from './components/TestimonialsSection';
@@ -16,12 +15,38 @@ import CTAFinalSection from './components/CTAFinalSection';
 import ContactLocationSection from './components/ContactLocationSection';
 import Footer from './components/Footer';
 import BookingModal from './components/BookingModal';
+import EventsPage from './components/EventsPage';
 
 export default function App() {
+  const [currentView, setCurrentView] = useState('home'); // 'home' | 'events'
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [selectedRoom, setSelectedRoom] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchParams, setSearchParams] = useState(null);
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      if (window.location.hash === '#events-page' || window.location.hash === '#billetterie') {
+        setCurrentView('events');
+      } else {
+        setCurrentView('home');
+      }
+    };
+
+    handleHashChange();
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  const navigateToView = (view) => {
+    setCurrentView(view);
+    if (view === 'events') {
+      window.location.hash = '#events-page';
+    } else {
+      window.location.hash = '#hero';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   const handleOpenBooking = (room = null) => {
     setSelectedRoom(room);
@@ -39,17 +64,18 @@ export default function App() {
     }
   };
 
-  const handleSelectCategory = (catId) => {
-    setSelectedCategory(catId);
-    const roomsElem = document.getElementById('rooms');
-    if (roomsElem) {
-      roomsElem.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  if (currentView === 'events') {
+    return (
+      <EventsPage onBackToHome={() => navigateToView('home')} />
+    );
+  }
 
   return (
     <div className="bg-white text-dark min-vh-100 font-sans">
-      <Navbar onOpenBooking={() => handleOpenBooking()} />
+      <Navbar 
+        onOpenBooking={() => handleOpenBooking()} 
+        onOpenEventsPage={() => navigateToView('events')}
+      />
       
       <main style={{ paddingTop: '72px' }}>
         {/* Section 1: Hero Carousel */}
@@ -74,7 +100,10 @@ export default function App() {
         <VideoSection onOpenBooking={() => handleOpenBooking()} />
 
         {/* Section 6: Événements, Bar Lounge & Privatisation */}
-        <EventsSection onOpenBooking={() => handleOpenBooking()} />
+        <EventsSection 
+          onOpenBooking={() => handleOpenBooking()} 
+          onOpenEventsPage={() => navigateToView('events')}
+        />
 
         {/* Section 7: Process Steps (Comment réserver ?) */}
         <ProcessSection onOpenBooking={() => handleOpenBooking()} />
@@ -96,17 +125,17 @@ export default function App() {
       </main>
 
       {/* Section 13: Rich MPB-inspired Footer */}
-      <Footer onOpenBooking={() => handleOpenBooking()} />
+      <Footer 
+        onOpenBooking={() => handleOpenBooking()} 
+        onOpenEventsPage={() => navigateToView('events')}
+      />
 
-      {/* Booking Modal */}
+      {/* Dynamic Booking Modal */}
       <BookingModal 
-        isOpen={isBookingOpen}
+        isOpen={isBookingOpen} 
+        onClose={() => setIsBookingOpen(false)}
         selectedRoom={selectedRoom}
         searchParams={searchParams}
-        onClose={() => {
-          setIsBookingOpen(false);
-          setSelectedRoom(null);
-        }}
       />
     </div>
   );

@@ -4,7 +4,7 @@ import {
   MapPin, Phone, CalendarCheck, ChevronDown, ChevronUp
 } from 'lucide-react';
 
-export default function Navbar({ onOpenBooking }) {
+export default function Navbar({ onOpenBooking, onOpenEventsPage }) {
   const [isOpen, setIsOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
   const [activeItem, setActiveItem] = useState('hero');
@@ -68,10 +68,17 @@ export default function Navbar({ onOpenBooking }) {
             <a href="#rooms" onClick={() => handleNavClick('rooms')} className={`text-decoration-none transition-all d-flex align-items-center text-nowrap ${activeItem === 'rooms' ? 'text-chrysalide-green' : 'text-secondary hover-gold'}`}>
               <BedDouble size={15} className="me-1 text-chrysalide-gold flex-shrink-0" />Chambres
             </a>
-            <a href="#events" onClick={() => handleNavClick('events')} className={`text-decoration-none transition-all d-flex align-items-center text-nowrap ${activeItem === 'events' ? 'text-chrysalide-green' : 'text-chrysalide-gold hover-gold'}`}>
-              <span className="badge bg-warning text-dark me-1" style={{ fontSize: '0.62rem' }}>NEW</span>
-              <Calendar size={15} className="me-1 flex-shrink-0" />Événements
-            </a>
+            <button 
+              onClick={() => {
+                setActiveItem('events');
+                if (onOpenEventsPage) onOpenEventsPage();
+              }} 
+              className={`btn btn-link p-0 text-decoration-none transition-all d-flex align-items-center text-nowrap font-weight-bold ${activeItem === 'events' ? 'text-chrysalide-green' : 'text-chrysalide-gold hover-gold'}`}
+              style={{ fontSize: '0.85rem' }}
+            >
+              <span className="badge bg-warning text-dark me-1" style={{ fontSize: '0.62rem' }}>TICKETS</span>
+              <Calendar size={15} className="me-1 flex-shrink-0" />Événements & Billetterie
+            </button>
             <a href="#services" onClick={() => handleNavClick('services')} className={`text-decoration-none transition-all d-flex align-items-center text-nowrap ${activeItem === 'services' ? 'text-chrysalide-green' : 'text-secondary hover-gold'}`}>
               <Sparkles size={15} className="me-1 text-chrysalide-green flex-shrink-0" />Services
             </a>
@@ -223,15 +230,18 @@ export default function Navbar({ onOpenBooking }) {
               </button>
             </li>
 
-            {/* Événements & Privatisation */}
+            {/* Événements & Billetterie */}
             <li className="list-group-item p-0 border-bottom">
               <button 
-                onClick={() => handleNavClick('events')}
+                onClick={() => {
+                  setIsOpen(false);
+                  if (onOpenEventsPage) onOpenEventsPage();
+                }}
                 className={`w-100 text-start py-3 px-4 btn rounded-0 border-0 font-weight-bold d-flex align-items-center justify-content-between ${activeItem === 'events' ? 'bg-light text-chrysalide-green border-start border-4' : 'text-dark'}`}
                 style={{ borderColor: activeItem === 'events' ? '#25854C' : 'transparent', fontSize: '0.98rem' }}
               >
-                <span>Événements & Privatisation</span>
-                <span className="badge bg-warning text-dark small" style={{ fontSize: '0.65rem' }}>NEW</span>
+                <span>Événements & Billetterie</span>
+                <span className="badge bg-warning text-dark small" style={{ fontSize: '0.65rem' }}>TICKETS</span>
               </button>
             </li>
 

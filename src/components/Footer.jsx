@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Footer({ onOpenBooking }) {
+export default function Footer({ onOpenBooking, onOpenEventsPage }) {
   const mapLink = "https://maps.app.goo.gl/yhHdgrsgHU1yNCg98";
 
   return (
@@ -44,7 +44,7 @@ export default function Footer({ onOpenBooking }) {
               <li className="mb-2"><a href="#hero" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-chevron-right me-2 text-chrysalide-gold small"></i>Accueil</a></li>
               <li className="mb-2"><a href="#about" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-chevron-right me-2 text-chrysalide-gold small"></i>À propos de nous</a></li>
               <li className="mb-2"><a href="#rooms" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-chevron-right me-2 text-chrysalide-gold small"></i>Nos Chambres & Tarifs</a></li>
-              <li className="mb-2"><a href="#events" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-chevron-right me-2 text-chrysalide-gold small"></i>Événements & Privatisation</a></li>
+              <li className="mb-2"><button onClick={onOpenEventsPage} className="btn btn-link p-0 text-white-50 text-decoration-none hover-gold transition-all small border-0"><i className="fa fa-chevron-right me-2 text-chrysalide-gold small"></i>Événements & Billetterie</button></li>
               <li className="mb-2"><a href="#services" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-chevron-right me-2 text-chrysalide-gold small"></i>Services & Bar Lounge</a></li>
               <li className="mb-2"><a href="#contact-location" className="text-white-50 text-decoration-none hover-gold transition-all"><i className="fa fa-chevron-right me-2 text-chrysalide-gold small"></i>Contact & Localisation</a></li>
             </ul>
