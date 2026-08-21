@@ -4,7 +4,7 @@ export default function Footer({ onOpenBooking, onOpenEventsPage }) {
   const mapLink = "https://maps.app.goo.gl/yhHdgrsgHU1yNCg98";
 
   return (
-    <footer className="container-fluid text-white footer pt-5 pb-3 border-top border-3" id="contact" style={{ backgroundColor: '#2D0B36', borderColor: '#CFA34C' }}>
+    <footer className="container-fluid text-white footer pt-5 pb-3 border-top border-3 mt-5 mt-md-6" id="contact" style={{ backgroundColor: '#2D0B36', borderColor: '#CFA34C', marginTop: '4rem' }}>
       <div className="container">
         
         {/* Main 4-Column Grid */}
