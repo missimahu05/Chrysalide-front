@@ -97,7 +97,7 @@ export default function Navbar({ onOpenBooking, onOpenEventsPage }) {
             </a>
             
             <button 
-              className="btn py-2 px-3 text-uppercase font-weight-bold shadow-sm rounded-3 d-inline-flex align-items-center text-white text-nowrap border-0"
+              className="btn py-2 px-3 text-uppercase font-weight-bold shadow-sm rounded-3 d-none d-sm-inline-flex align-items-center text-white text-nowrap border-0"
               onClick={onOpenBooking}
               style={{ backgroundColor: '#25854C', fontSize: '0.8rem' }}
             >

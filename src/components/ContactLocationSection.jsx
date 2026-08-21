@@ -5,7 +5,7 @@ export default function ContactLocationSection() {
   const embedUrl = "https://maps.google.com/maps?q=9.360140,2.652972&z=17&output=embed";
 
   return (
-    <section className="container-xxl min-vh-100 d-flex align-items-center py-5 bg-light border-top border-bottom border-light" id="contact-location">
+    <section className="container-xxl py-5 my-4 my-md-5 bg-light border-top border-bottom border-light" id="contact-location">
       <div className="container">
         
         {/* Title */}
